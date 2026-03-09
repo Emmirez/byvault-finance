@@ -1,0 +1,4886 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "submit": "Submit",
+    "back": "Back",
+    "next": "Next",
+    "continue": "Continue",
+    "search": "Search",
+    "close": "Close",
+    "confirm": "Confirm",
+    "learnMore": "Learn more",
+    "with": "with",
+    "and": "and",
+    "policy": "policy",
+    "status": {
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "verified": "Verified",
+      "pending": "Pending",
+      "rejected": "Rejected"
+    }
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "logOut": "Log Out",
+    "email": "Email Address",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "rememberMe": "Remember Me",
+    "dontHaveAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?",
+    "loginToAccount": "Login to your account",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone Number",
+    "confirmPassword": "Confirm Password",
+    "createAccount": "Create Account",
+    "acceptTerms1": "I accept the",
+    "acceptTerms2": "and agree to the terms and conditions",
+    "resetPassword": "Reset Password",
+    "forgotPasswordDescription": "Enter your email and we'll send you a reset link",
+    "sendResetLink": "Send Reset Link",
+    "checkYourEmail": "Check Your Email",
+    "resetLinkSent": "If an account exists with that email, we've sent a reset link.",
+    "backToLogin": "Back to Login",
+    "identifier": {
+      "emailOrUsername": "Email or Username",
+      "enterIdentifier": "Enter your email or username",
+      "detectingAsEmail": "(Currently detecting as email)",
+      "detectingAsUsername": "(Currently detecting as username)",
+      "emailPlaceholder": "your.email@example.com",
+      "usernamePlaceholder": "your_username",
+      "enterEmail": "Enter your email address",
+      "enterUsername": "Enter your username",
+      "emailDescription": "Enter your registered email address or username",
+      "usernameDescription": "Username must be at least 3 characters",
+      "invalidEmail": "Please enter a valid email address",
+      "invalidUsername": "Please enter a valid username",
+      "identifierRequired": "Please enter your email address or username"
+    },
+    "password": {
+      "current": "Current Password",
+      "newPassword": "New Password",
+      "confirmNewPassword": "Confirm New Password",
+      "enterPassword": "Enter your password",
+      "enterCurrentPassword": "Enter your current password",
+      "enterNewPassword": "Enter your new password",
+      "confirmYourPassword": "Confirm your password",
+      "passwordRequired": "Please enter your password",
+      "passwordMinLength": "Password must be at least 6 characters",
+      "passwordMinLengthEight": "Password must be at least 8 characters",
+      "passwordStrength": {
+        "strong": "Strong",
+        "medium": "Medium",
+        "weak": "Weak",
+        "min8Chars": "Min 8 chars",
+        "lowercase": "Lowercase",
+        "uppercase": "Uppercase",
+        "number": "Number"
+      }
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "subtitle": "Create a strong new password for your account",
+      "createNewPassword": "Create New Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password",
+      "enterNewPassword": "Enter new password",
+      "confirmNewPassword": "Confirm new password",
+      "resetButton": "Reset Password",
+      "successTitle": "Password Reset Successful!",
+      "successMessage": "Your password has been successfully reset. You'll be redirected to login in 3 seconds.",
+      "redirecting": "Redirecting to login...",
+      "resetLinkSent": "Password reset link sent successfully!",
+      "failedToSend": "Failed to send reset link. Please try again.",
+      "tokenRequired": "Reset token is required"
+    },
+    "forgotPassword": {
+      "title": "Forgot Password",
+      "subtitle": "Reset your password in just a few clicks",
+      "description": "Enter your email address or username and we'll send you a secure reset link",
+      "identifierLabel": "Email Address or Username",
+      "sendResetLink": "Send Password Reset Link",
+      "sending": "Sending Reset Link...",
+      "checkYourAccount": "Check Your Email or Account",
+      "messageSent": "We've sent a password reset link to your {identifierType}",
+      "checkSpam": "Can't find it? Check your spam folder",
+      "checkEmailAssociated": "Check your email associated with this username",
+      "tryDifferent": "Try Different {identifierType}",
+      "returnToLogin": "Return to Login"
+    },
+    "login": {
+      "welcomeBack": "Welcome Back",
+      "subtitle": "Sign in to Byvault Finance",
+      "enterCredentials": "Enter Your Credentials",
+      "keepMeSignedIn": "Keep me signed in",
+      "signInButton": "Sign in to Account",
+      "signingIn": "Signing In...",
+      "noAccount": "New to Byvault Finance?",
+      "createAccount": "Create New Account",
+      "invalidCredentials": "Invalid credentials. Please try again.",
+      "errorOccurred": "An error occurred. Please try again.",
+      "agreement": "By signing in, you agree to our Terms of Service and Privacy Policy. Your data is protected with bank-grade security.",
+      "redirecting": "Redirecting to dashboard..."
+    },
+    "register": {
+      "title": "Start your free account",
+      "step": "Step {current} of {total}",
+      "steps": {
+        "personal": "Personal",
+        "contact": "Contact",
+        "account": "Account",
+        "security": "Security"
+      },
+      "personalInfo": {
+        "title": "Personal Information",
+        "subtitle": "Tell us about yourself",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "middleName": "Middle Name",
+        "username": "Username",
+        "firstNameRequired": "First name is required",
+        "lastNameRequired": "Last name is required",
+        "usernameRequired": "Username is required",
+        "usernameMinLength": "Username must be at least 3 characters",
+        "usernameInvalid": "Username can only contain letters, numbers, and underscores",
+        "firstNamePlaceholder": "Jane",
+        "lastNamePlaceholder": "Dane",
+        "middleNamePlaceholder": "David",
+        "usernamePlaceholder": "john_doe"
+      },
+      "contactInfo": {
+        "title": "Contact Information",
+        "subtitle": "How can we reach you?",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "dateOfBirth": "Date of Birth",
+        "address": "Address",
+        "emailRequired": "Email is required",
+        "phoneRequired": "Phone number is required",
+        "phoneInvalid": "Please enter a valid phone number",
+        "phoneMinDigits": "Phone number must be at least 10 digits",
+        "dobRequired": "Date of birth is required",
+        "dobAgeRestriction": "You must be at least 18 years old",
+        "dobInvalid": "Please enter a valid date of birth",
+        "ageRequirement": "You must be at least 18 years old",
+        "emailPlaceholder": "your.email@example.com",
+        "phonePlaceholder": "+1 (555) 000-0000",
+        "addressPlaceholder": "123 Main Street, City, Country"
+      },
+      "accountSetup": {
+        "title": "Account Setup",
+        "subtitle": "Choose your account preferences",
+        "currency": "Currency",
+        "accountType": "Account Type",
+        "transactionPin": "Transaction PIN",
+        "pinRequired": "Transaction PIN is required",
+        "pinLength": "PIN must be 4 digits",
+        "pinNumeric": "PIN must contain only numbers",
+        "pinPlaceholder": "4-digit PIN"
+      },
+      "securitySetup": {
+        "title": "Security Setup",
+        "subtitle": "Secure your account",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "passwordRequired": "Password is required",
+        "passwordMinLength": "Password must be at least 8 characters",
+        "confirmPasswordRequired": "Please confirm your password",
+        "passwordsDoNotMatch": "Passwords do not match",
+        "passwordPlaceholder": "Create strong password",
+        "confirmPasswordPlaceholder": "Confirm your password"
+      },
+      "termsAgreement": "I agree to the {termsOfService} and {privacyPolicy}",
+      "termsOfService": "Terms of Service",
+      "privacyPolicy": "Privacy Policy",
+      "alreadyHaveAccount": "Already have an account?",
+      "signIn": "Sign In",
+      "createAccountButton": "Create Account",
+      "creatingAccount": "Creating Account...",
+      "registrationSuccessful": "Registration Successful!",
+      "successMessage": "Your account has been created successfully. You will be redirected to your dashboard shortly.",
+      "validationError": "Please fix the following fields: {fields}",
+      "termsRequired": "You must agree to the Terms of Service and Privacy Policy",
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+  "navigation": {
+    "menu": "Menu",
+    "dashboard": "Dashboard",
+    "accounts": "Accounts",
+    "transfers": "Transfers",
+    "payments": "Payments",
+    "cards": "Cards",
+    "statements": "Statements",
+    "settings": "Settings",
+    "help": "Help",
+    "contact": "Contact Us",
+    "checking": "Checking",
+    "savings": "Savings & CDs",
+    "creditCards": "Credit Cards",
+    "loans": "Loans",
+    "business": "Business",
+    "education": "Education & Goals",
+    "wealthManagement": "Wealth Management",
+    "privacySecurity": "Privacy & Security",
+    "aboutUs": "About Us"
+  },
+  "landing": {
+    "hero": {
+      "title1": "Solutions built around you",
+      "title2": "Your financial goals matter",
+      "title3": "Banking made simple for everyone",
+      "subtitle1": "BYVAULT FINANCE - A BANK OF AMERICA COMPANY",
+      "subtitle2": "BETTER MONEY HABITS",
+      "subtitle3": "BYVAULT FINANCE",
+      "description1": "At byvault Finance, we provide the tools, people and know-how to help you pursue your financial goals.",
+      "description2": "We can help you achieve them through Better Money Habits financial education and programs that make communities stronger.",
+      "description3": "Open an account in minutes. Enjoy zero monthly fees, powerful tools, and rewards that work for you.",
+      "cta1": "Get started",
+      "cta2": "Learn more",
+      "cta3": "Open an account"
+    },
+    "currency": {
+      "liveExchangeRates": "Live Exchange Rates",
+      "realTimeUpdates": "Real-time foreign exchange rates updated every minute",
+      "currency": "Currency",
+      "amount": "Amount",
+      "change": "Change (24h)",
+      "chart": "Chart (24h)",
+      "action": "Action",
+      "send": "Send",
+      "lastUpdated": "Last updated",
+      "positive": "Positive",
+      "negative": "Negative",
+      "chatSupport": "Chat with us, we're online!",
+      "instantSupport": "Get instant support for currency exchange",
+      "startChat": "Start Live Chat"
+    },
+    "about": {
+      "label": "Our Story",
+      "title": "Redefining Financial Freedom for Everyone",
+      "description": "We're not just another bank. Founded on the belief that financial services should be accessible, transparent, and empowering, we've built a platform that puts you in control. From seamless digital experiences to intelligent financial tools, we're committed to making banking work for you, not against you.",
+      "statLabel": "Industry Impact",
+      "statDesc": "Customers Worldwide",
+      "value1": "Innovation",
+      "value1Desc": "Cutting-edge technology",
+      "value2": "Transparency",
+      "value2Desc": "No hidden fees",
+      "value3": "Security",
+      "value3Desc": "Your data matters",
+      "value4": "Experience",
+      "value4Desc": "Customer first",
+      "readMore": "About us",
+      "trustText": "Join thousands",
+      "trustTextDesc": "who trust us daily."
+    },
+    "features": {
+      "title": "Why bank with us?",
+      "secure": "Secure & Protected",
+      "secureDesc": "Your deposits are FDIC insured up to $250,000. Advanced security features protect your account 24/7.",
+      "support": "24/7 Support",
+      "supportDesc": "Our customer service team is available around the clock to help with any questions or concerns.",
+      "rates": "Better Rates",
+      "ratesDesc": "Competitive interest rates on savings accounts and low rates on loans to help you save more.",
+      "visualTitle": "Modern Banking Experience",
+      "visualDesc": "Our state-of-the-art digital platform provides a seamless and secure banking experience from anywhere in the world.",
+      "imageCaption": "Seamless digital banking experience across all your devices"
+    },
+    "realTalk": {
+      "title": "Real Talk With Better Money Habits®",
+      "badge": "Financial Guidance",
+      "description": "Practical advice and real conversations about money to help you build better financial habits.",
+      "budgeting": {
+        "title": "Budgeting Basics",
+        "cardTitle": "How to Create Your First Budget",
+        "description": "Learn step-by-step how to create a budget that works for your lifestyle and helps you reach your goals.",
+        "cta": "Explore more"
+      },
+      "homeBuying": {
+        "title": "Home Buying",
+        "cardTitle": "First-Time Home Buyer's Guide",
+        "description": "Everything you need to know about buying your first home, from saving for a down payment to closing the deal.",
+        "cta": "Learn more"
+      },
+      "credit": {
+        "title": "Credit Health",
+        "cardTitle": "Building Credit from Scratch",
+        "description": "Strategies to build and maintain good credit, even if you're starting with no credit history.",
+        "cta": "Get started"
+      },
+      "exploreResources": "Explore all resources"
+    },
+    "featuredOffer": {
+      "limitedTime": "LIMITED TIME OFFER",
+      "title": "Earn $500 bonus",
+      "description": "Open a new checking account with qualifying activities. Terms apply.",
+      "cta": "See details",
+      "imageAlt": "BankApp Credit Card"
+    },
+    "mobileApp": {
+      "title": "Banking at your fingertips",
+      "description": "Manage your finances anytime, anywhere with our award-winning mobile app.",
+      "features": {
+        "biometricLogin": {
+          "title": "Biometric Login",
+          "description": "Secure access with fingerprint or face ID"
+        },
+        "mobileCheckDeposit": {
+          "title": "Mobile Check Deposit",
+          "description": "Deposit checks instantly with your camera"
+        },
+        "spendingInsights": {
+          "title": "Spending Insights",
+          "description": "Track expenses with intelligent categorization"
+        }
+      },
+      "appStore": "App Store",
+      "googlePlay": "Google Play",
+      "imageAlt": "Mobile banking app interface"
+    },
+    "products": {
+      "title": "Choose what's right for you",
+      "subtitle": "Explore our full range of banking products and services",
+      "checking": {
+        "description": "No monthly fees. Free debit card. Unlimited transactions."
+      },
+      "savings": {
+        "description": "Competitive rates. FDIC insured. Reach your goals faster."
+      },
+      "creditCards": {
+        "description": "Cash back rewards. Travel benefits. Build your credit."
+      },
+      "homeLoans": {
+        "title": "Home Loans",
+        "description": "Mortgages, refinancing, and home equity loans made simple."
+      },
+      "business": {
+        "description": "Business accounts, loans, and merchant services for entrepreneurs."
+      },
+      "student": {
+        "title": "Student Banking",
+        "description": "Special accounts and resources for students and young adults."
+      }
+    },
+    "testimonials": {
+      "title": "Trusted by millions",
+      "subtitle": "See what our customers are saying",
+      "sarah": {
+        "role": "Small Business Owner",
+        "quote": "\"Switching Byvault Finance was the best decision for my business. The mobile banking app makes managing finances so much easier.\""
+      },
+      "michael": {
+        "role": "Home Buyer",
+        "quote": "\"The mortgage process was seamless. My loan officer guided me through every step and we closed on our dream home in 30 days.\""
+      },
+      "jessica": {
+        "role": "College Student",
+        "quote": "\"As a student, the zero monthly fees and student-focused resources have been a lifesaver. Highly recommend for young adults!\""
+      }
+    },
+    "trustBadges": {
+      "title": "TRUSTED AND SECURE",
+      "fdicInsured": "FDIC Insured",
+      "sipcMember": "SIPC Member",
+      "ssl256Bit": "256-bit SSL",
+      "betterBusinessBureau": "Better Business Bureau",
+      "pciDssCompliant": "PCI DSS Compliant"
+    },
+    "stats": {
+      "customers": "Customers",
+      "assetsManaged": "Assets Managed",
+      "customerSatisfaction": "Customer Satisfaction",
+      "yearsExperience": "Years Experience"
+    },
+    "imageGallery": {
+      "atmMachineAlt": "ATM Machine",
+      "bankingServicesAlt": "Banking services",
+      "digitalBankingAlt": "Digital banking",
+      "atmAccess": "24/7 ATM Access",
+      "personalBanking": "Personal Banking",
+      "mobileBanking": "Mobile Banking"
+    },
+    "cta": {
+      "readyToGetStarted": "Ready to get started?",
+      "openAccountToday": "Open your account today and start enjoying the benefits of modern banking.",
+      "openAnAccount": "Open an account",
+      "scheduleAppointment": "Schedule appointment"
+    },
+    "financialDisclosures": {
+      "financialSecurityAlt": "Financial security and compliance",
+      "memberSipcFdic": "Member SIPC & FDIC",
+      "securitiesDepositsInsured": "Securities and deposits insured",
+      "importantFinancialInformation": "Important Financial Information",
+      "onlineBankingServiceAgreement": "Online Banking Service Agreement",
+      "investingRisksTitle": "Investing involves risks",
+      "investingRisksDescription": "There is always the potential of losing money when you invest in securities. You should review any planned financial transactions that may have tax or legal implications with your personal tax or legal advisor.",
+      "securitiesProducts": "Securities products",
+      "securitiesProductsDescription": "Are provided by Byvault Finance, Pierce, Fenner & Smith Incorporated (also referred to as \"Hmlc\", or \"Hamilton & Co\"), a registered broker-dealer, registered investment adviser, Member SIPC, and a wholly-owned subsidiary of byvault finance Corporation.",
+      "byvaultfinancePrivateBank": "Byvault Finance Private Bank",
+      "byvaultfinancePrivateBankDescription": "is a division of Byvault Finance, N.A., Member FDIC and a wholly owned subsidiary of Byvault finance Corporation. Trust and fiduciary services are provided by Byvault finance, N.A. and U.S. Trust Company of Delaware.",
+      "insuranceProducts": "Insurance Products",
+      "insuranceProductsDescription": "Are offered through Byvault Finance Life Agency Inc. (MLLA) and/or Byvault finance Insurance Services, Inc., both of which are licensed insurance agencies and wholly-owned subsidiaries of Byvault finance Corporation.",
+      "bankingProducts": "Banking products",
+      "bankingProductsDescription": "including credit card, automobile loans, mortgage and home equity products are provided by Byvault finance, N.A. and affiliated banks, Members FDIC and wholly owned subsidiaries of Byvault finance Corporation. Credit and collateral are subject to approval. Terms and conditions apply.",
+      "disclaimer": "This is not a commitment to lend. Programs, rates, terms and conditions are subject to change without notice.",
+      "sipcInsured": "SIPC Insured",
+      "viewFullTerms": "View full terms and conditions",
+      "fdicInsured": "FDIC Insured"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Get answers to common questions about our services",
+      "faq1Question": "How do I open an account?",
+      "faq1Answer": "You can open an account online in just 10 minutes. Simply visit our application page, provide your information, and verify your identity. No visit to a branch is required.",
+      "faq2Question": "Are my deposits insured?",
+      "faq2Answer": "Yes, all deposits are FDIC insured up to $250,000 per depositor, per insured bank, for each account ownership category.",
+      "faq3Question": "What fees do you charge?",
+      "faq3Answer": "We offer no monthly fees on checking accounts, no minimum balance requirements, and free ATM access at thousands of locations nationwide.",
+      "faq4Question": "How do I contact customer service?",
+      "faq4Answer": "Our customer service is available 24/7 by phone at 1-800-BYVAULTFN-1, through live chat on our website, or via the mobile app."
+    }
+  },
+  "footer": {
+    "products": "Products",
+    "support": "Support",
+    "privacy": "Privacy",
+    "company": "Company",
+    "careers": "Careers",
+    "press": "Press",
+    "locations": "Locations",
+    "connect": "Connect",
+    "bankappDisclaimer": "Byvault Finance, N.A. Member FDIC. Equal Housing Lender.",
+    "copyright": "© 2025 Byvault Finance Corporation. All rights reserved.",
+    "legalDisclaimer": "Banking products and services provided by Byvault Finance, N.A. and affiliated banks. Terms and conditions apply. This is not a commitment to lend."
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode",
+    "toggle": "Toggle theme",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
+  },
+  "pages": {
+    "contact": {
+      "contactSupport": "Contact Support",
+      "subtitle": "Get in touch with our support team",
+      "ourLocation": "Our Location",
+      "emailUs": "Email Us",
+      "phone": "Phone",
+      "vipOnly": "VIP ONLY",
+      "vvipDial": "VVIP DIAL",
+      "sendMessage": "Send Message",
+      "name": "Name*",
+      "namePlaceholder": "Enter your name",
+      "email": "Email*",
+      "emailPlaceholder": "Enter your email",
+      "phonePlaceholder": "Enter your phone number",
+      "yourMessage": "Your Message*",
+      "messagePlaceholder": "Type your message here...",
+      "agreeTerms": "I agree to the ",
+      "termsConditions": "Terms & Conditions",
+      "and": "and",
+      "privacyPolicy": "Privacy Policy",
+      "sending": "Sending...",
+      "sendMessageButton": "SEND MESSAGE",
+      "timeline": "TIMELINE",
+      "master": "master*",
+      "liveChat": "Live Chat",
+      "liveChatDesc": "Chat with us, we're online!",
+      "startChat": "Start Live Chat",
+      "responseTime": "Response within 2-4 hours",
+      "operatingHours": "24/7 Support"
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "subtitle": "Please read these terms carefully before using our services",
+      "imageAlt": "Terms and Conditions",
+      "lastUpdated": "Last Updated:",
+      "section1": {
+        "title": "1. Introduction and Acceptance",
+        "content1": "Welcome to ByVault Finance. These Terms and Conditions ('Terms') constitute a legally binding agreement between you ('Customer,' 'you,' or 'your') and ByVault Finance ('Bank,' 'we,' 'us,' or 'our') governing your access to and use of our banking services, digital platforms, and financial products.",
+        "content2": "By opening an account, accessing our online banking platform, mobile application, or utilizing any of our financial services, you acknowledge that you have read, understood, and agree to be bound by these Terms, along with our Privacy Policy and any additional agreements applicable to specific products or services."
+      },
+      "section2": {
+        "title": "2. Account Opening and Eligibility",
+        "subsection1": {
+          "title": "2.1 Eligibility Requirements:",
+          "content": "To open an account with ByVault Finance, you must:",
+          "list1": "Be at least 18 years of age or the age of majority in your jurisdiction",
+          "list2": "Possess legal capacity to enter into binding contracts",
+          "list3": "Provide valid government-issued identification",
+          "list4": "Provide a verifiable residential address",
+          "list5": "Have a valid Social Security Number or Tax Identification Number"
+        },
+        "subsection2": {
+          "title": "2.2 Account Verification:",
+          "content": "We reserve the right to verify your identity and may request additional documentation at any time. This may include proof of address, employment verification, source of funds documentation, and other information required under applicable laws including the USA PATRIOT Act and Bank Secrecy Act."
+        },
+        "subsection3": {
+          "title": "2.3 Account Approval:",
+          "content": "ByVault Finance reserves the right to refuse account opening for any reason permitted by law, including but not limited to inability to verify identity, concerns about fraudulent activity, or failure to meet our account opening criteria."
+        }
+      },
+      "section3": {
+        "title": "3. Account Usage and Responsibilities",
+        "subsection1": {
+          "title": "3.1 Account Security:",
+          "content": "You are responsible for maintaining the confidentiality of your account credentials, including usernames, passwords, PINs, security questions, and any other authentication methods. You must immediately notify us of any unauthorized access or suspected security breach."
+        },
+        "subsection2": {
+          "title": "3.2 Authorized Transactions:",
+          "content": "You authorize us to honor all transactions initiated using your account credentials, whether by you or by third parties with your permission. You remain liable for all authorized and unauthorized transactions until you notify us of a security compromise."
+        },
+        "subsection3": {
+          "title": "3.3 Prohibited Activities:",
+          "content": "You agree not to use your account for:",
+          "list1": "Any illegal activities or transactions",
+          "list2": "Money laundering or terrorist financing",
+          "list3": "Fraudulent activities or identity theft",
+          "list4": "Gambling transactions where prohibited by law",
+          "list5": "Purchasing illegal goods or services",
+          "list6": "Business purposes if opened as a personal account"
+        },
+        "subsection4": {
+          "title": "3.4 Account Monitoring:",
+          "content": "We actively monitor accounts for suspicious activity and reserve the right to freeze, suspend, or close accounts that violate these Terms or applicable laws."
+        }
+      },
+      "section4": {
+        "title": "4. Fees, Charges, and Interest",
+        "subsection1": {
+          "title": "4.1 Fee Schedule:",
+          "content": "All applicable fees are disclosed in our Fee Schedule, which is provided at account opening and is available on our website. Fees may include monthly maintenance fees, overdraft fees, ATM fees, wire transfer fees, and other service charges."
+        },
+        "subsection2": {
+          "title": "4.2 Fee Changes:",
+          "content": "We reserve the right to modify our fees with at least 30 days' prior written notice to you. Continued use of your account after the effective date constitutes acceptance of the new fee structure."
+        },
+        "subsection3": {
+          "title": "4.3 Interest Rates:",
+          "content": "Interest rates on deposit accounts are variable and may change at our discretion. Current rates are available on our website and in branch locations. Interest is calculated using the daily balance method and credited monthly."
+        },
+        "subsection4": {
+          "title": "4.4 Overdraft Protection:",
+          "content": "If you enroll in overdraft protection, transactions that exceed your available balance may be honored subject to our overdraft limit and applicable fees. You acknowledge that overdraft fees may result in additional charges."
+        }
+      },
+      "section5": {
+        "title": "5. Electronic Banking Services",
+        "subsection1": {
+          "title": "5.1 Online and Mobile Banking:",
+          "content": "Our electronic banking services allow you to check balances, transfer funds, pay bills, deposit checks remotely, and perform other transactions. These services are subject to system availability and may be interrupted for maintenance."
+        },
+        "subsection2": {
+          "title": "5.2 Electronic Communications:",
+          "content": "By using our services, you consent to receive communications electronically, including account statements, notices, disclosures, and other information that we are legally required to provide."
+        },
+        "subsection3": {
+          "title": "5.3 Mobile Deposit:",
+          "content": "Our mobile deposit service allows you to deposit checks by capturing images. You agree to properly endorse checks, retain the original for 14 days, and securely destroy it thereafter. You are responsible for ensuring deposits are accurate and legitimate."
+        },
+        "subsection4": {
+          "title": "5.4 Bill Pay Services:",
+          "content": "Our bill pay service allows you to make payments to third parties. You authorize us to debit your account for payment amounts and any applicable fees. We are not responsible for late payments caused by payee processing delays."
+        }
+      },
+      "section6": {
+        "title": "6. Deposits, Withdrawals, and Transfers",
+        "subsection1": {
+          "title": "6.1 Deposit Availability:",
+          "content": "Deposits are subject to verification and availability schedules as disclosed in our Funds Availability Policy. Electronic deposits are generally available within 1-2 business days, while check deposits may be held longer based on amount and account history."
+        },
+        "subsection2": {
+          "title": "6.2 Deposit Endorsements:",
+          "content": "All checks must be endorsed as specified by us. We reserve the right to reject improperly endorsed items or deposits that appear suspicious or fraudulent."
+        },
+        "subsection3": {
+          "title": "6.3 Withdrawal Limits:",
+          "content": "We may impose daily withdrawal and transfer limits for security purposes. ATM withdrawals and certain electronic transfers may be limited to protect your account."
+        },
+        "subsection4": {
+          "title": "6.4 Regulation D:",
+          "content": "For savings and money market accounts, federal regulations may limit certain types of withdrawals and transfers to six per monthly statement cycle."
+        }
+      },
+      "section7": {
+        "title": "7. Liability and Dispute Resolution",
+        "subsection1": {
+          "title": "7.1 Unauthorized Transactions:",
+          "content": "You must notify us immediately of any unauthorized transactions. Your liability for unauthorized electronic transfers is governed by federal law (Regulation E), which limits your losses if you report them promptly:",
+          "list1": "$0 if reported before any unauthorized use",
+          "list2": "Up to $50 if reported within 2 business days",
+          "list3": "Up to $500 if reported within 60 days of statement",
+          "list4": "Unlimited if not reported within 60 days"
+        },
+        "subsection2": {
+          "title": "7.2 Error Resolution:",
+          "content": "If you believe an error has occurred, you must notify us within 60 days of the statement date. We will investigate and respond within 10 business days (or 45 days for certain transactions)."
+        },
+        "subsection3": {
+          "title": "7.3 Limitation of Liability:",
+          "content": "To the maximum extent permitted by law, ByVault Finance is not liable for indirect, incidental, special, or consequential damages arising from your use of our services, including lost profits or business interruption."
+        },
+        "subsection4": {
+          "title": "7.4 Arbitration Agreement:",
+          "content": "Any disputes arising from these Terms or your accounts shall be resolved through binding arbitration rather than court proceedings, except where prohibited by law. You waive your right to participate in class action lawsuits."
+        }
+      },
+      "section8": {
+        "title": "8. Account Closure and Termination",
+        "subsection1": {
+          "title": "8.1 Closure by Customer:",
+          "content": "You may close your account at any time by providing written notice and returning all checks, debit cards, and other access devices. You remain responsible for all outstanding transactions and fees."
+        },
+        "subsection2": {
+          "title": "8.2 Closure by Bank:",
+          "content": "We reserve the right to close your account at any time for any reason, including but not limited to:",
+          "list1": "Violation of these Terms",
+          "list2": "Suspicious or fraudulent activity",
+          "list3": "Excessive overdrafts or returned items",
+          "list4": "Account inactivity",
+          "list5": "Provision of false information",
+          "list6": "Legal or regulatory requirements"
+        },
+        "subsection3": {
+          "title": "8.3 Final Distribution:",
+          "content": "Upon closure, any remaining balance will be mailed to your address of record after deducting applicable fees and charges. Unclaimed funds are subject to state escheatment laws."
+        }
+      },
+      "section9": {
+        "title": "9. Privacy and Data Security",
+        "subsection1": {
+          "title": "9.1 Privacy Policy:",
+          "content": "Our collection, use, and protection of your personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference. We comply with all applicable privacy laws including the Gramm-Leach-Bliley Act."
+        },
+        "subsection2": {
+          "title": "9.2 Information Sharing:",
+          "content": "We may share your information with affiliates, service providers, and third parties as necessary to provide services, comply with legal requirements, or prevent fraud."
+        },
+        "subsection3": {
+          "title": "9.3 Data Security:",
+          "content": "We employ industry-standard security measures including encryption, firewalls, and multi-factor authentication. However, no system is completely secure, and you acknowledge that electronic transmission carries inherent risks."
+        }
+      },
+      "section10": {
+        "title": "10. Legal and Regulatory Compliance",
+        "subsection1": {
+          "title": "10.1 Governing Law:",
+          "content": "These Terms are governed by federal law and the laws of the state where your account was opened, without regard to conflict of law principles."
+        },
+        "subsection2": {
+          "title": "10.2 Regulatory Compliance:",
+          "content": "We comply with all applicable banking regulations including those issued by the Federal Reserve, FDIC, OCC, CFPB, and state banking authorities. Your accounts are FDIC insured up to the maximum amount permitted by law."
+        },
+        "subsection3": {
+          "title": "10.3 Anti-Money Laundering:",
+          "content": "We maintain compliance programs for the Bank Secrecy Act and USA PATRIOT Act. We may file Suspicious Activity Reports (SARs) and Currency Transaction Reports (CTRs) as required by law without notice to you."
+        },
+        "subsection4": {
+          "title": "10.4 Tax Reporting:",
+          "content": "We report account interest and other taxable events to the IRS as required. You are responsible for reporting and paying all applicable taxes on your accounts."
+        }
+      },
+      "section11": {
+        "title": "11. Changes to Terms and Conditions",
+        "subsection1": {
+          "title": "11.1 Right to Modify:",
+          "content": "We reserve the right to modify these Terms at any time. Changes will be communicated through written notice, email, posting on our website, or statement inserts at least 30 days before the effective date."
+        },
+        "subsection2": {
+          "title": "11.2 Acceptance of Changes:",
+          "content": "Continued use of your account after the effective date of changes constitutes acceptance of the modified Terms. If you do not agree to the changes, you must close your account before the effective date."
+        }
+      },
+      "section12": {
+        "title": "12. General Provisions",
+        "subsection1": {
+          "title": "12.1 Severability:",
+          "content": "If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect."
+        },
+        "subsection2": {
+          "title": "12.2 Waiver:",
+          "content": "Our failure to enforce any provision does not constitute a waiver of our right to enforce that provision in the future."
+        },
+        "subsection3": {
+          "title": "12.3 Assignment:",
+          "content": "You may not assign these Terms or your account without our written consent. We may assign our rights and obligations without notice to you."
+        },
+        "subsection4": {
+          "title": "12.4 Entire Agreement:",
+          "content": "These Terms, together with our Privacy Policy, Fee Schedule, and product-specific disclosures, constitute the entire agreement between you and ByVault Finance regarding your accounts and supersede all prior agreements."
+        }
+      },
+      "contact": {
+        "title": "Questions About These Terms?",
+        "subtitle": "If you have any questions regarding these Terms and Conditions, please contact us:",
+        "email": "Email:",
+        "phone": "Phone:",
+        "address": "Address:"
+      }
+    }
+  },
+  "creditCards": {
+    "pageTitle": "Credit Cards",
+    "breadcrumb": {
+      "home": "Home",
+      "creditCards": "Credit Cards"
+    },
+    "hero": {
+      "title": "Credit Cards",
+      "subtitle": "Find the perfect card with rewards, low rates, and benefits that match your lifestyle",
+      "badges": {
+        "premiumRewards": "Premium Rewards",
+        "introApr": "0% Intro APR",
+        "fraudProtection": "Fraud Protection"
+      },
+      "applyNow": "Apply Now"
+    },
+    "chooseYourCard": "Choose Your Card",
+    "cards": {
+      "premiumRewards": {
+        "name": "Premium Rewards Card",
+        "description": "Earn unlimited 2x points on all purchases",
+        "annualFee": "$95",
+        "introAPR": "0% for 15 months",
+        "regularAPR": "16.99% - 24.99%",
+        "rewards": [
+          "2x points on all purchases",
+          "60,000 bonus points",
+          "Travel insurance",
+          "No foreign transaction fees"
+        ],
+        "category": "rewards",
+        "cardBrand": "VISA",
+        "keyBenefits": "Key Benefits",
+        "applyNow": "Apply Now",
+        "details": "Details"
+      },
+      "cashBack": {
+        "name": "Cash Back Card",
+        "description": "Get 3% cash back in popular categories",
+        "annualFee": "$0",
+        "introAPR": "0% for 12 months",
+        "regularAPR": "14.99% - 22.99%",
+        "rewards": [
+          "3% cash back at supermarkets",
+          "2% at gas stations",
+          "1% on everything else",
+          "$200 welcome bonus"
+        ],
+        "category": "cashback",
+        "cardBrand": "MASTERCARD"
+      },
+      "travel": {
+        "name": "Travel Card",
+        "description": "Perfect for frequent travelers",
+        "annualFee": "$450",
+        "introAPR": "N/A",
+        "regularAPR": "17.99% - 25.99%",
+        "rewards": [
+          "5x points on travel",
+          "Lounge access",
+          "Global Entry credit",
+          "Travel protections"
+        ],
+        "category": "travel",
+        "cardBrand": "VISA SIGNATURE"
+      },
+      "student": {
+        "name": "Student Card",
+        "description": "Build credit while earning rewards",
+        "annualFee": "$0",
+        "introAPR": "0% for 6 months",
+        "regularAPR": "18.99% - 26.99%",
+        "rewards": [
+          "1% cash back on all purchases",
+          "Credit education tools",
+          "No annual fee",
+          "Credit limit increases"
+        ],
+        "category": "student",
+        "cardBrand": "DISCOVER"
+      },
+      "business": {
+        "name": "Business Card",
+        "description": "Rewards for business expenses",
+        "annualFee": "$125",
+        "introAPR": "0% for 12 months",
+        "regularAPR": "15.99% - 23.99%",
+        "rewards": [
+          "5x points on office supplies",
+          "3x on travel",
+          "Employee cards",
+          "Expense management"
+        ],
+        "category": "business",
+        "cardBrand": "AMERICAN EXPRESS"
+      },
+      "visaPlatinum": {
+        "name": "VISA PLATINUM",
+        "description": "Consolidate debt with low APR",
+        "annualFee": "$0 first year, then $99",
+        "introAPR": "0% for 18 months",
+        "regularAPR": "16.99% - 25.99%",
+        "rewards": [
+          "0% balance transfer fee",
+          "No late fee first year",
+          "Credit score tracking",
+          "Debt payoff calculator"
+        ],
+        "category": "balance",
+        "cardBrand": "VISA PLATINUM"
+      },
+      "labels": {
+        "annualFee": "Annual Fee",
+        "introAPR": "Intro APR",
+        "regularAPR": "Regular APR",
+        "keyBenefits": "Key Benefits",
+        "cardHolder": "CARD HOLDER",
+        "validThru": "VALID THRU",
+        "chip": "CHIP",
+        "yourName": "YOUR NAME"
+      },
+      "buttons": {
+        "applyNow": "Apply Now",
+        "details": "Details"
+      }
+    },
+    "benefits": {
+      "title": "Card Benefits",
+      "subtitle": "Exclusive features that come with every card",
+      "zeroFraud": {
+        "title": "Zero Fraud Liability",
+        "description": "You're not responsible for unauthorized charges"
+      },
+      "mobileWallet": {
+        "title": "Mobile Wallet",
+        "description": "Add to Apple Pay, Google Pay & Samsung Pay"
+      },
+      "instantApproval": {
+        "title": "Instant Approval",
+        "description": "Get a decision in as little as 60 seconds"
+      },
+      "welcomeBonus": {
+        "title": "Welcome Bonus",
+        "description": "Earn bonus rewards when you meet spending requirements"
+      }
+    }
+  },
+  "education": {
+    "pageTitle": "Education",
+    "breadcrumb": {
+      "home": "Home",
+      "education": "Education"
+    },
+    "hero": {
+      "badge": "Learn & Grow",
+      "title": "Financial",
+      "titleHighlight": "Education",
+      "titleEnd": "Starts Here",
+      "subtitle": "Master money management with expert-led courses, practical tools, and actionable strategies for financial success.",
+      "buttons": {
+        "startLearning": "Start Learning Free",
+        "exploreCourses": "Explore Courses"
+      },
+      "stats": {
+        "activeLearners": "Active Learners",
+        "expertCourses": "Expert Courses",
+        "freeAccess": "Free Access"
+      }
+    },
+    "featuredCourses": {
+      "title": "Featured Courses",
+      "subtitle": "Learn at your own pace with our comprehensive financial curriculum",
+      "gallery": {
+        "investmentBasics": "Investment Basics",
+        "marketAnalysis": "Market Analysis",
+        "retirementPlanning": "Retirement Planning",
+        "taxStrategies": "Tax Strategies"
+      },
+      "filters": {
+        "allLevels": "All Levels",
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      },
+      "noCoursesFound": "No courses found for \"{level}\" level.",
+      "showAllCourses": "Show All Courses",
+      "enrollNow": "Enroll Now",
+      "courseLabels": {
+        "lessons": "{count} lessons",
+        "students": "{count} students"
+      }
+    },
+    "resources": {
+      "title": "Free Resources & Tools",
+      "subtitle": "Access our complete library of financial education materials",
+      "items": {
+        "ebook": {
+          "type": "E-Book",
+          "title": "Financial Wellness Guide",
+          "description": "50-page guide to financial health and planning",
+          "size": "2.4 MB"
+        },
+        "webinar": {
+          "type": "Webinar",
+          "title": "Market Trends 2024",
+          "description": "Expert-led session with live Q&A",
+          "size": "Monthly"
+        },
+        "budgetCalculator": {
+          "type": "Tool",
+          "title": "Budget Calculator",
+          "description": "Interactive tool for financial planning",
+          "size": "Free"
+        },
+        "forums": {
+          "type": "Community",
+          "title": "Financial Forums",
+          "description": "Connect with experts and peers",
+          "size": "24/7"
+        }
+      },
+      "loginToAccess": "Login to Access",
+      "unlockResources": {
+        "title": "Unlock All Resources",
+        "description": "Create a free account or login to access our complete library of financial education materials",
+        "button": "Login Now to Get Access"
+      }
+    },
+    "quickTips": {
+      "title": "Quick Financial Tips",
+      "subtitle": "Practical, actionable advice for immediate financial improvement. Apply these tips today!",
+      "howToImplement": "🚀 How to implement:",
+      "difficulty": "Difficulty:",
+      "impact": "Impact:",
+      "tips": {
+        "budgetRule": {
+          "title": "50/30/20 Budget Rule",
+          "description": "Allocate 50% to needs, 30% to wants, 20% to savings",
+          "steps": [
+            "Calculate your monthly income",
+            "Categorize expenses as needs, wants, savings",
+            "Set up automatic transfers",
+            "Review monthly and adjust"
+          ]
+        },
+        "emergencyFund": {
+          "title": "Emergency Fund",
+          "description": "Save 3-6 months of expenses for financial security",
+          "steps": [
+            "Open a dedicated savings account",
+            "Set goal: 3-6 months of expenses",
+            "Automate monthly contributions",
+            "Keep in liquid, safe account"
+          ]
+        },
+        "startEarly": {
+          "title": "Start Early",
+          "description": "Begin retirement savings early to leverage compound interest",
+          "steps": [
+            "Open retirement account",
+            "Set up automatic contributions",
+            "Increase contributions annually",
+            "Review investment choices"
+          ]
+        },
+        "checkCredit": {
+          "title": "Check Credit",
+          "description": "Monitor your credit report regularly for errors",
+          "steps": [
+            "Get free annual credit report",
+            "Dispute any errors immediately",
+            "Set up credit monitoring",
+            "Pay bills on time"
+          ]
+        },
+        "diversify": {
+          "title": "Diversify",
+          "description": "Spread investments across asset classes to manage risk",
+          "steps": [
+            "Assess current portfolio",
+            "Add different asset classes",
+            "Rebalance quarterly",
+            "Consider index funds"
+          ]
+        },
+        "debtStrategy": {
+          "title": "Debt Strategy",
+          "description": "Pay high-interest debt first using the avalanche method",
+          "steps": [
+            "List all debts with interest rates",
+            "Focus on highest interest first",
+            "Make minimum payments on others",
+            "Snowball as debts are paid"
+          ]
+        }
+      },
+      "summary": {
+        "essentialTips": "Essential Tips",
+        "coverAllAreas": "Covering all financial areas",
+        "dailyPractice": "Daily Practice",
+        "forBestResults": "For best results",
+        "successRate": "Success Rate",
+        "whenApplied": "When consistently applied"
+      },
+      "personalizedAdvice": {
+        "question": "Want personalized financial advice based on your specific situation?",
+        "button": "Get Personalized Advice"
+      }
+    },
+    "whyLearn": {
+      "title": "Why Financial Education Matters",
+      "subtitle": "Financial literacy is one of the most valuable skills you can develop. It impacts every major life decision.",
+      "stats": {
+        "betterDecisions": {
+          "value": "92%",
+          "label": "Better Decisions"
+        },
+        "wealthGrowth": {
+          "value": "3.5x",
+          "label": "Wealth Growth"
+        },
+        "lessStress": {
+          "value": "68%",
+          "label": "Less Stress"
+        }
+      },
+      "benefits": [
+        {
+          "title": "Make Informed Financial Decisions",
+          "description": "Navigate investments, loans, and major purchases with confidence",
+          "icon": "🎯"
+        },
+        {
+          "title": "Build Wealth Systematically",
+          "description": "Create sustainable growth through proven strategies",
+          "icon": "📈"
+        },
+        {
+          "title": "Avoid Costly Financial Mistakes",
+          "description": "Learn from experts who've seen common pitfalls",
+          "icon": "🛡️"
+        },
+        {
+          "title": "Achieve Long-Term Goals",
+          "description": "Plan for retirement, education, and major life events",
+          "icon": "🏆"
+        },
+        {
+          "title": "Reduce Financial Stress",
+          "description": "Gain peace of mind through financial security",
+          "icon": "😌"
+        }
+      ],
+      "expertLearning": {
+        "badge": "Expert-Led Learning",
+        "title": "Learn from Industry Professionals",
+        "description": "Our courses are designed and taught by financial experts with decades of real-world experience in banking, investments, and wealth management.",
+        "stats": {
+          "improvement": {
+            "value": "+42%",
+            "label": "Avg. Financial Literacy Improvement"
+          },
+          "experience": {
+            "value": "25+",
+            "label": "Years Avg. Instructor Experience"
+          }
+        },
+        "features": [
+          "Real-world case studies",
+          "Live Q&A sessions",
+          "Personalized feedback"
+        ],
+        "button": "Start Learning with Experts",
+        "successfulLearners": "Successful Learners",
+        "satisfactionRate": "Satisfaction Rate"
+      },
+      "testimonial": {
+        "quote": "The financial education I received completely transformed how I manage my money. I went from living paycheck to paycheck to building real wealth.",
+        "author": "Sarah M.",
+        "date": "Graduate, 6 months ago",
+        "increasedSavings": "Increased Savings"
+      }
+    },
+    "cta": {
+      "title": "Start Your",
+      "titleHighlight": "Financial Transformation",
+      "subtitle": "Join thousands of learners who've improved their financial health and achieved their goals",
+      "buttons": {
+        "createAccount": "Create Free Account",
+        "exploreCourses": "Explore Courses"
+      },
+      "stats": {
+        "activeLearners": "Active Learners",
+        "satisfactionRate": "Satisfaction Rate",
+        "freeAccess": "Free Access"
+      }
+    }
+  },
+  "notFound": {
+    "pageTitle": "404 - Page Not Found",
+    "errorCode": "404",
+    "title": "Oops! Page Not Found",
+    "message": "The page you're looking for seems to have wandered off.",
+    "description": "It might have been moved, deleted, or never existed in the first place.",
+    "search": {
+      "placeholder": "Search for something else...",
+      "button": "Search"
+    },
+    "actions": {
+      "goHome": "Go Home",
+      "refreshPage": "Refresh Page"
+    },
+    "helpfulLinks": {
+      "title": "Try one of these helpful links:",
+      "dashboard": "Dashboard",
+      "helpCenter": "Help Center",
+      "contactSupport": "Contact Support"
+    },
+    "copyright": "© {year} Byvault Finance • Error 404"
+  },
+  "exploreResources": {
+    "pageTitle": "Explore Resources",
+    "hero": {
+      "title": "Explore Resources",
+      "subtitle": "Guides, tools, and educational content to help you make informed financial decisions"
+    },
+    "search": {
+      "placeholder": "Search resources...",
+      "filter": "Filter",
+      "resultsCount": {
+        "zero": "No resources found",
+        "one": "{count} resource found",
+        "other": "{count} resources found"
+      }
+    },
+    "categories": {
+      "all": "All Resources",
+      "banking": "Banking Basics",
+      "savings": "Savings & Investment",
+      "credit": "Credit & Loans",
+      "security": "Security & Fraud",
+      "tools": "Financial Tools",
+      "guides": "How-To Guides"
+    },
+    "resources": {
+      "gettingStarted": {
+        "title": "Getting Started with Online Banking",
+        "description": "Learn how to set up and navigate your online banking account with our comprehensive step-by-step guide.",
+        "duration": "5 min read"
+      },
+      "accountTypes": {
+        "title": "Understanding Your Account Types",
+        "description": "Explore the differences between checking, savings, and money market accounts to choose what's right for you.",
+        "duration": "8 min watch"
+      },
+      "emergencyFund": {
+        "title": "Building Your Emergency Fund",
+        "description": "Discover strategies for creating a financial safety net with 3-6 months of expenses saved.",
+        "duration": "7 min read"
+      },
+      "savingsCalculator": {
+        "title": "Savings Goal Calculator",
+        "description": "Calculate how much you need to save monthly to reach your financial goals on time.",
+        "duration": "Interactive"
+      },
+      "creditScore": {
+        "title": "Understanding Your Credit Score",
+        "description": "Learn what affects your credit score and how to improve it for better loan rates.",
+        "duration": "6 min read"
+      },
+      "mortgagePreApproval": {
+        "title": "Mortgage Pre-Approval Process",
+        "description": "Step-by-step guide to getting pre-approved for a home mortgage loan.",
+        "duration": "10 min read"
+      },
+      "fraudProtection": {
+        "title": "Protecting Your Account from Fraud",
+        "description": "Essential security practices to keep your money and identity safe from scammers.",
+        "duration": "5 min read"
+      },
+      "phishing": {
+        "title": "Recognizing Phishing Attempts",
+        "description": "Learn to identify and avoid email, text, and phone scams targeting bank customers.",
+        "duration": "6 min watch"
+      },
+      "loanCalculator": {
+        "title": "Loan Payment Calculator",
+        "description": "Estimate your monthly payments for auto loans, personal loans, and mortgages.",
+        "duration": "Interactive"
+      },
+      "compoundCalculator": {
+        "title": "Compound Interest Calculator",
+        "description": "See how your savings can grow over time with compound interest.",
+        "duration": "Interactive"
+      },
+      "directDeposit": {
+        "title": "How to Set Up Direct Deposit",
+        "description": "Quick guide to setting up direct deposit for your paycheck or benefits.",
+        "duration": "4 min read"
+      },
+      "mobileCheckDeposit": {
+        "title": "Mobile Check Deposit Tutorial",
+        "description": "Learn how to deposit checks using your smartphone camera safely and securely.",
+        "duration": "3 min read"
+      },
+      "wireTransfer": {
+        "title": "Wire Transfer vs ACH: What's the Difference?",
+        "description": "Understand the pros and cons of different money transfer methods.",
+        "duration": "6 min read"
+      },
+      "retirementPlanning": {
+        "title": "Retirement Planning 101",
+        "description": "Start planning for retirement with IRAs, 401(k)s, and other investment vehicles.",
+        "duration": "12 min read"
+      },
+      "debtManagement": {
+        "title": "Debt Management Strategies",
+        "description": "Effective methods to pay down debt and improve your financial health.",
+        "duration": "10 min watch"
+      },
+      "studentBanking": {
+        "title": "Student Banking Benefits",
+        "description": "Special accounts and services designed for students and young adults.",
+        "duration": "5 min read"
+      },
+      "actions": {
+        "useTool": "Use Tool",
+        "watchNow": "Watch Now",
+        "readMore": "Read More"
+      }
+    },
+    "noResults": {
+      "title": "No resources found",
+      "description": "Try adjusting your search or filter to find what you're looking for.",
+      "clearFilters": "Clear Filters"
+    },
+    "cta": {
+      "title": "Need Personalized Guidance?",
+      "subtitle": "Our financial advisors are here to help you achieve your goals",
+      "button": "Schedule a Consultation"
+    }
+  },
+  "help": {
+    "pageTitle": "Help & Support",
+    "breadcrumb": {
+      "home": "Home",
+      "helpSupport": "Help & Support"
+    },
+    "hero": {
+      "title": "Welcome to Customer Service",
+      "subtitle": "We'll help you find a solution.",
+      "searchPlaceholder": "Search for help articles, guides, or FAQs...",
+      "searchButton": "Search"
+    },
+    "searchResults": {
+      "noResults": "No results found for \"{query}\"",
+      "viewAll": "View all {count} results"
+    },
+    "navigation": {
+      "overview": "Overview",
+      "selfService": "Self-service actions",
+      "accountHelp": "Get help with your account",
+      "faqs": "FAQs",
+      "watchLearn": "Watch and learn",
+      "questions": "Still have questions?"
+    },
+    "overview": {
+      "title": "Get the banking services help you need",
+      "subtitle": "We'll help you find answers to your questions today!"
+    },
+    "selfService": {
+      "title": "Self-service actions",
+      "subtitle": "Quickly manage common banking tasks online",
+      "actions": {
+        "makePayment": "Make a payment",
+        "orderChecks": "Order checks",
+        "manageAlerts": "Manage account alerts",
+        "replaceCard": "Replace a lost/damaged card",
+        "disputeCharge": "Dispute a charge",
+        "resetPassword": "Reset username/password",
+        "findRouting": "Find account/routing number",
+        "reportFraud": "Report fraud",
+        "paymentSupport": "Payment support"
+      }
+    },
+    "accountHelp": {
+      "title": "Get help with your account",
+      "subtitle": "We've got tools and information to guide you",
+      "categories": {
+        "creditCards": {
+          "name": "Credit Cards",
+          "description": "Find tools that can help with your credit card accounts"
+        },
+        "savings": {
+          "name": "Savings",
+          "description": "Checking, savings, and debit card support"
+        },
+        "education": {
+          "name": "Education",
+          "description": "Education savings and retirement planning"
+        },
+        "wealthManagement": {
+          "name": "Wealth Management",
+          "description": "Premium banking services"
+        },
+        "loans": {
+          "name": "Loans",
+          "description": "Auto financing and lease support"
+        },
+        "checking": {
+          "name": "Checking",
+          "description": "Checking accounts and services"
+        },
+        "privacySecurity": {
+          "name": "Privacy & Security",
+          "description": "Manage your privacy settings"
+        },
+        "business": {
+          "name": "Business",
+          "description": "Small business banking support"
+        }
+      },
+      "learnMore": "Learn more"
+    },
+    "faqs": {
+      "title": "Frequently Asked Questions",
+      "customerService": "{category} Customer Service:",
+      "seeFaqs": "See FAQs",
+      "categories": {
+        "creditCard": {
+          "category": "Credit Card",
+          "description": "Answers to common questions about credit cards"
+        },
+        "savings": {
+          "category": "Savings & CDs",
+          "description": "Answers about checking and savings accounts, and debit cards"
+        },
+        "loans": {
+          "category": "Loans",
+          "description": "Answers about auto loans and leases"
+        },
+        "checking": {
+          "category": "Checking",
+          "description": "Answers about mortgage loans and home equity lines"
+        },
+        "education": {
+          "category": "Education",
+          "description": "Answers about investment accounts and retirement planning"
+        },
+        "business": {
+          "category": "Business Banking",
+          "description": "Answers about small business banking services"
+        },
+        "wealthManagement": {
+          "category": "Wealth Management",
+          "description": "Answers about wealth management services"
+        },
+        "privacySecurity": {
+          "category": "Privacy & Security",
+          "description": "Answers about online security and privacy settings"
+        }
+      }
+    },
+    "watchLearn": {
+      "title": "Watch and learn",
+      "subtitle": "Explore how-to videos and see how easy it is to get things done",
+      "cardTitle": "Helpful Tips & Tutorials",
+      "description": "Learn how to manage your accounts, make payments, and use our digital tools through step-by-step video guides.",
+      "button": "More helpful tips videos"
+    },
+    "questions": {
+      "title": "Still have questions?",
+      "subtitle": "If you need to contact us, we're here to help",
+      "customerHelp": {
+        "title": "Customer Help and Technical Support",
+        "description": "Get online and mobile banking support, or help with your account.",
+        "relayCalls": "We also accept operator relay calls."
+      },
+      "socialMedia": {
+        "title": "Connect with Us on Social Media",
+        "description": "Tweet us @TrustedBankSupport or message us on Facebook. We're here to help!",
+        "privacyNote": "Please don't include account numbers or personal information."
+      },
+      "scheduleMeeting": {
+        "title": "Schedule a Meeting",
+        "description": "Meet with a banker to discuss your account or open a new one.",
+        "continue": "Continue"
+      },
+      "military": {
+        "title": "Military Personnel and Veterans",
+        "domestic": "Domestic Military Services:",
+        "overseas": "Overseas:",
+        "relayCalls": "We also accept operator relay calls."
+      },
+      "complaints": {
+        "title": "Complaints and Feedback",
+        "description": "Your satisfaction matters. Tell us about your banking experience.",
+        "letUsKnow": "Let us know"
+      }
+    },
+    "searchableContent": {
+      "openAccount": {
+        "title": "How to Open an Account",
+        "category": "Getting Started",
+        "content": "Learn how to open a bank account online with our step-by-step guide."
+      },
+      "mobileBanking": {
+        "title": "Mobile Banking Setup",
+        "category": "Digital Banking",
+        "content": "Set up mobile banking on your smartphone in minutes."
+      },
+      "resetPassword": {
+        "title": "Reset Password",
+        "category": "Account Security",
+        "content": "Forgot your password? Here's how to reset it securely."
+      },
+      "makePayment": {
+        "title": "Make a Payment",
+        "category": "Payments",
+        "content": "How to make payments online through your account."
+      },
+      "orderChecks": {
+        "title": "Order Checks",
+        "category": "Account Services",
+        "content": "Order new checks for your checking account."
+      },
+      "creditCardSupport": {
+        "title": "Credit Card Support",
+        "category": "Credit Cards",
+        "content": "Get help with credit card payments, disputes, and questions."
+      },
+      "reportFraud": {
+        "title": "Report Fraud",
+        "category": "Security",
+        "content": "Steps to take if you suspect fraudulent activity on your account."
+      },
+      "wireTransfer": {
+        "title": "Wire Transfer",
+        "category": "Transfers",
+        "content": "How to send and receive wire transfers."
+      },
+      "billPay": {
+        "title": "Bill Pay",
+        "category": "Payments",
+        "content": "Set up and manage automatic bill payments."
+      },
+      "accountStatements": {
+        "title": "Account Statements",
+        "category": "Documents",
+        "content": "Access and download your account statements."
+      }
+    }
+  },
+  "loans": {
+    "pageTitle": "Loans",
+    "breadcrumb": {
+      "home": "Home",
+      "loans": "Loans"
+    },
+    "hero": {
+      "title": "Loan Solutions",
+      "subtitle": "Achieve your dreams with flexible financing options and competitive rates",
+      "badges": {
+        "fastApproval": "Fast Approval",
+        "secureProcess": "Secure Process",
+        "easyPayments": "Easy Payments"
+      },
+      "applyNow": "Apply Now"
+    },
+    "loanTypes": {
+      "home": {
+        "name": "Home Loans",
+        "rates": "From 3.5% APR",
+        "category": "Real Estate"
+      },
+      "auto": {
+        "name": "Auto Loans",
+        "rates": "From 2.9% APR",
+        "category": "Vehicle Financing"
+      },
+      "personal": {
+        "name": "Personal Loans",
+        "rates": "From 5.9% APR",
+        "category": "Personal Finance"
+      },
+      "student": {
+        "name": "Student Loans",
+        "rates": "From 4.5% APR",
+        "category": "Education"
+      },
+      "business": {
+        "name": "Business Loans",
+        "rates": "From 4.5% APR",
+        "category": "Business Growth"
+      },
+      "selected": "Selected"
+    },
+    "loanDetails": {
+      "home": {
+        "title": "Home Mortgage Loans",
+        "description": "Purchase or refinance your home with competitive rates and flexible terms.",
+        "features": [
+          "Fixed rates from 6.25% APR",
+          "Adjustable rates available",
+          "Up to 95% loan-to-value",
+          "No PMI with 20% down payment",
+          "Online application in minutes"
+        ],
+        "terms": ["15-year", "20-year", "30-year"],
+        "maxAmount": "$2,000,000"
+      },
+      "auto": {
+        "title": "Auto Loans",
+        "description": "Finance new or used vehicles with low rates and fast approval.",
+        "features": [
+          "Rates from 4.99% APR for qualified buyers",
+          "Up to 84-month terms",
+          "100% financing available",
+          "Gap insurance included",
+          "Pre-approval in 5 minutes"
+        ],
+        "terms": ["36-month", "48-month", "60-month", "72-month", "84-month"],
+        "maxAmount": "$100,000"
+      },
+      "personal": {
+        "title": "Personal Loans",
+        "description": "Borrow for any purpose with fixed monthly payments.",
+        "features": [
+          "Rates from 7.99% APR",
+          "Loan amounts $1,000 - $50,000",
+          "No collateral required",
+          "Fixed monthly payments",
+          "Funds as fast as same day"
+        ],
+        "terms": ["12-month", "24-month", "36-month", "48-month", "60-month"],
+        "maxAmount": "$50,000"
+      },
+      "student": {
+        "title": "Student Loans",
+        "description": "Cover education costs with deferred payment options.",
+        "features": [
+          "Undergraduate rates from 4.50% APR",
+          "Graduate rates from 5.99% APR",
+          "Defer payments until after graduation",
+          "Cosigner release available",
+          "Multi-year approval"
+        ],
+        "terms": ["5-year", "10-year", "15-year", "20-year"],
+        "maxAmount": "Cost of attendance"
+      },
+      "business": {
+        "title": "Business Loans",
+        "description": "Fund your business growth with flexible financing options.",
+        "features": [
+          "Rates from 6.99% APR",
+          "Loan amounts up to $500,000",
+          "Flexible repayment terms",
+          "No prepayment penalties",
+          "Fast funding in 2-5 days"
+        ],
+        "terms": ["12-month", "24-month", "36-month", "48-month", "60-month"],
+        "maxAmount": "$500,000"
+      },
+      "keyFeatures": "Key Features",
+      "loanDetails": "Loan Details",
+      "maxLoanAmount": "Max Loan Amount",
+      "availableTerms": "Available Terms",
+      "applyFor": "Apply for {title}",
+      "visualizeGoal": "Visualize Your Goal"
+    },
+    "calculator": {
+      "title": "Calculate Your Payment",
+      "loanAmount": "Loan Amount",
+      "loanTerm": "Loan Term",
+      "monthlyPayment": "Monthly Payment",
+      "totalInterest": "Total Interest",
+      "totalAmount": "Total Amount",
+      "principalInterest": "Principal + Interest over {months} months",
+      "termOptions": {
+        "12": "12 mo",
+        "24": "24 mo",
+        "36": "36 mo",
+        "48": "48 mo",
+        "60": "60 mo",
+        "72": "72 mo"
+      },
+      "applyNow": "Apply Now"
+    },
+    "applicationProcess": {
+      "title": "Simple Application Process",
+      "subtitle": "Get pre-approved in just a few steps",
+      "steps": {
+        "1": {
+          "title": "Check Rates",
+          "description": "See your personalized rates without affecting your credit score"
+        },
+        "2": {
+          "title": "Apply Online",
+          "description": "Complete our secure application in about 10 minutes"
+        },
+        "3": {
+          "title": "Get Decision",
+          "description": "Receive instant decision on most applications"
+        },
+        "4": {
+          "title": "Receive Funds",
+          "description": "Get funds as fast as the same day after approval"
+        }
+      },
+      "startApplication": "Start Your Application"
+    },
+    "applyPageTitle": "Apply for Loan",
+    "servicesTitle": "Loan Services",
+    "application": {
+      "title": "Loan Application",
+      "submitted": "Application Submitted!",
+      "pendingMessage": "Your {productName} application is pending review",
+      "summary": {
+        "loanAmount": "Loan Amount",
+        "term": "Term",
+        "interestRate": "Interest Rate",
+        "monthlyPayment": "Monthly Payment",
+        "applicationId": "Application ID"
+      },
+      "expectedDecision": "Expected decision: 24-48 hours",
+      "backToServices": "Back to Loan Services",
+      "goToDashboard": "Go to Dashboard"
+    },
+    "form": {
+      "sections": {
+        "loanDetails": "Loan Details",
+        "financialInfo": "Financial Information",
+        "terms": "Terms and Conditions"
+      },
+      "fields": {
+        "loanAmount": "Loan Amount (USD)",
+        "loanAmountPlaceholder": "Enter loan amount",
+        "duration": "Duration (Months)",
+        "creditFacility": "Credit Facility",
+        "creditFacilityPlaceholder": "Select Loan/Credit Facility",
+        "purpose": "Purpose of Loan",
+        "purposePlaceholder": "Please describe the purpose of this loan...",
+        "monthlyIncome": "Monthly Net Income (USD)",
+        "monthlyIncomePlaceholder": "Enter your monthly net income"
+      },
+      "limits": {
+        "minMax": "Min: {min} • Max: {max}"
+      },
+      "termsText": "By submitting this application, I confirm that all information provided is accurate and complete. I authorize Byvault Finance to verify my information and credit history.",
+      "submitButton": "Submit Loan Application",
+      "submitting": "Submitting...",
+      "cancelButton": "Cancel"
+    },
+    "services": {
+      "whyChoose": "Why Choose Our Loan Services",
+      "benefits": {
+        "quickApproval": {
+          "title": "Quick Approval",
+          "description": "Get a decision within hours and funds within days"
+        },
+        "competitiveRates": {
+          "title": "Competitive Rates",
+          "description": "Low interest rates tailored to your credit profile"
+        },
+        "simpleProcess": {
+          "title": "Simple Process",
+          "description": "Straightforward application with minimal paperwork"
+        },
+        "secureConfidential": {
+          "title": "Secure & Confidential",
+          "description": "Your information is protected with bank-level security"
+        }
+      },
+      "availableTypes": "Available Loan Types",
+      "types": {
+        "personalHome": "Personal Home Loans",
+        "personalHomeDesc": "Finance your dream home with competitive rates",
+        "automobile": "Automobile Loans",
+        "automobileDesc": "Get on the road with flexible auto financing",
+        "business": "Business Loans",
+        "businessDesc": "Grow your business with tailored financing solutions",
+        "jointMortgage": "Joint Mortgage",
+        "jointMortgageDesc": "Share responsibility with a co-borrower",
+        "securedOverdraft": "Secured Overdraft",
+        "securedOverdraftDesc": "Access funds when needed with asset backing",
+        "healthFinance": "Health Finance",
+        "healthFinanceDesc": "Cover medical expenses with flexible payment options"
+      },
+      "howItWorks": "How It Works",
+      "steps": {
+        "applyOnline": {
+          "title": "Apply Online",
+          "description": "Complete our simple online application form with your details and loan requirements"
+        },
+        "quickReview": {
+          "title": "Quick Review",
+          "description": "Our team reviews your application and may contact you for additional information"
+        },
+        "approvalDisbursement": {
+          "title": "Approval & Disbursement",
+          "description": "Once approved, the loan amount will be transferred to your account"
+        }
+      },
+      "cta": {
+        "title": "Ready to get started?",
+        "description": "Apply now and get a decision on your loan application quickly",
+        "button": "Apply for a Loan"
+      }
+    },
+    "errors": {
+      "agreeToTerms": "Please agree to the terms and conditions",
+      "selectLoanType": "Please select a loan type",
+      "validAmount": "Please enter a valid loan amount",
+      "validIncome": "Please enter your monthly income"
+    }
+  },
+  "privacyPolicy": {
+    "pageTitle": "Privacy Policy",
+    "hero": {
+      "title": "Privacy Policy",
+      "subtitle": "Your privacy and security are our top priorities"
+    },
+    "lastUpdated": "Last Updated: January 30, 2026",
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "content1": "ByVault Finance (\"we,\" \"us,\" \"our,\" or \"Bank\") is committed to protecting your privacy and safeguarding your personal information. This Privacy Policy explains how we collect, use, share, and protect your information when you use our banking services, website, mobile applications, and other digital platforms.",
+        "content2": "This policy complies with the Gramm-Leach-Bliley Act (GLBA), the California Consumer Privacy Act (CCPA), the General Data Protection Regulation (GDPR) where applicable, and other relevant privacy laws and regulations. By using our services, you consent to the practices described in this policy."
+      },
+      "informationWeCollect": {
+        "title": "1. Information We Collect",
+        "intro": "We collect several types of information to provide and improve our services:",
+        "personalInfo": {
+          "title": "1.1 Personal Identification Information:",
+          "items": [
+            "Full name, date of birth, and Social Security Number or Tax ID",
+            "Government-issued identification documents (driver's license, passport)",
+            "Residential and mailing addresses",
+            "Email addresses and telephone numbers",
+            "Employment information and income details",
+            "Citizenship and immigration status"
+          ]
+        },
+        "financialInfo": {
+          "title": "1.2 Financial Information:",
+          "items": [
+            "Account numbers, balances, and transaction history",
+            "Payment card information and banking credentials",
+            "Credit history and credit scores",
+            "Investment account information and portfolio data",
+            "Loan applications and mortgage information",
+            "Source of funds and wealth information"
+          ]
+        },
+        "technicalInfo": {
+          "title": "1.3 Technical and Usage Information:",
+          "items": [
+            "IP address, device identifiers, and browser type",
+            "Operating system and device settings",
+            "Cookies, web beacons, and similar tracking technologies",
+            "Website and mobile app usage patterns",
+            "Geolocation data (with your consent)",
+            "Login times and account access patterns"
+          ]
+        },
+        "communicationsInfo": {
+          "title": "1.4 Communications and Interactions:",
+          "items": [
+            "Customer service inquiries and support tickets",
+            "Phone call recordings for quality and training purposes",
+            "Email correspondence and chat transcripts",
+            "Survey responses and feedback",
+            "Social media interactions"
+          ]
+        },
+        "thirdPartyInfo": {
+          "title": "1.5 Information from Third Parties:",
+          "content": "We may receive information about you from credit bureaus, identity verification services, fraud prevention services, marketing partners, and other financial institutions."
+        }
+      },
+      "howWeUse": {
+        "title": "2. How We Use Your Information",
+        "intro": "We use your information for the following purposes:",
+        "accountServices": {
+          "title": "2.1 Account Services and Operations:",
+          "items": [
+            "Opening and maintaining your accounts",
+            "Processing transactions, deposits, and withdrawals",
+            "Providing customer service and technical support",
+            "Sending account statements and notifications",
+            "Managing loan applications and credit decisions",
+            "Administering rewards programs and promotions"
+          ]
+        },
+        "legalCompliance": {
+          "title": "2.2 Legal and Regulatory Compliance:",
+          "items": [
+            "Verifying your identity and preventing identity theft",
+            "Complying with anti-money laundering (AML) requirements",
+            "Fulfilling Know Your Customer (KYC) obligations",
+            "Reporting to regulatory authorities and law enforcement",
+            "Responding to legal process, subpoenas, and court orders",
+            "Filing Suspicious Activity Reports (SARs) and Currency Transaction Reports (CTRs)"
+          ]
+        },
+        "security": {
+          "title": "2.3 Security and Fraud Prevention:",
+          "items": [
+            "Monitoring for fraudulent and suspicious activity",
+            "Protecting against unauthorized access and cyber threats",
+            "Implementing multi-factor authentication",
+            "Investigating and resolving disputes",
+            "Securing our systems and networks"
+          ]
+        },
+        "marketing": {
+          "title": "2.4 Marketing and Communications:",
+          "items": [
+            "Sending promotional offers and product information",
+            "Providing personalized recommendations",
+            "Conducting market research and surveys",
+            "Improving our products and services",
+            "Analyzing customer preferences and behavior"
+          ]
+        },
+        "businessOperations": {
+          "title": "2.5 Business Operations:",
+          "content": "We use aggregated and anonymized data to analyze trends, improve our services, develop new products, and enhance user experience."
+        }
+      },
+      "informationSharing": {
+        "title": "3. How We Share Your Information",
+        "intro": "We may share your information in the following circumstances:",
+        "affiliates": {
+          "title": "3.1 Affiliates and Subsidiaries:",
+          "content": "We may share information with our corporate affiliates and subsidiaries for business operations, marketing, and service provision. Our affiliates are bound by similar privacy protections."
+        },
+        "serviceProviders": {
+          "title": "3.2 Service Providers and Vendors:",
+          "intro": "We share information with third-party service providers who assist us with:",
+          "items": [
+            "Payment processing and transaction verification",
+            "Data storage and cloud computing services",
+            "Customer service and call center operations",
+            "Marketing and advertising services",
+            "Fraud detection and prevention",
+            "Identity verification and credit reporting",
+            "IT support and cybersecurity"
+          ]
+        },
+        "financialPartners": {
+          "title": "3.3 Financial Partners:",
+          "intro": "We may share information with:",
+          "items": [
+            "Other financial institutions for transaction processing",
+            "Credit bureaus for creditworthiness assessment",
+            "Payment networks (Visa, Mastercard, ACH)",
+            "Insurance providers for account protection products",
+            "Investment firms for brokerage services"
+          ]
+        },
+        "legalRequirements": {
+          "title": "3.4 Legal and Regulatory Requirements:",
+          "intro": "We disclose information when required by law, including:",
+          "items": [
+            "Responding to subpoenas, court orders, and legal processes",
+            "Cooperating with law enforcement investigations",
+            "Complying with regulatory examinations and audits",
+            "Reporting to tax authorities (IRS reporting)",
+            "Fulfilling anti-money laundering obligations"
+          ]
+        },
+        "businessTransfers": {
+          "title": "3.5 Business Transfers:",
+          "content": "In the event of a merger, acquisition, bankruptcy, or sale of assets, your information may be transferred to the acquiring entity."
+        },
+        "consent": {
+          "title": "3.6 With Your Consent:",
+          "content": "We may share information with third parties when you explicitly authorize us to do so, such as when linking external accounts or using third-party financial management tools."
+        }
+      },
+      "privacyRights": {
+        "title": "4. Your Privacy Rights and Choices",
+        "access": {
+          "title": "4.1 Access and Correction:",
+          "content": "You have the right to access your personal information and request corrections to inaccurate data. You can update most information through your online account or by contacting customer service."
+        },
+        "marketingOptOut": {
+          "title": "4.2 Marketing Opt-Out:",
+          "intro": "You can opt out of marketing communications by:",
+          "items": [
+            "Clicking \"unsubscribe\" in marketing emails",
+            "Adjusting preferences in your account settings",
+            "Calling our customer service line",
+            "Sending a written request to our mailing address"
+          ]
+        },
+        "doNotShare": {
+          "title": "4.3 Do Not Share:",
+          "content": "You can limit our sharing of information with affiliates for marketing purposes by opting out through your account settings or contacting us directly."
+        },
+        "ccpaRights": {
+          "title": "4.4 California Privacy Rights (CCPA):",
+          "intro": "California residents have additional rights including:",
+          "items": [
+            "Right to know what personal information is collected",
+            "Right to know if information is sold or shared",
+            "Right to opt out of the sale of personal information",
+            "Right to request deletion of personal information",
+            "Right to non-discrimination for exercising privacy rights"
+          ]
+        },
+        "gdprRights": {
+          "title": "4.5 European Privacy Rights (GDPR):",
+          "intro": "If you are in the European Economic Area, you have rights including:",
+          "items": [
+            "Right to access your personal data",
+            "Right to rectification of inaccurate data",
+            "Right to erasure (\"right to be forgotten\")",
+            "Right to restrict processing",
+            "Right to data portability",
+            "Right to object to processing",
+            "Right to withdraw consent"
+          ]
+        },
+        "exerciseRights": {
+          "content": "To exercise these rights, please contact our Privacy Office using the information provided at the end of this policy."
+        }
+      },
+      "dataSecurity": {
+        "title": "5. Data Security and Protection",
+        "measures": {
+          "title": "5.1 Security Measures:",
+          "intro": "We implement comprehensive security measures to protect your information:",
+          "items": [
+            "256-bit SSL/TLS encryption for data transmission",
+            "AES-256 encryption for data at rest",
+            "Multi-factor authentication (MFA)",
+            "Biometric authentication options",
+            "Firewalls and intrusion detection systems",
+            "Regular security audits and vulnerability assessments",
+            "Employee security training and access controls",
+            "24/7 fraud monitoring and detection"
+          ]
+        },
+        "physicalSecurity": {
+          "title": "5.2 Physical Security:",
+          "content": "Our data centers employ physical security controls including surveillance, access badges, biometric scanners, and 24/7 monitoring."
+        },
+        "breachNotification": {
+          "title": "5.3 Breach Notification:",
+          "content": "In the event of a data breach that compromises your personal information, we will notify you and relevant authorities as required by law, typically within 72 hours of discovery."
+        },
+        "yourResponsibilities": {
+          "title": "5.4 Your Responsibilities:",
+          "content": "You must protect your account credentials, use strong passwords, enable MFA, avoid public Wi-Fi for banking, keep your devices secure, and report suspicious activity immediately."
+        }
+      },
+      "cookies": {
+        "title": "6. Cookies and Tracking Technologies",
+        "types": {
+          "title": "6.1 Types of Cookies:",
+          "intro": "We use various types of cookies:",
+          "items": [
+            {
+              "term": "Essential Cookies:",
+              "description": "Required for website functionality and security"
+            },
+            {
+              "term": "Performance Cookies:",
+              "description": "Help us understand how visitors use our site"
+            },
+            {
+              "term": "Functional Cookies:",
+              "description": "Remember your preferences and settings"
+            },
+            {
+              "term": "Marketing Cookies:",
+              "description": "Track your browsing to provide relevant advertisements"
+            }
+          ]
+        },
+        "management": {
+          "title": "6.2 Cookie Management:",
+          "content": "You can control cookies through your browser settings. Note that disabling certain cookies may limit website functionality."
+        },
+        "thirdParty": {
+          "title": "6.3 Third-Party Analytics:",
+          "content": "We use services like Google Analytics to analyze website traffic. These services may collect information about your visits to our site and other websites."
+        }
+      },
+      "dataRetention": {
+        "title": "7. Data Retention",
+        "retentionPeriods": {
+          "title": "7.1 Retention Periods:",
+          "intro": "We retain your information for as long as necessary to:",
+          "items": [
+            "Maintain your accounts and provide services",
+            "Comply with legal and regulatory requirements",
+            "Resolve disputes and enforce agreements",
+            "Prevent fraud and maintain security",
+            "Meet audit and examination requirements"
+          ]
+        },
+        "specificRequirements": {
+          "title": "7.2 Specific Retention Requirements:",
+          "intro": "We are required to retain certain records for specific periods:",
+          "items": [
+            "Account records: 7 years after account closure",
+            "Transaction records: 5-7 years",
+            "Identity verification documents: 5 years after relationship ends",
+            "Tax records: 7 years",
+            "Loan documents: 7 years after final payment"
+          ]
+        },
+        "secureDisposal": {
+          "title": "7.3 Secure Disposal:",
+          "content": "When information is no longer needed, we securely destroy it using methods appropriate to the sensitivity of the data."
+        }
+      },
+      "childrenPrivacy": {
+        "title": "8. Children's Privacy",
+        "content1": "Our services are not directed to individuals under 18 years of age. We do not knowingly collect personal information from children without parental consent. Custodial accounts for minors require parental or guardian authorization.",
+        "content2": "If we discover that we have inadvertently collected information from a child under 13 without proper consent, we will delete that information immediately."
+      },
+      "internationalTransfers": {
+        "title": "9. International Data Transfers",
+        "intro": "Your information may be transferred to and processed in countries other than your country of residence. We ensure that international transfers comply with applicable laws and implement appropriate safeguards such as:",
+        "items": [
+          "Standard Contractual Clauses approved by the European Commission",
+          "Privacy Shield frameworks (where applicable)",
+          "Adequacy decisions by relevant authorities",
+          "Binding corporate rules"
+        ]
+      },
+      "changesToPolicy": {
+        "title": "10. Changes to This Privacy Policy",
+        "intro": "We may update this Privacy Policy periodically to reflect changes in our practices, technology, legal requirements, or business operations. Material changes will be communicated through:",
+        "items": [
+          "Email notification to your registered email address",
+          "Prominent notice on our website",
+          "In-app notifications",
+          "Account statement inserts"
+        ],
+        "content": "Continued use of our services after changes become effective constitutes acceptance of the updated policy."
+      },
+      "contact": {
+        "title": "Privacy Office Contact",
+        "intro": "For privacy-related inquiries, to exercise your rights, or to file a complaint:",
+        "email": "Email:",
+        "phone": "Phone:",
+        "mail": "Mail:",
+        "onlineForm": "Online Form:",
+        "onlineFormDesc": "Available through your account dashboard",
+        "note": "We will respond to your request within 30 days. For California residents exercising CCPA rights, we will respond within 45 days."
+      },
+      "resources": {
+        "fdic": {
+          "title": "FDIC Insured",
+          "description": "Your deposits are insured up to $250,000 per depositor."
+        },
+        "security": {
+          "title": "Bank-Level Security",
+          "description": "256-bit encryption and multi-factor authentication protect your data."
+        },
+        "control": {
+          "title": "Your Control",
+          "description": "Manage your privacy preferences anytime in account settings."
+        }
+      }
+    }
+  },
+  "privacySecurity": {
+    "pageTitle": "Privacy & Security",
+    "breadcrumb": {
+      "home": "Home",
+      "privacySecurity": "Privacy & Security"
+    },
+    "hero": {
+      "title": "Your Security is Our Priority",
+      "subtitle": "Bank-level security protecting your accounts with 256-bit encryption, real-time fraud monitoring, and FDIC insurance up to $250,000",
+      "certifications": [
+        {
+          "label": "FDIC Insured",
+          "subtitle": "Up to $250,000"
+        },
+        {
+          "label": "SOC 2 Type II",
+          "subtitle": "Certified"
+        },
+        {
+          "label": "PCI DSS",
+          "subtitle": "Compliant"
+        },
+        {
+          "label": "ISO 27001",
+          "subtitle": "Certified"
+        }
+      ]
+    },
+    "securityFeatures": {
+      "title": "Advanced Security Features",
+      "subtitle": "Explore our full range of banking products and services",
+      "learnMore": "Learn more",
+      "features": [
+        {
+          "title": "256-Bit Encryption",
+          "description": "Military-grade SSL/TLS encryption protects all your data in transit and at rest",
+          "details": [
+            "AES-256 encryption standard",
+            "Secure Socket Layer (SSL)",
+            "Transport Layer Security (TLS 1.3)",
+            "End-to-end encryption"
+          ]
+        },
+        {
+          "title": "Multi-Factor Authentication",
+          "description": "Multiple verification layers ensure only you can access your account",
+          "details": [
+            "SMS verification codes",
+            "Authenticator app support (Google, Microsoft)",
+            "Biometric authentication (Face ID, Touch ID)",
+            "Hardware security key compatibility"
+          ]
+        },
+        {
+          "title": "24/7 Fraud Monitoring",
+          "description": "AI-powered systems detect and prevent suspicious activity around the clock",
+          "details": [
+            "Real-time transaction monitoring",
+            "Behavioral analysis algorithms",
+            "Instant fraud alerts via SMS/email",
+            "Automatic account protection"
+          ]
+        },
+        {
+          "title": "Secure Infrastructure",
+          "description": "Enterprise-grade servers with redundant backups in multiple locations",
+          "details": [
+            "ISO 27001 certified data centers",
+            "99.99% uptime guarantee",
+            "Regular security audits",
+            "Disaster recovery systems"
+          ]
+        }
+      ]
+    },
+    "privacyRights": {
+      "title": "Your Privacy Rights",
+      "subtitle": "Transparent policies that comply with federal privacy laws and give you control over your data",
+      "policies": [
+        {
+          "title": "Data Collection & Usage",
+          "description": "We collect only what's necessary to provide our services",
+          "points": [
+            "Personal information for account verification (name, address, SSN)",
+            "Transaction data to process payments and prevent fraud",
+            "Device information for security and authentication",
+            "Communication preferences for alerts and updates",
+            "No sale of personal information to third parties"
+          ]
+        },
+        {
+          "title": "Information Sharing",
+          "description": "Your data is shared only when legally required or explicitly authorized",
+          "points": [
+            "Service providers (payment processors, identity verification)",
+            "Regulatory authorities when required by law",
+            "Credit bureaus for credit reporting purposes",
+            "Your explicit consent required for marketing partners",
+            "Annual privacy notice detailing all sharing practices"
+          ]
+        },
+        {
+          "title": "Your Privacy Rights",
+          "description": "Federal and state laws protect your financial privacy",
+          "points": [
+            "Access your personal data at any time",
+            "Request corrections to inaccurate information",
+            "Opt-out of marketing communications",
+            "Delete your data (subject to legal requirements)",
+            "Export your data in portable format",
+            "File complaints with regulatory authorities"
+          ]
+        }
+      ],
+      "viewFullPolicy": "View Full Privacy Policy"
+    },
+    "securityTips": {
+      "title": "Security Best Practices",
+      "subtitle": "Follow these essential tips to protect your account and personal information",
+      "tips": [
+        {
+          "title": "Create Strong Passwords",
+          "description": "Use 12+ characters with uppercase, lowercase, numbers, and symbols. Never reuse passwords across accounts."
+        },
+        {
+          "title": "Enable Two-Factor Authentication",
+          "description": "Add an extra security layer by requiring a second verification step beyond your password."
+        },
+        {
+          "title": "Monitor Account Activity",
+          "description": "Review transactions weekly and set up alerts for unusual activity. Report suspicious charges immediately."
+        },
+        {
+          "title": "Beware of Phishing Scams",
+          "description": "Never click suspicious links or share account details via email, text, or phone. Verify requests directly with the bank."
+        },
+        {
+          "title": "Use Secure Networks",
+          "description": "Avoid banking on public Wi-Fi. Use your mobile data or a VPN when accessing accounts outside your home."
+        },
+        {
+          "title": "Keep Software Updated",
+          "description": "Regularly update your devices, browsers, and banking apps to get the latest security patches."
+        }
+      ]
+    },
+    "commonScams": {
+      "title": "Recognize & Avoid Common Scams",
+      "subtitle": "Stay alert to these common fraud tactics and protect yourself from scammers",
+      "scams": [
+        {
+          "type": "Phishing Emails",
+          "description": "Fake emails claiming to be from your bank asking for account details or password resets",
+          "warning": "Banks never ask for passwords via email"
+        },
+        {
+          "type": "Phone Scams (Vishing)",
+          "description": "Callers impersonating bank staff requesting verification of account information or one-time codes",
+          "warning": "Never share security codes over the phone"
+        },
+        {
+          "type": "Text Message Scams (Smishing)",
+          "description": "Text messages with urgent warnings about account problems with links to fake websites",
+          "warning": "Don't click links in unexpected text messages"
+        },
+        {
+          "type": "Fake Customer Support",
+          "description": "Scammers posing as tech support claiming your account has been compromised",
+          "warning": "Contact us through official channels only"
+        },
+        {
+          "type": "Check Fraud",
+          "description": "Counterfeit checks or requests to deposit checks and wire back funds",
+          "warning": "Verify large checks before depositing"
+        },
+        {
+          "type": "Romance Scams",
+          "description": "Online relationships leading to requests for money transfers or account access",
+          "warning": "Never send money to people you haven't met"
+        }
+      ],
+      "fraudHelp": {
+        "title": "If You Suspect Fraud",
+        "call": {
+          "title": "Call Us Immediately",
+          "subtitle": "24/7 Fraud Hotline",
+          "number": "1-800-FRAUD-ALERT"
+        },
+        "email": {
+          "title": "Email Security Team",
+          "subtitle": "Direct support line",
+          "address": "security@byvaultfinance.com"
+        },
+        "response": {
+          "title": "Response Time",
+          "subtitle": "Average response",
+          "time": "Under 5 minutes"
+        }
+      }
+    },
+    "cta": {
+      "title": "Questions About Security?",
+      "subtitle": "Our security team is available 24/7 to assist with any concerns, fraud reports, or security questions",
+      "button": "Contact Security Team",
+      "badges": [
+        "24/7 Monitoring",
+        "Bank-Grade Encryption",
+        "Certified Security"
+      ]
+    }
+  },
+  "termsConditions": {
+    "pageTitle": "Terms & Conditions",
+    "breadcrumb": {
+      "home": "Home",
+      "terms": "Terms & Conditions"
+    },
+    "hero": {
+      "title": "Terms & Conditions",
+      "subtitle": "Please read these terms carefully before using our services",
+      "imageAlt": "Terms and Conditions"
+    },
+    "lastUpdated": "Last Updated:",
+    "sections": {
+      "introduction": {
+        "title": "1. Introduction and Acceptance",
+        "content1": "Welcome to ByVault Finance. These Terms and Conditions ('Terms') constitute a legally binding agreement between you ('Customer,' 'you,' or 'your') and ByVault Finance ('Bank,' 'we,' 'us,' or 'our') governing your access to and use of our banking services, digital platforms, and financial products.",
+        "content2": "By opening an account, accessing our online banking platform, mobile application, or utilizing any of our financial services, you acknowledge that you have read, understood, and agree to be bound by these Terms, along with our Privacy Policy and any additional agreements applicable to specific products or services."
+      },
+      "accountOpening": {
+        "title": "2. Account Opening and Eligibility",
+        "eligibility": {
+          "title": "2.1 Eligibility Requirements:",
+          "content": "To open an account with ByVault Finance, you must:",
+          "items": [
+            "Be at least 18 years of age or the age of majority in your jurisdiction",
+            "Possess legal capacity to enter into binding contracts",
+            "Provide valid government-issued identification",
+            "Provide a verifiable residential address",
+            "Have a valid Social Security Number or Tax Identification Number"
+          ]
+        },
+        "verification": {
+          "title": "2.2 Account Verification:",
+          "content": "We reserve the right to verify your identity and may request additional documentation at any time. This may include proof of address, employment verification, source of funds documentation, and other information required under applicable laws including the USA PATRIOT Act and Bank Secrecy Act."
+        },
+        "approval": {
+          "title": "2.3 Account Approval:",
+          "content": "ByVault Finance reserves the right to refuse account opening for any reason permitted by law, including but not limited to inability to verify identity, concerns about fraudulent activity, or failure to meet our account opening criteria."
+        }
+      },
+      "accountUsage": {
+        "title": "3. Account Usage and Responsibilities",
+        "security": {
+          "title": "3.1 Account Security:",
+          "content": "You are responsible for maintaining the confidentiality of your account credentials, including usernames, passwords, PINs, security questions, and any other authentication methods. You must immediately notify us of any unauthorized access or suspected security breach."
+        },
+        "authorized": {
+          "title": "3.2 Authorized Transactions:",
+          "content": "You authorize us to honor all transactions initiated using your account credentials, whether by you or by third parties with your permission. You remain liable for all authorized and unauthorized transactions until you notify us of a security compromise."
+        },
+        "prohibited": {
+          "title": "3.3 Prohibited Activities:",
+          "content": "You agree not to use your account for:",
+          "items": [
+            "Any illegal activities or transactions",
+            "Money laundering or terrorist financing",
+            "Fraudulent activities or identity theft",
+            "Gambling transactions where prohibited by law",
+            "Purchasing illegal goods or services",
+            "Business purposes if opened as a personal account"
+          ]
+        },
+        "monitoring": {
+          "title": "3.4 Account Monitoring:",
+          "content": "We actively monitor accounts for suspicious activity and reserve the right to freeze, suspend, or close accounts that violate these Terms or applicable laws."
+        }
+      },
+      "fees": {
+        "title": "4. Fees, Charges, and Interest",
+        "schedule": {
+          "title": "4.1 Fee Schedule:",
+          "content": "All applicable fees are disclosed in our Fee Schedule, which is provided at account opening and is available on our website. Fees may include monthly maintenance fees, overdraft fees, ATM fees, wire transfer fees, and other service charges."
+        },
+        "changes": {
+          "title": "4.2 Fee Changes:",
+          "content": "We reserve the right to modify our fees with at least 30 days' prior written notice to you. Continued use of your account after the effective date constitutes acceptance of the new fee structure."
+        },
+        "interest": {
+          "title": "4.3 Interest Rates:",
+          "content": "Interest rates on deposit accounts are variable and may change at our discretion. Current rates are available on our website and in branch locations. Interest is calculated using the daily balance method and credited monthly."
+        },
+        "overdraft": {
+          "title": "4.4 Overdraft Protection:",
+          "content": "If you enroll in overdraft protection, transactions that exceed your available balance may be honored subject to our overdraft limit and applicable fees. You acknowledge that overdraft fees may result in additional charges."
+        }
+      },
+      "electronicBanking": {
+        "title": "5. Electronic Banking Services",
+        "online": {
+          "title": "5.1 Online and Mobile Banking:",
+          "content": "Our electronic banking services allow you to check balances, transfer funds, pay bills, deposit checks remotely, and perform other transactions. These services are subject to system availability and may be interrupted for maintenance."
+        },
+        "communications": {
+          "title": "5.2 Electronic Communications:",
+          "content": "By using our services, you consent to receive communications electronically, including account statements, notices, disclosures, and other information that we are legally required to provide."
+        },
+        "mobileDeposit": {
+          "title": "5.3 Mobile Deposit:",
+          "content": "Our mobile deposit service allows you to deposit checks by capturing images. You agree to properly endorse checks, retain the original for 14 days, and securely destroy it thereafter. You are responsible for ensuring deposits are accurate and legitimate."
+        },
+        "billPay": {
+          "title": "5.4 Bill Pay Services:",
+          "content": "Our bill pay service allows you to make payments to third parties. You authorize us to debit your account for payment amounts and any applicable fees. We are not responsible for late payments caused by payee processing delays."
+        }
+      },
+      "deposits": {
+        "title": "6. Deposits, Withdrawals, and Transfers",
+        "availability": {
+          "title": "6.1 Deposit Availability:",
+          "content": "Deposits are subject to verification and availability schedules as disclosed in our Funds Availability Policy. Electronic deposits are generally available within 1-2 business days, while check deposits may be held longer based on amount and account history."
+        },
+        "endorsements": {
+          "title": "6.2 Deposit Endorsements:",
+          "content": "All checks must be endorsed as specified by us. We reserve the right to reject improperly endorsed items or deposits that appear suspicious or fraudulent."
+        },
+        "limits": {
+          "title": "6.3 Withdrawal Limits:",
+          "content": "We may impose daily withdrawal and transfer limits for security purposes. ATM withdrawals and certain electronic transfers may be limited to protect your account."
+        },
+        "regulationD": {
+          "title": "6.4 Regulation D:",
+          "content": "For savings and money market accounts, federal regulations may limit certain types of withdrawals and transfers to six per monthly statement cycle."
+        }
+      },
+      "liability": {
+        "title": "7. Liability and Dispute Resolution",
+        "unauthorized": {
+          "title": "7.1 Unauthorized Transactions:",
+          "content": "You must notify us immediately of any unauthorized transactions. Your liability for unauthorized electronic transfers is governed by federal law (Regulation E), which limits your losses if you report them promptly:",
+          "items": [
+            "$0 if reported before any unauthorized use",
+            "Up to $50 if reported within 2 business days",
+            "Up to $500 if reported within 60 days of statement",
+            "Unlimited if not reported within 60 days"
+          ]
+        },
+        "errorResolution": {
+          "title": "7.2 Error Resolution:",
+          "content": "If you believe an error has occurred, you must notify us within 60 days of the statement date. We will investigate and respond within 10 business days (or 45 days for certain transactions)."
+        },
+        "limitation": {
+          "title": "7.3 Limitation of Liability:",
+          "content": "To the maximum extent permitted by law, ByVault Finance is not liable for indirect, incidental, special, or consequential damages arising from your use of our services, including lost profits or business interruption."
+        },
+        "arbitration": {
+          "title": "7.4 Arbitration Agreement:",
+          "content": "Any disputes arising from these Terms or your accounts shall be resolved through binding arbitration rather than court proceedings, except where prohibited by law. You waive your right to participate in class action lawsuits."
+        }
+      },
+      "closure": {
+        "title": "8. Account Closure and Termination",
+        "customer": {
+          "title": "8.1 Closure by Customer:",
+          "content": "You may close your account at any time by providing written notice and returning all checks, debit cards, and other access devices. You remain responsible for all outstanding transactions and fees."
+        },
+        "bank": {
+          "title": "8.2 Closure by Bank:",
+          "content": "We reserve the right to close your account at any time for any reason, including but not limited to:",
+          "items": [
+            "Violation of these Terms",
+            "Suspicious or fraudulent activity",
+            "Excessive overdrafts or returned items",
+            "Account inactivity",
+            "Provision of false information",
+            "Legal or regulatory requirements"
+          ]
+        },
+        "final": {
+          "title": "8.3 Final Distribution:",
+          "content": "Upon closure, any remaining balance will be mailed to your address of record after deducting applicable fees and charges. Unclaimed funds are subject to state escheatment laws."
+        }
+      },
+      "privacy": {
+        "title": "9. Privacy and Data Security",
+        "policy": {
+          "title": "9.1 Privacy Policy:",
+          "content": "Our collection, use, and protection of your personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference. We comply with all applicable privacy laws including the Gramm-Leach-Bliley Act."
+        },
+        "sharing": {
+          "title": "9.2 Information Sharing:",
+          "content": "We may share your information with affiliates, service providers, and third parties as necessary to provide services, comply with legal requirements, or prevent fraud."
+        },
+        "security": {
+          "title": "9.3 Data Security:",
+          "content": "We employ industry-standard security measures including encryption, firewalls, and multi-factor authentication. However, no system is completely secure, and you acknowledge that electronic transmission carries inherent risks."
+        }
+      },
+      "legal": {
+        "title": "10. Legal and Regulatory Compliance",
+        "governing": {
+          "title": "10.1 Governing Law:",
+          "content": "These Terms are governed by federal law and the laws of the state where your account was opened, without regard to conflict of law principles."
+        },
+        "regulatory": {
+          "title": "10.2 Regulatory Compliance:",
+          "content": "We comply with all applicable banking regulations including those issued by the Federal Reserve, FDIC, OCC, CFPB, and state banking authorities. Your accounts are FDIC insured up to the maximum amount permitted by law."
+        },
+        "aml": {
+          "title": "10.3 Anti-Money Laundering:",
+          "content": "We maintain compliance programs for the Bank Secrecy Act and USA PATRIOT Act. We may file Suspicious Activity Reports (SARs) and Currency Transaction Reports (CTRs) as required by law without notice to you."
+        },
+        "tax": {
+          "title": "10.4 Tax Reporting:",
+          "content": "We report account interest and other taxable events to the IRS as required. You are responsible for reporting and paying all applicable taxes on your accounts."
+        }
+      },
+      "changes": {
+        "title": "11. Changes to Terms and Conditions",
+        "modify": {
+          "title": "11.1 Right to Modify:",
+          "content": "We reserve the right to modify these Terms at any time. Changes will be communicated through written notice, email, posting on our website, or statement inserts at least 30 days before the effective date."
+        },
+        "acceptance": {
+          "title": "11.2 Acceptance of Changes:",
+          "content": "Continued use of your account after the effective date of changes constitutes acceptance of the modified Terms. If you do not agree to the changes, you must close your account before the effective date."
+        }
+      },
+      "general": {
+        "title": "12. General Provisions",
+        "severability": {
+          "title": "12.1 Severability:",
+          "content": "If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect."
+        },
+        "waiver": {
+          "title": "12.2 Waiver:",
+          "content": "Our failure to enforce any provision does not constitute a waiver of our right to enforce that provision in the future."
+        },
+        "assignment": {
+          "title": "12.3 Assignment:",
+          "content": "You may not assign these Terms or your account without our written consent. We may assign our rights and obligations without notice to you."
+        },
+        "entireAgreement": {
+          "title": "12.4 Entire Agreement:",
+          "content": "These Terms, together with our Privacy Policy, Fee Schedule, and product-specific disclosures, constitute the entire agreement between you and ByVault Finance regarding your accounts and supersede all prior agreements."
+        }
+      },
+      "contact": {
+        "title": "Questions About These Terms?",
+        "subtitle": "If you have any questions regarding these Terms and Conditions, please contact us:",
+        "email": "Email:",
+        "phone": "Phone:",
+        "address": "Address:"
+      }
+    }
+  },
+  "unauthorized": {
+    "pageTitle": "403 - Access Denied",
+    "errorCode": "403",
+    "title": "Access Denied",
+    "message": "You don't have permission to access this page. Please contact the administrator if you believe this is an error.",
+    "buttons": {
+      "goToHomepage": "Go to Homepage",
+      "goToDashboard": "Go to Dashboard"
+    }
+  },
+  "wealthManagement": {
+    "pageTitle": "Wealth Management",
+    "breadcrumb": {
+      "home": "Home",
+      "wealthManagement": "Wealth Management"
+    },
+    "hero": {
+      "badge": "Wealth Solutions",
+      "title": "Grow & Preserve",
+      "titleHighlight": "Your Wealth",
+      "subtitle": "Sophisticated financial solutions for preserving and growing your wealth across generations with expert guidance and personalized strategies.",
+      "cta": "Schedule Consultation",
+      "stats": {
+        "assetsManaged": {
+          "value": "$500B+",
+          "label": "Assets Managed"
+        },
+        "clientsServed": {
+          "value": "50k+",
+          "label": "Clients Served"
+        },
+        "clientRetention": {
+          "value": "98%",
+          "label": "Client Retention"
+        }
+      }
+    },
+    "services": {
+      "title": "Wealth Services",
+      "subtitle": "Tailored strategies for every stage of your financial journey",
+      "gallery": {
+        "investmentPlanning": "Investment Planning",
+        "retirementSolutions": "Retirement Solutions",
+        "estatePlanning": "Estate Planning",
+        "taxOptimization": "Tax Optimization"
+      },
+      "cards": [
+        {
+          "title": "Investment Management",
+          "description": "Customized portfolio strategies aligned with your goals",
+          "features": [
+            "Diversified portfolios",
+            "Risk management",
+            "Performance tracking"
+          ]
+        },
+        {
+          "title": "Retirement Planning",
+          "description": "Comprehensive strategies for your golden years",
+          "features": [
+            "Pension planning",
+            "401(k) optimization",
+            "Income strategies"
+          ]
+        },
+        {
+          "title": "Estate Planning",
+          "description": "Preserve and transfer wealth across generations",
+          "features": [
+            "Trust structures",
+            "Asset protection",
+            "Succession planning"
+          ]
+        },
+        {
+          "title": "Tax Optimization",
+          "description": "Strategies to minimize tax liabilities",
+          "features": [
+            "Tax-efficient investing",
+            "Liability reduction",
+            "Compliance"
+          ]
+        }
+      ],
+      "learnMore": "Learn more",
+      "cta": {
+        "question": "Need a personalized wealth strategy?",
+        "button": "Get Free Consultation"
+      }
+    },
+    "serviceTiers": {
+      "title": "Service Tiers",
+      "subtitle": "Choose the wealth management tier that matches your financial profile",
+      "gallery": {
+        "privateBanking": "Private Banking",
+        "wealthManagement": "Wealth Management",
+        "familyOffice": "Family Office",
+        "investmentAdvisory": "Investment Advisory"
+      },
+      "mostPopular": "MOST POPULAR",
+      "minimum": "Minimum:",
+      "keyFeatures": "Key Features",
+      "button": "Schedule Assessment",
+      "bottomNote": "All tiers include dedicated advisor support and quarterly portfolio reviews",
+      "tiers": [
+        {
+          "name": "Premier Banking",
+          "minimum": "$100K+",
+          "features": [
+            "Priority Banking Services",
+            "Preferred Rates & Pricing",
+            "Financial Advisory",
+            "Enhanced Digital Tools",
+            "Dedicated Support"
+          ]
+        },
+        {
+          "name": "Wealth Management",
+          "minimum": "$500K+",
+          "features": [
+            "Financial Planning",
+            "Investment Advisory",
+            "Retirement Strategies",
+            "Education Funding",
+            "Relationship Manager"
+          ]
+        },
+        {
+          "name": "Private Banking",
+          "minimum": "$1M+",
+          "features": [
+            "Dedicated Relationship Manager",
+            "Custom Credit Solutions",
+            "Family Office Services",
+            "Concierge Banking",
+            "Global Access"
+          ]
+        }
+      ]
+    },
+    "team": {
+      "title": "Meet Our Expert Team",
+      "subtitle": "Certified professionals with decades of combined wealth management experience, dedicated to your financial success",
+      "stats": {
+        "clients": "Clients",
+        "awards": "Awards",
+        "yearsExperience": "Years Combined Experience",
+        "certifications": "Certifications",
+        "clientsServed": "Clients Served",
+        "assetsManaged": "Assets Managed"
+      },
+      "members": [
+        {
+          "name": "Michael Chen",
+          "title": "Estate Planning Director",
+          "experience": "20+ years",
+          "specialization": "Estate & Legacy Planning",
+          "expertise": ["Estate", "Trusts", "Legacy"],
+          "bio": "Expert in multi-generational wealth transfer and complex estate structures."
+        },
+        {
+          "name": "David Rodriguez",
+          "title": "Chief Investment Officer",
+          "experience": "18+ years",
+          "specialization": "Global Markets & Asset Allocation",
+          "expertise": ["Global Markets", "Asset Allocation", "Risk Management"],
+          "bio": "Former hedge fund manager specializing in global market strategies and tactical asset allocation."
+        },
+        {
+          "name": "Lisa Thompson",
+          "title": "Business Wealth Advisor",
+          "experience": "16+ years",
+          "specialization": "Business Succession & Exit Planning",
+          "expertise": ["Succession", "Exit Strategy", "Business Valuation"],
+          "bio": "Helps business owners maximize value and execute seamless ownership transitions."
+        },
+        {
+          "name": "Emily Parker",
+          "title": "Philanthropy Advisor",
+          "experience": "10+ years",
+          "specialization": "Charitable Giving & Foundations",
+          "expertise": ["Philanthropy", "Foundations", "Impact Investing"],
+          "bio": "Helps families create meaningful charitable legacies through strategic giving and foundations."
+        },
+        {
+          "name": "Marcus Johnson",
+          "title": "Alternative Investments Director",
+          "experience": "13+ years",
+          "specialization": "Private Equity & Real Estate",
+          "expertise": ["Private Equity", "Real Estate", "Hedge Funds"],
+          "bio": "Specializes in alternative investment opportunities for qualified investors."
+        },
+        {
+          "name": "Priya Sharma",
+          "title": "Risk Management Director",
+          "experience": "11+ years",
+          "specialization": "Portfolio Risk & Compliance",
+          "expertise": ["Risk Management", "Compliance", "Due Diligence"],
+          "bio": "Ensures portfolio resilience through comprehensive risk assessment and mitigation strategies."
+        },
+        {
+          "name": "Thomas Anderson",
+          "title": "Digital Assets Strategist",
+          "experience": "8+ years",
+          "specialization": "Crypto & Digital Wealth",
+          "expertise": ["Cryptocurrency", "Blockchain", "Digital Assets"],
+          "bio": "Pioneer in integrating digital assets into traditional wealth management portfolios."
+        }
+      ],
+      "cta": "Schedule Team Consultation"
+    },
+    "cta": {
+      "title": "Ready to Grow Your",
+      "titleHighlight": "Wealth?",
+      "subtitle": "Our wealth advisors are ready to help you build a comprehensive financial plan tailored to your goals",
+      "button": "Request Consultation"
+    }
+  },
+  "business": {
+    "pageTitle": "Business Banking",
+    "breadcrumb": {
+      "home": "Home",
+      "business": "Business Banking"
+    },
+    "hero": {
+      "title": "Business Banking",
+      "subtitle": "Comprehensive financial solutions designed to help your business grow and thrive",
+      "badges": {
+        "fdicInsured": "FDIC Insured",
+        "growthTools": "Business Growth Tools",
+        "onlineManagement": "Online Management"
+      },
+      "cta": "Open Business Account"
+    },
+    "solutions": {
+      "badge": "Tailored Solutions",
+      "title": "Solutions for",
+      "titleHighlight": "Every Business",
+      "subtitle": "Tailored banking services designed to help businesses of all sizes grow and thrive",
+      "businessTypes": [
+        {
+          "type": "Startups & SMEs",
+          "description": "Growth-focused banking for emerging businesses",
+          "features": [
+            "No minimum balance",
+            "Digital-first banking",
+            "Growth capital access",
+            "Business credit lines"
+          ],
+          "stats": "+25% YoY Growth"
+        },
+        {
+          "type": "Enterprise",
+          "description": "Corporate solutions for large organizations",
+          "features": [
+            "Global transactions",
+            "Treasury management",
+            "M&A advisory",
+            "Risk management"
+          ],
+          "stats": "$10M+ Accounts"
+        },
+        {
+          "type": "E-commerce",
+          "description": "Digital payment and merchant solutions",
+          "features": [
+            "Payment processing",
+            "Fraud protection",
+            "Multi-currency",
+            "Inventory financing"
+          ],
+          "stats": "2M+ Transactions"
+        },
+        {
+          "type": "Professional Services",
+          "description": "Banking for consultants and service providers",
+          "features": [
+            "Client payment portals",
+            "Expense tracking",
+            "Tax optimization",
+            "Retirement planning"
+          ],
+          "stats": "98% Satisfaction"
+        }
+      ],
+      "exploreSolutions": "Explore Solutions",
+      "customQuote": {
+        "text": "Don't see your business type? We customize solutions for unique needs.",
+        "button": "Get Custom Quote"
+      }
+    },
+    "stats": {
+      "businessClients": {
+        "value": "50,000+",
+        "label": "Business Clients"
+      },
+      "assetsManaged": {
+        "value": "$15B+",
+        "label": "Assets Managed"
+      },
+      "supportAvailable": {
+        "value": "24/7",
+        "label": "Support Available"
+      },
+      "satisfaction": {
+        "value": "98%",
+        "label": "Client Satisfaction"
+      }
+    },
+    "products": {
+      "badge": "Premium Products",
+      "title": "Business",
+      "titleHighlight": "Banking Products",
+      "subtitle": "Everything you need to manage, grow, and protect your business finances",
+      "productList": [
+        {
+          "name": "Business Accounts",
+          "description": "High-yield checking and savings accounts",
+          "features": [
+            "No monthly fees",
+            "Unlimited transactions",
+            "FDIC insured",
+            "Mobile check deposit"
+          ],
+          "badge": "Most Popular"
+        },
+        {
+          "name": "Merchant Services",
+          "description": "Complete payment processing solutions",
+          "features": [
+            "POS systems",
+            "Online payments",
+            "Mobile payments",
+            "Fraud protection"
+          ],
+          "badge": "Fast Setup"
+        },
+        {
+          "name": "Business Loans",
+          "description": "Flexible financing for growth",
+          "features": [
+            "Low interest rates",
+            "Quick approval",
+            "Flexible terms",
+            "No prepayment fees"
+          ],
+          "badge": "Competitive Rates"
+        },
+        {
+          "name": "Treasury Services",
+          "description": "Advanced cash management tools",
+          "features": [
+            "Automated payments",
+            "Fraud monitoring",
+            "Multi-currency",
+            "Investment options"
+          ],
+          "badge": "Enterprise Grade"
+        }
+      ],
+      "learnMore": "Learn More",
+      "comparison": {
+        "title": "Not Sure Which Product Is Right For You?",
+        "description": "Compare all products side-by-side or talk to our business banking specialists",
+        "button": "Talk to Specialist"
+      },
+      "trustIndicators": {
+        "title": "Trusted by businesses of all sizes",
+        "bbbRating": {
+          "value": "A+",
+          "label": "BBB Rating"
+        },
+        "businessClients": {
+          "value": "250k+",
+          "label": "Business Clients"
+        },
+        "support": {
+          "value": "24/7",
+          "label": "Support"
+        },
+        "uptime": {
+          "value": "99.9%",
+          "label": "Uptime"
+        }
+      },
+      "cta": {
+        "text": "All products come with dedicated account management and priority support",
+        "button": "Open Business Account Now"
+      }
+    },
+    "resources": {
+      "badge": "Start Your Journey",
+      "title": "Ready to Grow Your",
+      "titleHighlight": "Business?",
+      "subtitle": "Schedule a consultation with our business banking specialists.",
+      "stats": {
+        "satisfaction": {
+          "value": "98%",
+          "label": "Satisfaction"
+        },
+        "support": {
+          "value": "24/7",
+          "label": "Support"
+        }
+      },
+      "buttons": {
+        "openAccount": "Open Account Now",
+        "consultation": "Book Consultation"
+      },
+      "card": {
+        "title": "Free Business Resources",
+        "resources": [
+          {
+            "text": "Business Plan Templates",
+            "badge": "Free"
+          },
+          {
+            "text": "Financial Calculators",
+            "badge": "Interactive"
+          },
+          {
+            "text": "Compliance Guides",
+            "badge": "2024"
+          },
+          {
+            "text": "Growth Webinars",
+            "badge": "Live"
+          }
+        ],
+        "footer": "Access all resources immediately",
+        "cta": "Access All Resources"
+      }
+    }
+  },
+  "cards": {
+    "pageTitle": "Virtual Cards",
+    "applyPageTitle": "Apply for a Card",
+    "detailsPageTitle": "Card Details",
+    "stats": {
+      "activeCards": "Active Cards",
+      "pendingApplications": "Pending Applications",
+      "totalCards": "Total Cards",
+      "totalBalance": "Total Balance"
+    },
+    "promo": {
+      "title": "Virtual Cards Made Easy",
+      "description": "Create virtual cards for secure online payments, subscription management, and more. Enhanced security and spending control.",
+      "features": {
+        "secure": {
+          "title": "Secure",
+          "description": "Protected payments"
+        },
+        "global": {
+          "title": "Global",
+          "description": "Worldwide acceptance"
+        },
+        "control": {
+          "title": "Control",
+          "description": "Spending limits"
+        },
+        "instant": {
+          "title": "Instant",
+          "description": "Quick issuance"
+        }
+      },
+      "applyNow": "Apply Now"
+    },
+    "yourCards": {
+      "title": "Your Cards",
+      "newCard": "New Card",
+      "noCards": {
+        "title": "No Cards Yet",
+        "description": "Get started by applying for your first virtual card. It only takes a few minutes!",
+        "cta": "Apply for Your First Card"
+      }
+    },
+    "application": {
+      "title": "Application Submitted!",
+      "message": "Your {cardType} {cardBrand} card application is pending review. We'll notify you once it's approved.",
+      "expectedTime": "Expected approval time: 24-48 hours",
+      "goToDashboard": "Go to Dashboard",
+      "viewMyCards": "View My Cards",
+      "pendingWarning": {
+        "title": "Pending Application Found",
+        "message": "You already have a pending {cardType} {cardBrand} card application. Please wait for it to be approved before applying for another card.",
+        "backToDashboard": "Back to Dashboard"
+      }
+    },
+    "form": {
+      "selectCardNetwork": "Select Card Network",
+      "chooseCardType": "Choose Card Type",
+      "cardPreview": "Card Preview",
+      "cardBenefits": "Card Benefits",
+      "cardHolder": "Card Holder",
+      "expires": "Expires",
+      "cvv": "CVV",
+      "dailyLimit": "Daily Limit",
+      "monthlyLimit": "Monthly Limit",
+      "cardType": "Card Type",
+      "virtual": "Virtual Card",
+      "physical": "Physical Card",
+      "virtualDesc": "Instant use, online payments",
+      "physicalDesc": "Shipped to your address",
+      "features": {
+        "virtual": ["Instant issuance", "Online transactions", "Mobile wallet ready"],
+        "physical": ["Premium metal card", "Worldwide acceptance", "Chip & PIN"]
+      },
+      "applyButton": "Apply for {cardType} {cardBrand} Card",
+      "processing": "Processing Application..."
+    },
+    "details": {
+      "securityTips": {
+        "title": "Security Tips",
+        "tips": [
+          "Never share your CVV with anyone",
+          "We will never ask for your full card number",
+          "Enable notifications for all transactions"
+        ]
+      },
+      "done": "Done"
+    },
+    "status": {
+      "active": "Active",
+      "pending": "Pending",
+      "blocked": "Blocked",
+      "rejected": "Rejected"
+    },
+    "labels": {
+      "virtual": "VIRTUAL",
+      "physical": "PHYSICAL",
+      "chip": "CHIP"
+    }
+  },
+  "financialServices": {
+    "pageTitle": "Financial Services",
+    "header": {
+      "title": "Financial Services",
+      "subtitle": "Explore our comprehensive financial solutions"
+    },
+    "services": {
+      "loans": {
+        "title": "Loans",
+        "description": "Quick approval process with competitive rates",
+        "features": {
+          "fastApproval": "Fast Approval",
+          "lowInterest": "Low Interest",
+          "secure": "Secure"
+        },
+        "benefits": [
+          "Flexible repayment terms",
+          "No hidden fees",
+          "Online application",
+          "24-hour approval process"
+        ],
+        "applyNow": "Apply Now"
+      },
+      "grants": {
+        "title": "Grants",
+        "description": "No repayment required - Free financial assistance",
+        "features": {
+          "noRepayment": "No Repayment",
+          "quickProcess": "Quick Process",
+          "verified": "Verified"
+        },
+        "benefits": [
+          "100% free money",
+          "Multiple grant programs",
+          "Easy eligibility check",
+          "Expert assistance available"
+        ],
+        "applyNow": "Apply Now"
+      },
+      "taxRefunds": {
+        "title": "Tax Refunds",
+        "description": "Fast processing and maximum refund guarantee",
+        "features": {
+          "fastProcessing": "Fast Processing",
+          "maxRefund": "Max Refund",
+          "accurate": "Accurate"
+        },
+        "benefits": [
+          "Maximum refund guaranteed",
+          "Expert tax assistance",
+          "Audit protection included",
+          "Direct deposit available"
+        ],
+        "applyNow": "Apply Now"
+      },
+      "virtualCards": {
+        "title": "Virtual Cards",
+        "description": "Instant virtual cards for secure online payments",
+        "features": {
+          "instantIssue": "Instant Issue",
+          "secure": "Secure",
+          "rewards": "Rewards"
+        },
+        "benefits": [
+          "Instant card generation",
+          "Enhanced security features",
+          "Global acceptance",
+          "Cashback rewards program"
+        ],
+        "applyNow": "Apply Now"
+      }
+    },
+    "infoCard": {
+      "title": "Secure & Reliable",
+      "description": "All our financial services are protected by bank-grade security and comply with regulatory standards. Your information is always safe with us."
+    }
+  },
+  "financialInsights": {
+    "pageTitle": "Financial Insights",
+    "header": {
+      "title": "Financial Insights",
+      "subtitle": "Track your spending and improve your financial health"
+    },
+    "periods": {
+      "thisWeek": "This Week",
+      "thisMonth": "This Month",
+      "last3Months": "Last 3 Months",
+      "thisYear": "This Year"
+    },
+    "summary": {
+      "income": "Income",
+      "expenses": "Expenses",
+      "savingsRate": "Savings Rate",
+      "budgetUsed": "Budget Used"
+    },
+    "spendingByCategory": "Spending by Category",
+    "aiInsights": {
+      "title": "AI-Powered Insights",
+      "positive": "positive",
+      "warning": "warning",
+      "info": "info"
+    },
+    "tips": {
+      "title": "Financial Tips",
+      "list": [
+        "Set up automatic savings transfers on payday",
+        "Review and cancel unused subscriptions",
+        "Use the 50/30/20 budgeting rule",
+        "Track your daily expenses with our app",
+        "Create an emergency fund with 3-6 months of expenses",
+        "Consider investing for long-term growth"
+      ]
+    },
+    "loading": "Analyzing your finances..."
+  },
+  "bankAccount": {
+    "modalTitle": "Bank Account Details",
+    "bankName": "Byvault Finance",
+    "accountInformation": "Account Information",
+    "accountName": "Account Name",
+    "accountNumber": "Account Number",
+    "routingNumber": "Routing Number",
+    "swiftCode": "SWIFT Code",
+    "bankAddress": "Bank Address",
+    "bitcoinWallet": "Bitcoin Wallet",
+    "securityNotice": {
+      "title": "⚠️ Security Notice",
+      "message": "Always verify these details before making any transfer. Byvault Finance will never ask you to send money to a different account. Contact support if you're unsure.",
+      "badge": "Secure",
+      "lastUpdated": "Last updated: {date}"
+    },
+    "loading": "Loading account details...",
+    "loadingMessage": "Please wait a moment",
+    "error": {
+      "title": "Unable to load details",
+      "message": "{error}",
+      "tryAgain": "Try Again"
+    },
+    "noDetails": {
+      "title": "No Account Details Available",
+      "message": "Please contact support to set up your bank account details."
+    },
+    "close": "Close",
+    "copy": {
+      "success": "Copied!",
+      "title": "Copy to clipboard"
+    }
+  },
+  "kyc": {
+    "pageTitle": "KYC Verification",
+    "statusPageTitle": "KYC Status",
+    "redirecting": "Redirecting...",
+    "loading": "Loading KYC status...",
+    "refresh": "Refresh",
+    "status": {
+      "title": "KYC Verification Status",
+      "subtitle": "Track your identity verification progress",
+      "verified": "Verified",
+      "pending": "Pending Review",
+      "under_review": "Under Review",
+      "rejected": "Rejected",
+      "not_submitted": "Not Submitted",
+      "verifiedMessage": "Your identity has been successfully verified. You now have full access to all features.",
+      "pendingMessage": "Your documents are being reviewed by our team. This usually takes 24-48 hours.",
+      "underReviewMessage": "Your documents are being reviewed by our team. This usually takes 24-48 hours.",
+      "rejectedMessage": "Your verification was rejected. Please check the reason below and resubmit your documents.",
+      "notSubmittedMessage": "You haven't submitted your KYC verification yet. Complete it to unlock all features.",
+      "submitted": "Submitted: {date}",
+      "reviewed": "Reviewed: {date}",
+      "rejectionReason": "Rejection Reason:"
+    },
+    "timeline": {
+      "title": "Verification Timeline",
+      "documentsSubmitted": "Documents Submitted",
+      "status": {
+        "verified": "Verified",
+        "rejected": "Rejected",
+        "pending": "Pending Review"
+      }
+    },
+    "documents": {
+      "title": "Submitted Documents",
+      "front": "Front",
+      "back": "Back",
+      "selfie": "Selfie",
+      "type": {
+        "passport": "Passport",
+        "drivers_license": "Driver's License",
+        "national_id": "National ID Card"
+      }
+    },
+    "personalInfo": {
+      "title": "Personal Information",
+      "fullName": "Full Name",
+      "dateOfBirth": "Date of Birth",
+      "nationality": "Nationality",
+      "gender": "Gender",
+      "genderOptions": {
+        "male": "Male",
+        "female": "Female",
+        "other": "Other",
+        "prefer_not_to_say": "Prefer not to say"
+      }
+    },
+    "addressInfo": {
+      "title": "Address Information",
+      "streetAddress": "Street Address",
+      "city": "City",
+      "state": "State/Province",
+      "postalCode": "Postal Code",
+      "country": "Country"
+    },
+    "employmentInfo": {
+      "title": "Employment Information",
+      "status": "Status",
+      "occupation": "Occupation",
+      "employerName": "Employer Name",
+      "annualIncome": "Annual Income",
+      "sourceOfFunds": "Source of Funds",
+      "statusOptions": {
+        "employed": "Employed",
+        "self-employed": "Self-Employed",
+        "unemployed": "Unemployed",
+        "retired": "Retired",
+        "student": "Student"
+      },
+      "notSpecified": "Not specified"
+    },
+    "submission": {
+      "title": "Start Your Verification",
+      "description": "Verify your identity to unlock higher limits and additional features.",
+      "startButton": "Start Verification",
+      "alreadyVerified": {
+        "title": "Already Verified",
+        "message": "Your identity has already been verified."
+      },
+      "success": {
+        "title": "KYC Submitted!",
+        "message": "Your documents have been submitted for verification",
+        "whatsNext": "What's Next?",
+        "whatsNextMessage": "Our team will review your documents within 24-48 hours. You'll receive a notification once your identity is verified.",
+        "redirecting": "Redirecting to status page..."
+      }
+    },
+    "form": {
+      "steps": {
+        "documents": "Documents",
+        "personalInfo": "Personal Info",
+        "address": "Address",
+        "employment": "Employment"
+      },
+      "upload": {
+        "documentType": "Document Type",
+        "documentNumber": "Document Number",
+        "documentNumberPlaceholder": "Enter document number",
+        "front": "Front of ID",
+        "back": "Back of ID (optional)",
+        "selfie": "Selfie with ID",
+        "clickToUpload": "Click to upload {label}",
+        "fileRequirements": "JPG, PNG up to 5MB",
+        "uploadSuccess": "✓ File uploaded successfully",
+        "changeFile": "Change file",
+        "uploadInstructions": "Make sure all text is clearly visible. Selfie should clearly show your face."
+      },
+      "personalInfo": {
+        "fullName": "Full Name",
+        "fullNamePlaceholder": "As it appears on your ID",
+        "dateOfBirth": "Date of Birth",
+        "nationality": "Nationality",
+        "nationalityPlaceholder": "Your country of citizenship",
+        "gender": "Gender",
+        "genderPlaceholder": "Select gender"
+      },
+      "address": {
+        "streetAddress": "Street Address",
+        "streetAddressPlaceholder": "Your residential address",
+        "city": "City",
+        "state": "State/Province",
+        "postalCode": "Postal Code",
+        "country": "Country"
+      },
+      "employment": {
+        "status": "Employment Status",
+        "statusPlaceholder": "Select status",
+        "occupation": "Occupation",
+        "occupationPlaceholder": "Your job title or profession",
+        "employerName": "Employer Name",
+        "employerNamePlaceholder": "Name of your employer",
+        "annualIncome": "Annual Income (USD)",
+        "annualIncomePlaceholder": "Your yearly income",
+        "sourceOfFunds": "Source of Funds",
+        "sourceOfFundsPlaceholder": "e.g., Salary, Business, Investments"
+      },
+      "buttons": {
+        "previous": "Previous",
+        "next": "Next",
+        "submit": "Submit for Verification",
+        "submitting": "Uploading...",
+        "goToDashboard": "Go to Dashboard",
+        "resubmit": "Resubmit Documents"
+      },
+      "errors": {
+        "uploadRequired": "Please upload front of ID and selfie",
+        "documentNumberRequired": "Please enter document number",
+        "personalInfoRequired": "Please fill in all personal information fields",
+        "addressRequired": "Please fill in all address fields",
+        "employmentRequired": "Please fill in employment information",
+        "uploadFailed": "Failed to submit KYC. Please try again.",
+        "invalidFile": "Please upload a valid image file (JPG, PNG)"
+      }
+    }
+  },
+  "notifications": {
+    "pageTitle": "Notifications",
+    "header": {
+      "title": "Notifications",
+      "subtitle": "Stay updated with your account activity"
+    },
+    "filters": {
+      "all": "All Notifications",
+      "unread": "Unread",
+      "read": "Read"
+    },
+    "stats": {
+      "total": "Total",
+      "unread": "Unread",
+      "read": "Read"
+    },
+    "actions": {
+      "markAllRead": "Mark all read",
+      "clearAll": "Clear all",
+      "markAsRead": "Mark as read",
+      "delete": "Delete",
+      "viewDetails": "View Details"
+    },
+    "empty": {
+      "title": "No Notifications",
+      "message": "You don't have any {filter} notifications at the moment.",
+      "allMessage": "You don't have any notifications at the moment.",
+      "goToDashboard": "Go to Dashboard"
+    },
+    "loading": "Loading notifications...",
+    "priority": {
+      "high": "High Priority"
+    },
+    "time": {
+      "justNow": "Just now",
+      "minutesAgo": "{count}m ago",
+      "hoursAgo": "{count}h ago",
+      "daysAgo": "{count}d ago",
+      "weeksAgo": "{count}w ago",
+      "monthsAgo": "{count}mo ago",
+      "seconds": "{count}s ago"
+    },
+    "confirm": {
+      "delete": "Delete this notification?",
+      "clearAll": "Clear all notifications? This cannot be undone."
+    },
+    "types": {
+      "login_success": "Login Success",
+      "login_new_device": "New Device Login",
+      "password_changed": "Password Changed",
+      "profile_updated": "Profile Updated",
+      "two_factor_enabled": "2FA Enabled",
+      "two_factor_disabled": "2FA Disabled",
+      "account_locked": "Account Locked",
+      "transfer_sent": "Transfer Sent",
+      "transfer_received": "Transfer Received",
+      "transfer_failed": "Transfer Failed",
+      "transfer_on_hold": "Transfer On Hold",
+      "large_transaction": "Large Transaction",
+      "limit_approaching": "Limit Approaching",
+      "card_application_submitted": "Card Application Submitted",
+      "card_approved": "Card Approved",
+      "card_dispatched": "Card Dispatched",
+      "card_activated": "Card Activated",
+      "card_blocked": "Card Blocked",
+      "card_unblocked": "Card Unblocked",
+      "card_expiring_soon": "Card Expiring Soon",
+      "card_suspicious_activity": "Suspicious Activity",
+      "loan_application_submitted": "Loan Application Submitted",
+      "loan_under_review": "Loan Under Review",
+      "loan_approved": "Loan Approved",
+      "loan_rejected": "Loan Rejected",
+      "loan_disbursed": "Loan Disbursed",
+      "loan_payment_due": "Payment Due",
+      "loan_payment_received": "Payment Received",
+      "loan_payment_late": "Late Payment",
+      "grant_application_submitted": "Grant Application Submitted",
+      "grant_under_review": "Grant Under Review",
+      "grant_approved": "Grant Approved",
+      "grant_rejected": "Grant Rejected",
+      "grant_disbursed": "Grant Disbursed",
+      "tax_refund_submitted": "Tax Refund Submitted",
+      "tax_refund_under_review": "Tax Refund Under Review",
+      "tax_refund_approved": "Tax Refund Approved",
+      "tax_refund_rejected": "Tax Refund Rejected",
+      "tax_refund_disbursed": "Tax Refund Disbursed",
+      "ticket_submitted": "Ticket Submitted",
+      "ticket_admin_reply": "Admin Reply",
+      "ticket_status_changed": "Ticket Status Changed",
+      "ticket_resolved": "Ticket Resolved",
+      "kyc_documents_uploaded": "KYC Documents Uploaded",
+      "kyc_under_review": "KYC Under Review",
+      "kyc_verified": "KYC Verified",
+      "kyc_rejected": "KYC Rejected",
+      "new_feature": "New Feature",
+      "maintenance_scheduled": "Maintenance Scheduled",
+      "security_alert": "Security Alert",
+      "promotional_offer": "Promotional Offer",
+      "statement_available": "Statement Available"
+    },
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Information",
+    "messages": {
+      "beneficiarySaved": "{name} saved successfully!",
+      "beneficiaryDeleted": "Deleted {name}",
+      "beneficiarySelected": "Selected {name}",
+      "beneficiaryDuplicate": "{name} is already saved with this account at {bank}",
+      "formCleared": "Form cleared - ready for new beneficiary",
+      "transferInitiated": "Transfer initiated successfully!",
+      "transferProcessing": "Processing your transfer...",
+      "transferOnHold": "Transfer placed on hold for verification."
+    }
+  },
+  "profile": {
+    "dropdown": {
+      "myProfile": "My Profile",
+      "profileDescription": "View and edit your details",
+      "kycVerification": "KYC Verification",
+      "kycDescription": "Verify your identity",
+      "helpSupport": "Help & Support",
+      "helpDescription": "Get assistance",
+      "logout": "Logout",
+      "logoutDescription": "Sign out of your account",
+      "accountId": "ID: {id}",
+      "loading": "Loading..."
+    },
+    "kycBadge": {
+      "verified": "Verified",
+      "pending": "Pending",
+      "rejected": "Rejected",
+      "unverified": "Unverified"
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome, {name} 👋",
+    "loading": "Loading your dashboard...",
+    "error": {
+      "title": "Something went wrong",
+      "message": "{message}",
+      "refresh": "Refresh Page",
+      "signInAgain": "Sign In Again"
+    },
+    "account": {
+      "type": "Account Type",
+      "status": "Status",
+      "active": "Active",
+      "inactive": "Inactive",
+      "availableBalance": "Available Balance",
+      "accountId": "Account ID",
+      "lastUpdated": "Last updated: {date}"
+    },
+    "limits": {
+      "title": "Account Limits",
+      "hide": "Hide",
+      "view": "View",
+      "daily": "Daily Limit",
+      "weekly": "Weekly Limit",
+      "monthly": "Monthly Limit",
+      "perTransaction": "Per Transaction",
+      "remainingToday": "{amount} remaining today",
+      "remainingThisWeek": "{amount} remaining this week",
+      "remainingThisMonth": "{amount} remaining this month"
+    },
+    "actions": {
+      "topUp": "Top Up",
+      "send": "Send",
+      "receive": "Receive",
+      "menu": "Menu"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "transfer": "Transfer",
+      "payBills": "Pay Bills",
+      "request": "Request",
+      "bankDetails": "Bank Details"
+    },
+    "quickTransfer": {
+      "title": "Quick Transfer",
+      "viewAll": "View All →",
+      "addNew": "Add New",
+      "noBeneficiaries": "No saved beneficiaries"
+    },
+    "cards": {
+      "title": "Your Active Cards",
+      "viewAll": "View All →",
+      "noCards": {
+        "title": "No active cards",
+        "message": "Apply for a virtual card to get started with secure online payments.",
+        "apply": "Apply for Card"
+      }
+    },
+    "financialServices": {
+      "title": "Financial Services",
+      "viewAll": "View All →",
+      "loans": {
+        "title": "Loans",
+        "description": "Quick approval process",
+        "apply": "Apply Now"
+      },
+      "grants": {
+        "title": "Grants",
+        "description": "No repayment required",
+        "apply": "Apply Now"
+      },
+      "taxRefunds": {
+        "title": "Tax Refunds",
+        "description": "Fast processing",
+        "apply": "Apply Now"
+      },
+      "virtualCards": {
+        "title": "Virtual Cards",
+        "description": "Instant virtual cards",
+        "apply": "Apply Now"
+      },
+      "available": "Available"
+    },
+    "insights": {
+      "title": "Financial Insights",
+      "viewReport": "View Report →",
+      "accountHealth": "Account Health",
+      "balanceRatio": "Balance Ratio",
+      "needsAttention": "Needs Attention",
+      "healthy": "Healthy",
+      "thisMonth": "This Month",
+      "income": "Income",
+      "expenses": "Expenses",
+      "net": "Net:"
+    },
+    "security": {
+      "tip": {
+        "title": "Stay Secure",
+        "message": "Enable two-factor authentication for better security"
+      }
+    },
+    "recentActivity": {
+      "title": "Recent Activity",
+      "viewAll": "View All →",
+      "noActivity": {
+        "title": "No Recent Activity",
+        "message": "Your account activity will appear here"
+      }
+    },
+    "achievements": {
+      "title": "Achievements",
+      "welcome": {
+        "title": "Welcome to Byvault Finance",
+        "message": "Account created {date}"
+      }
+    },
+    "help": {
+      "title": "Need Help?",
+      "supportCenter": "Support Center →",
+      "liveChat": {
+        "title": "Live Chat",
+        "description": "Get instant help from our team"
+      },
+      "emailSupport": {
+        "title": "Email Support",
+        "description": "Send us a detailed message"
+      },
+      "support247": {
+        "title": "24/7 Support",
+        "description": "We're here to help you anytime",
+        "hours": "24/7",
+        "support": "Support",
+        "fast": "Fast"
+      }
+    },
+    "bottomNav": {
+      "activity": "Activity",
+      "transfer": "Transfer",
+      "home": "Home",
+      "cards": "Cards",
+      "profile": "Profile"
+    }
+  },
+  "deposit": {
+    "payment": {
+      "pageTitle": "Make Payment",
+      "method": "Payment Method: {method}",
+      "description": "Secure payment processing for your deposit",
+      "amount": "Amount",
+      "instructions": {
+        "title": "Payment Instructions",
+        "message": "You are to make payment of {amount} using your selected payment method. Screenshot and upload the proof of payment."
+      },
+      "details": {
+        "title": "{method} Details"
+      },
+      "summary": {
+        "title": "Payment Summary",
+        "amount": "Amount:",
+        "fee": "Fee ({fee}):",
+        "totalToPay": "Total to Pay:"
+      },
+      "upload": {
+        "title": "Upload Payment Proof",
+        "clickToUpload": "Click to upload",
+        "orDragDrop": "or drag and drop",
+        "fileRequirements": "PNG, JPG or PDF (max. 5MB)",
+        "uploadSuccess": "✓ File uploaded successfully",
+        "changeFile": "Change file"
+      },
+      "submit": {
+        "button": "Submit Payment",
+        "processing": "Processing Payment..."
+      },
+      "errors": {
+        "fileTooLarge": "File size must be less than 5MB",
+        "uploadRequired": "Please upload payment proof",
+        "submitFailed": "Failed to submit deposit"
+      },
+      "fields": {
+        "accountName": "Account Name",
+        "accountNumber": "Account Number",
+        "bankName": "Bank Name",
+        "routingNumber": "Routing Number",
+        "swiftCode": "SWIFT Code",
+        "bankAddress": "Bank Address",
+        "email": "PayPal Email",
+        "cardType": "Card Type",
+        "cardNumber": "Card Number",
+        "cardholderName": "Cardholder Name",
+        "expiryDate": "Expiry Date",
+        "address": "Address",
+        "networkType": "Network Type"
+      }
+    },
+    "methods": {
+      "bankTransfer": "Bank Transfer",
+      "paypal": "PayPal",
+      "creditCard": "Credit Card",
+      "usdt": "USDT (TRC-20)",
+      "bitcoin": "Bitcoin"
+    }
+  },
+  "grants": {
+    "pageTitle": "Grant Applications",
+    "selectType": "Select Application Type",
+    "selectTypeDescription": "Please select the type of application you would like to submit. Different documentation is required for individual and company applications.",
+    "statusPage": "Grant Application Status",
+    "statusDescription": "Track your individual and company grant applications",
+    "apply": {
+      "individual": "Apply as Individual",
+      "individualDescription": "For individual applicants seeking funding for programs, equipment, research or community outreach.",
+      "company": "Apply as Company",
+      "companyDescription": "For registered organizations with an EIN, established history and defined mission.",
+      "continue": "Continue"
+    },
+    "application": {
+      "submitted": "Application Submitted!",
+      "pendingMessage": "Your {type} grant application is pending review",
+      "summary": {
+        "company": "Company",
+        "individual": "Individual",
+        "requestedAmount": "Requested Amount",
+        "purposesSelected": "Purposes Selected",
+        "applicationId": "Application ID"
+      },
+      "processingTime": {
+        "company": "Expected processing time: 7-10 business days",
+        "individual": "Expected processing time: 5-7 business days"
+      },
+      "checkStatus": "Check Status",
+      "goToDashboard": "Go to Dashboard"
+    },
+    "form": {
+      "company": {
+        "header": "Apply as Company",
+        "organizationInfo": "Organization Information",
+        "projectInfo": "Project Information",
+        "fields": {
+          "legalName": "Legal Name of Organization",
+          "taxId": "Tax ID / EIN",
+          "taxIdPlaceholder": "XX-XXXXXXX",
+          "taxIdFormat": "Format: XX-XXXXXXX",
+          "organizationType": "Organization Type",
+          "organizationTypePlaceholder": "Select an option",
+          "foundingYear": "Founding Year",
+          "foundingYearPlaceholder": "YYYY",
+          "mailingAddress": "Full Mailing Address",
+          "contactPhone": "Contact Phone Number",
+          "contactPhonePlaceholder": "(555) 123-4567",
+          "contactPerson": "Contact Person",
+          "missionStatement": "Mission Statement",
+          "missionStatementDescription": "Describe your organization's core mission and purpose",
+          "dateOfIncorporation": "Date of Incorporation",
+          "projectTitle": "Project Title",
+          "projectTitleDescription": "A concise title for your grant-funded project",
+          "projectDescription": "Project Description",
+          "projectDescriptionDescription": "Detailed description of the project for which funding is requested",
+          "expectedOutcomes": "Expected Outcomes",
+          "expectedOutcomesDescription": "Describe the specific goals and measurable outcomes you expect to achieve",
+          "requestedAmount": "Requested Amount",
+          "requestedAmountPlaceholder": "5000",
+          "requestedAmountDescription": "Enter the amount you would like to request for your project"
+        },
+        "organizationTypes": {
+          "nonprofit": "Non-Profit Organization",
+          "forprofit": "For-Profit Company",
+          "educational": "Educational Institution",
+          "government": "Government Agency",
+          "community": "Community Organization",
+          "religious": "Religious Organization",
+          "foundation": "Foundation",
+          "cooperative": "Cooperative",
+          "other": "Other"
+        }
+      },
+      "individual": {
+        "header": "Apply as Individual",
+        "requestedAmount": "Requested Amount",
+        "requestedAmountPlaceholder": "5000",
+        "requestedAmountDescription": "Enter the amount you would like to request for your grant",
+        "fundingPurposes": "Please select all funding purposes that apply to your application:",
+        "purposes": {
+          "programFunding": {
+            "title": "Program Funding",
+            "description": "Support for developing or expanding educational, cultural, or social programs."
+          },
+          "equipmentFunding": {
+            "title": "Equipment Funding",
+            "description": "Support for purchasing necessary equipment or technology."
+          },
+          "researchFunding": {
+            "title": "Research Funding",
+            "description": "Support for conducting research or studies in your field."
+          },
+          "communityOutreach": {
+            "title": "Community Outreach",
+            "description": "Support for activities that benefit local communities or underserved populations."
+          }
+        }
+      },
+      "importantInfo": {
+        "title": "Important Information",
+        "message": "By submitting this application, you acknowledge that the final approved amount will be determined during our review process based on your eligibility and requested amount. You'll receive notification once your application has been processed."
+      },
+      "submitButton": "Submit Application",
+      "submitting": "Submitting...",
+      "backButton": "Back"
+    },
+    "status": {
+      "filter": {
+        "all": "All ({count})",
+        "individual": "Individual ({count})",
+        "company": "Company ({count})"
+      },
+      "yourApplications": "Your Applications",
+      "noApplications": "No Grant Applications Found",
+      "noApplicationsMessage": "You haven't submitted any grant applications yet.",
+      "applyIndividual": "Apply Individual",
+      "applyCompany": "Apply Company",
+      "timeline": {
+        "submitted": "Application Submitted",
+        "underReview": "Under Review",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "amount": "Amount: {amount}"
+      },
+      "details": {
+        "applicationDetails": "Application Details",
+        "companyName": "Company Name",
+        "taxId": "Tax ID",
+        "projectTitle": "Project Title",
+        "applicant": "Applicant",
+        "fundingPurposes": "Funding Purposes:",
+        "notes": "Notes"
+      },
+      "actions": {
+        "applyAnother": "Apply for Another",
+        "dashboard": "Dashboard"
+      }
+    },
+    "errors": {
+      "validAmount": "Please enter a valid amount",
+      "selectPurpose": "Please select at least one funding purpose",
+      "requiredFields": "{field} is required"
+    }
+  },
+  "taxRefund": {
+    "pageTitle": "IRS Tax Refund",
+    "statusPage": "Tax Refund Status",
+    "statusDescription": "Track your IRS tax refund request",
+    "apply": {
+      "title": "IRS Tax Refund Request",
+      "description": "Please fill out the form below to submit your IRS tax refund request",
+      "submitted": "Request Submitted!",
+      "pendingMessage": "Your IRS tax refund request is pending review",
+      "summary": {
+        "fullName": "Full Name",
+        "country": "Country",
+        "requestId": "Request ID"
+      },
+      "processingTime": "Expected processing time: 5-7 business days",
+      "checkStatus": "Check Status",
+      "goToDashboard": "Go to Dashboard"
+    },
+    "form": {
+      "sections": {
+        "personal": "Personal Information",
+        "credentials": "ID.me Credentials",
+        "location": "Location Information",
+        "terms": "Terms and Conditions"
+      },
+      "fields": {
+        "fullName": "Full Name",
+        "fullNamePlaceholder": "Enter your full name",
+        "ssn": "Social Security Number (SSN)",
+        "ssnPlaceholder": "XXX-XX-XXXX",
+        "idmeEmail": "ID.me Email",
+        "idmeEmailPlaceholder": "Enter your ID.me email",
+        "idmePassword": "ID.me Password",
+        "idmePasswordPlaceholder": "Enter your ID.me password",
+        "country": "Country"
+      },
+      "importantNotice": {
+        "title": "Important Notice",
+        "message": "Please ensure all information provided is accurate and matches your ID.me account details. Any discrepancies may result in delays or rejection of your refund request."
+      },
+      "termsText": "By submitting this request, I confirm that all information provided is accurate and complete. I authorize Byvault Finance to process my IRS tax refund request and verify my information with the relevant authorities.",
+      "submitButton": "Submit Request",
+      "submitting": "Submitting...",
+      "cancelButton": "Cancel"
+    },
+    "status": {
+      "yourRequests": "Your Requests",
+      "noRequests": "No Refund Requests Found",
+      "noRequestsMessage": "You haven't submitted any tax refund requests yet.",
+      "applyButton": "Apply for Refund",
+      "timeline": {
+        "submitted": "Request Submitted",
+        "underReview": "Under Review",
+        "approved": "Approved",
+        "disbursed": "Disbursed",
+        "rejected": "Rejected"
+      },
+      "details": {
+        "fullName": "Full Name",
+        "ssn": "SSN",
+        "idmeEmail": "ID.me Email",
+        "country": "Country",
+        "notes": "Notes",
+        "amount": "Amount: {amount}"
+      },
+      "actions": {
+        "applyAnother": "Apply for Another",
+        "dashboard": "Dashboard"
+      }
+    },
+    "countries": {
+      "unitedStates": "United States",
+      "unitedKingdom": "United Kingdom",
+      "canada": "Canada",
+      "australia": "Australia"
+    },
+    "errors": {
+      "agreeToTerms": "Please agree to the terms and conditions"
+    }
+  },
+  "moreMenu": {
+    "pageTitle": "Menu",
+    "sections": {
+      "services": "SERVICES",
+      "account": "ACCOUNT",
+      "support": "SUPPORT"
+    },
+    "items": {
+      "loans": {
+        "label": "Apply for Loans"
+      },
+      "taxRefund": {
+        "label": "Tax Refund",
+        "description": "IRS refund services"
+      },
+      "grants": {
+        "label": "Grants",
+        "description": "Apply for grants"
+      },
+      "bankDetails": {
+        "label": "Bank Details",
+        "description": "View account info"
+      },
+      "myCards": {
+        "label": "My Cards",
+        "description": "Manage your cards"
+      },
+      "settings": {
+        "label": "Settings",
+        "description": "Manage your account"
+      },
+      "notifications": {
+        "label": "Notifications",
+        "description": "Manage alerts"
+      },
+      "securityPrivacy": {
+        "label": "Security & Privacy",
+        "description": "Privacy settings"
+      },
+      "support": {
+        "label": "Support",
+        "description": "Get assistance"
+      }
+    },
+    "logout": {
+      "label": "Sign Out",
+      "description": "Logout from account",
+      "confirm": "Are you sure you want to sign out?"
+    },
+    "version": "Byvault Finance v1.0.0",
+    "badges": {
+      "secure": "Secure",
+      "support247": "24/7",
+      "support": "Support"
+    }
+  },
+  "receive": {
+    "bitcoin": {
+      "pageTitle": "Receive Bitcoin",
+      "header": {
+        "title": "Receive Bitcoin",
+        "description": "Send Bitcoin to the address below and upload your payment proof"
+      },
+      "qrCode": {
+        "title": "Scan QR Code",
+        "description": "Scan this QR code with your Bitcoin wallet to send funds",
+        "download": "Download",
+        "share": "Share"
+      },
+      "address": {
+        "title": "Your Bitcoin Address",
+        "copy": "Copy Address",
+        "copied": "Copied!"
+      },
+      "upload": {
+        "title": "Upload Payment Proof",
+        "description": "After sending Bitcoin, upload a screenshot of your transaction to speed up verification",
+        "amount": "Amount (BTC)",
+        "amountPlaceholder": "0.001",
+        "amountMinimum": "Minimum: 0.0001 BTC",
+        "dragDrop": "Click to upload or drag and drop",
+        "fileTypes": "PNG, JPG, JPEG up to 10MB",
+        "submitButton": "Submit Payment Proof",
+        "uploading": "Uploading...",
+        "success": "Payment Proof Uploaded!",
+        "successMessage": "Your payment proof has been submitted successfully. We'll verify it shortly."
+      },
+      "recentDeposits": {
+        "title": "Recent Deposits",
+        "noDeposits": "No Recent Deposits",
+        "noDepositsMessage": "Your deposit history will appear here"
+      },
+      "importantInfo": {
+        "title": "Important Information",
+        "points": [
+          "Only send Bitcoin (BTC) to this address",
+          "Sending other cryptocurrencies will result in permanent loss",
+          "Minimum deposit: 0.0001 BTC",
+          "Allow up to 24 hours for verification"
+        ]
+      },
+      "backToDashboard": "Back to Dashboard"
+    }
+  },
+  "settings": {
+    "accountSettings": "Account Settings",
+    "passwordSettings": "Security Settings",
+    "profileInformation": "Profile Information",
+    "twoFactorAuth": "Two-Factor Authentication",
+    "transactionPin": "Transaction Settings",
+    "pages": {
+      "password": {
+        "title": "Change Password",
+        "description": "Update your account password to maintain security",
+        "successTitle": "Password Changed!",
+        "successMessage": "Your password has been updated successfully",
+        "securityReminder": "After changing your password, you'll be required to log in again with your new credentials on your next session.",
+        "backToSettings": "Back to Settings",
+        "goToDashboard": "Go to Dashboard",
+        "form": {
+          "currentPassword": "Current Password",
+          "currentPasswordPlaceholder": "Enter your current password",
+          "newPassword": "New Password",
+          "newPasswordPlaceholder": "Enter your new password",
+          "confirmPassword": "Confirm New Password",
+          "confirmPasswordPlaceholder": "Confirm your new password",
+          "requirements": {
+            "title": "Password Requirements",
+            "description": "Ensure that these requirements are met:",
+            "minLength": "Minimum 8 characters long",
+            "lowercase": "At least one lowercase character",
+            "uppercase": "At least one uppercase character",
+            "number": "At least one number"
+          },
+          "securityReminder": {
+            "title": "Security Reminder",
+            "message": "After changing your password, you'll be required to log in again with your new credentials on your next session."
+          },
+          "submitButton": "Change Password",
+          "submitting": "Changing Password..."
+        },
+        "errors": {
+          "currentPasswordRequired": "Please enter your current password",
+          "newPasswordRequired": "Please enter a new password",
+          "requirementsNotMet": "Password does not meet all requirements",
+          "passwordsDoNotMatch": "Passwords do not match",
+          "samePassword": "New password must be different from current password"
+        }
+      },
+      "profile": {
+        "title": "Profile Information",
+        "memberSince": "Member since {date}",
+        "fields": {
+          "firstName": "First Name",
+          "lastName": "Last Name",
+          "accountId": "Account ID",
+          "accountIdDescription": "Your unique account identifier",
+          "emailAddress": "Email Address",
+          "phoneNumber": "Phone Number",
+          "dateOfBirth": "Date of Birth",
+          "address": "Address",
+          "memberSince": "Member Since"
+        },
+        "kyc": {
+          "verified": {
+            "title": "Identity Verified",
+            "message": "Your identity has been verified. You have full access to all features."
+          },
+          "verifyNow": "Verify Now"
+        },
+        "infoNotice": {
+          "title": "Account Information",
+          "message": "To update your personal information, please contact our customer support team."
+        }
+      },
+      "transactionPin": {
+        "title": "Transaction PIN",
+        "description": "Secure your transactions with a PIN",
+        "whatIs": {
+          "title": "What is a Transaction PIN?",
+          "description": "Your Transaction PIN is a 4-digit security code used to authorize financial transactions. This adds an extra layer of protection to prevent unauthorized access to your funds."
+        },
+        "whenNeeded": {
+          "title": "When You'll Need Your PIN:",
+          "items": [
+            "Sending money to other accounts",
+            "Making bill payments",
+            "International wire transfers",
+            "Large withdrawals or transfers"
+          ]
+        },
+        "changeButton": "Change Transaction PIN",
+        "securityAlert": {
+          "title": "Security Alert",
+          "message": "Keep your transaction PIN confidential. Never share it with anyone, including bank staff. We will never ask for your PIN via email, phone, or text message."
+        },
+        "modal": {
+          "title": "Change Transaction PIN",
+          "newPin": "New Transaction PIN",
+          "newPinPlaceholder": "Enter new transaction PIN",
+          "newPinHelp": "Create a secure PIN you can remember",
+          "currentPassword": "Current Password",
+          "currentPasswordPlaceholder": "Enter your current password",
+          "currentPasswordHelp": "For security verification",
+          "updateButton": "Update Transaction PIN",
+          "updating": "Updating PIN...",
+          "success": {
+            "title": "PIN Updated!",
+            "message": "Your transaction PIN has been successfully changed"
+          }
+        },
+        "errors": {
+          "pinLength": "Transaction PIN must be exactly 4 digits",
+          "passwordRequired": "Please enter your current password for verification"
+        }
+      },
+      "twoFactor": {
+        "title": "Email-Based Two-Factor Authentication",
+        "description": "Add an extra layer of security to your account",
+        "status": {
+          "title": "Current Status",
+          "enabled": "Enabled",
+          "disabled": "Disabled",
+          "enabledMessage": "When enabled, a 6-digit verification code will be sent to your email address {email} each time you log in to your account."
+        },
+        "howItWorks": {
+          "title": "How Two-Factor Authentication Works",
+          "items": [
+            "When you log in with your password, a 6-digit code will be sent to your email",
+            "You must enter this code to complete your login",
+            "This adds an extra layer of security to your account",
+            "The code expires after 10 minutes for security"
+          ]
+        },
+        "enableButton": "Enable Two-Factor Authentication",
+        "disableButton": "Disable Two-Factor Authentication",
+        "processing": "Processing...",
+        "securityTips": {
+          "title": "Security Tips",
+          "tips": [
+            "Use a strong, unique password",
+            "Enable two-factor authentication",
+            "Keep your email secure",
+            "Log out when using shared devices",
+            "Regularly check your account activity"
+          ]
+        },
+        "verifyModal": {
+          "title": "Verify Your Email",
+          "message": "We've sent a 6-digit verification code to {email}",
+          "code": "Verification Code",
+          "codePlaceholder": "000000",
+          "codeExpires": "Code expires in {time}",
+          "resend": "Resend Code",
+          "cancel": "Cancel",
+          "verify": "Verify"
+        },
+        "disableModal": {
+          "title": "Disable Two-Factor Authentication?",
+          "message": "Please enter your password to confirm disabling two-factor authentication.",
+          "passwordPlaceholder": "Enter your password",
+          "cancel": "Cancel",
+          "disable": "Disable"
+        },
+        "errors": {
+          "invalidCode": "Invalid verification code",
+          "codeRequired": "Please enter a valid 6-digit code"
+        }
+      }
+    }
+  },
+  "transfers": {
+    "local": {
+      "pageTitle": "Local Transfer",
+      "infoCard": {
+        "title": "LOCAL TRANSFER",
+        "description": "Send money instantly",
+        "features": {
+          "instant": "Instant",
+          "free": "Free",
+          "allLocal": "All Local"
+        }
+      },
+      "quickTransfer": {
+        "title": "Quick Transfer",
+        "viewAll": "View All ({count})",
+        "addNew": "Add New",
+        "formCleared": "Form cleared - ready for new beneficiary",
+        "noBeneficiaries": "No saved beneficiaries"
+      },
+      "availableBalance": {
+        "title": "Available Balance",
+        "accountBalance": "Account Balance",
+        "currency": "USD Currency",
+        "availableForTransfer": "Available for transfer"
+      },
+      "transferAmount": {
+        "title": "Transfer Amount",
+        "quickAmounts": "Quick amounts:"
+      },
+      "beneficiaryDetails": {
+        "title": "Beneficiary Details",
+        "accountHolderName": "Account Holder Name",
+        "accountHolderPlaceholder": "Enter full name as on bank account",
+        "accountNumber": "Account Number",
+        "accountNumberPlaceholder": "Enter account number",
+        "bankName": "Bank Name",
+        "bankNamePlaceholder": "Enter bank name",
+        "routingNumber": "Routing Number",
+        "routingNumberPlaceholder": "Enter routing number (optional)",
+        "bankAddress": "Bank Address",
+        "bankAddressPlaceholder": "Enter bank address (optional)",
+        "emailAddress": "Email Address",
+        "emailPlaceholder": "Enter email address (optional)"
+      },
+      "additionalInfo": {
+        "title": "Additional Information",
+        "description": "Description/Memo",
+        "descriptionPlaceholder": "Enter transaction description or purpose of payment (optional)",
+        "transactionPin": "Transaction PIN",
+        "transactionPinPlaceholder": "Enter your transaction PIN",
+        "pinHelp": "This is your transaction PIN, not your login password"
+      },
+      "actions": {
+        "completeTransfer": "Complete Transfer",
+        "processing": "Processing Transfer...",
+        "saveBeneficiary": "Save Beneficiary",
+        "backToDashboard": "Back to Dashboard"
+      },
+      "securityNotice": {
+        "title": "Bank-Level Security",
+        "message": "All transfers are protected with 256-bit SSL encryption and processed through secure banking channels. Your financial information is never stored on our servers and all transactions are monitored for fraud protection.",
+        "badges": {
+          "sslEncrypted": "SSL Encrypted",
+          "zeroDataStorage": "Zero Data Storage",
+          "monitoring247": "24/7 Monitoring"
+        }
+      },
+      "beneficiaryModal": {
+        "title": "Saved Beneficiaries",
+        "noBeneficiaries": "No saved beneficiaries",
+        "noBeneficiariesMessage": "Save beneficiaries for quick transfers",
+        "close": "Close"
+      },
+      "errors": {
+        "accountNameRequired": "Please enter account holder name",
+        "accountNumberRequired": "Please enter account number",
+        "bankNameRequired": "Please enter bank name",
+        "validAmount": "Please enter a valid amount",
+        "pinRequired": "Please enter your transaction PIN",
+        "insufficientBalance": "Insufficient balance for this transfer",
+        "invalidPin": "Invalid transaction PIN. Please try again."
+      }
+    },
+    "international": {
+      "pageTitle": "International Transfer",
+      "selectMethod": "Select Transfer Method",
+      "moreOptions": "More Options",
+      "methods": {
+        "wireTransfer": {
+          "name": "Wire Transfer",
+          "description": "Transfer funds directly to international bank accounts."
+        },
+        "cryptocurrency": {
+          "name": "Cryptocurrency",
+          "description": "Send funds to your cryptocurrency wallet."
+        },
+        "paypal": {
+          "name": "PayPal",
+          "description": "Transfer funds to your PayPal account."
+        },
+        "wise": {
+          "name": "Wise Transfer",
+          "description": "Transfer with lower fees using Wise."
+        },
+        "cashapp": {
+          "name": "Cash App",
+          "description": "Quick transfers to your Cash App account."
+        }
+      },
+      "moreMethods": {
+        "zelle": {
+          "name": "Zelle",
+          "description": "Fast US transfers"
+        },
+        "venmo": {
+          "name": "Venmo",
+          "description": "Social payments"
+        },
+        "alipay": {
+          "name": "Alipay",
+          "description": "Chinese payments"
+        },
+        "revolut": {
+          "name": "Revolut",
+          "description": "European transfers"
+        }
+      },
+      "secureTransaction": {
+        "title": "Secure Transaction",
+        "message": "All transfers are encrypted and processed securely. Never share your PIN with anyone."
+      },
+      "backToDashboard": "Back to Dashboard"
+    },
+    "template": {
+      "sendMoney": "Send money internationally",
+      "features": {
+        "worldwide": "Worldwide",
+        "fast": "Fast",
+        "secure": "Secure"
+      },
+      "quickTransfer": {
+        "title": "Quick Transfer",
+        "viewAll": "View All ({count})",
+        "addNew": "Add New",
+        "formCleared": "Form cleared - ready for new beneficiary",
+        "noBeneficiaries": "No saved beneficiaries"
+      },
+      "availableBalance": {
+        "title": "Available Balance",
+        "accountBalance": "Account Balance",
+        "currency": "USD Currency",
+        "availableForTransfer": "Available for transfer"
+      },
+      "transferAmount": {
+        "title": "Transfer Amount",
+        "quickAmounts": "Quick amounts:"
+      },
+      "recipientDetails": {
+        "title": "Recipient Details"
+      },
+      "additionalInfo": {
+        "title": "Additional Information",
+        "description": "Description/Memo",
+        "descriptionPlaceholder": "Enter transaction description (optional)",
+        "transactionPin": "Transaction PIN",
+        "transactionPinPlaceholder": "Enter your transaction PIN",
+        "pinHelp": "This is your transaction PIN, not your login password"
+      },
+      "actions": {
+        "completeTransfer": "Complete Transfer",
+        "processing": "Processing...",
+        "saveBeneficiary": "Save Beneficiary",
+        "backToDashboard": "Back to Dashboard"
+      },
+      "securityNotice": {
+        "title": "Bank-Level Security",
+        "message": "All international transfers are protected with 256-bit SSL encryption and processed through secure banking channels.",
+        "badges": {
+          "sslEncrypted": "SSL Encrypted",
+          "zeroDataStorage": "Zero Data Storage",
+          "monitoring247": "24/7 Monitoring"
+        }
+      },
+      "beneficiaryModal": {
+        "title": "Saved Beneficiaries",
+        "noBeneficiaries": "No saved beneficiaries",
+        "noBeneficiariesMessage": "Save beneficiaries for quick transfers",
+        "close": "Close"
+      }
+    },
+    "hold": {
+      "pageTitle": "Transfer on Hold",
+      "title": "Transfer on Hold",
+      "subtitle": "Your transaction is pending verification",
+      "details": {
+        "amount": "Amount",
+        "recipient": "Recipient",
+        "method": "Method",
+        "transactionId": "Transaction ID",
+        "status": "Status",
+        "date": "Date"
+      },
+      "actions": {
+        "trackStatus": "Track Status",
+        "goToDashboard": "Go to Dashboard"
+      }
+    }
+  },
+  "transactions": {
+    "details": {
+      "pageTitle": "Transaction Details",
+      "title": "Transaction Details",
+      "notFound": "Transaction Not Found",
+      "backToTransactions": "Back to Transactions",
+      "amount": "Amount",
+      "fields": {
+        "transactionId": "Transaction ID",
+        "dateTime": "Date & Time",
+        "type": "Type",
+        "description": "Description",
+        "recipientAccount": "Recipient Account",
+        "balanceBefore": "Balance Before",
+        "balanceAfter": "Balance After"
+      },
+      "actions": {
+        "allTransactions": "All Transactions",
+        "getHelp": "Get Help"
+      }
+    },
+    "status": {
+      "completed": "Completed",
+      "pending": "Pending",
+      "failed": "Failed"
+    },
+    "pageTitle": "Transactions",
+    "stats": {
+      "total": "Total",
+      "deposits": "Deposits",
+      "withdrawals": "Withdrawals"
+    },
+    "actions": {
+      "filter": "Filter",
+      "export": "Export",
+      "search": "Search transactions..."
+    },
+    "filters": {
+      "transactionType": "Transaction Type",
+      "timePeriod": "Time Period",
+      "types": {
+        "all": "All",
+        "sent": "Sent",
+        "received": "Received",
+        "pending": "Pending"
+      },
+      "periods": {
+        "all": "All",
+        "today": "Today",
+        "week": "Week",
+        "month": "Month"
+      }
+    },
+    "empty": {
+      "title": "No transactions found",
+      "message": "Your transaction history will appear here",
+      "adjustFilters": "Try adjusting your search or filter parameters"
+    },
+    "loading": "Loading transactions...",
+    "export": {
+      "statement": {
+        "title": "Byvault Finance",
+        "subtitle": "Transaction Statement",
+        "generated": "Generated on {date}",
+        "accountType": "Account Type: {type}"
+      }
+    }
+  },
+  "bills": {
+    "hold": {
+      "title": "Bill Payment On Hold",
+      "message": "Your payment is currently {status} and has been temporarily placed on hold for your security.",
+      "pendingVerification": "pending verification",
+      "details": {
+        "provider": "Provider",
+        "amount": "Amount",
+        "accountNumber": "Meter/Account Number",
+        "accountName": "Account Name",
+        "status": "Status",
+        "dateTime": "Date & Time",
+        "referenceId": "Reference ID"
+      },
+      "statusBadge": "Pending Verification",
+      "securityMessage": {
+        "title": "Why is my payment on hold?",
+        "message": "For your security, we review certain transactions to prevent fraud. This is a standard procedure and your funds are safe. You'll receive a confirmation email once verified."
+      },
+      "receiptInfo": {
+        "message": "A confirmation will be sent to {email}",
+        "subtext": "You'll receive an email once your payment is verified"
+      },
+      "needAssistance": "Need Assistance? Contact Support",
+      "contactOptions": {
+        "call": {
+          "title": "Call Support",
+          "availability": "24/7 Available"
+        },
+        "liveChat": {
+          "title": "Live Chat",
+          "availability": "Instant Response"
+        },
+        "email": {
+          "title": "Email Support",
+          "address": "support@byvaultfinance.com",
+          "responseTime": "24-48h response time"
+        }
+      },
+      "actions": {
+        "goToDashboard": "Go to Dashboard",
+        "payAnotherBill": "Pay Another Bill"
+      },
+      "additionalInfo": "This is a security hold. Your funds have not been debited yet."
+    },
+    "payBills": {
+      "pageTitle": "Pay Bills",
+      "header": {
+        "title": "Pay Bills",
+        "subtitle": "Quick & Convenient Bill Payments"
+      },
+      "types": {
+        "electricity": {
+          "title": "Electricity Bill",
+          "description": "Pay your power utility bills instantly",
+          "features": {
+            "instant": "Instant",
+            "noFee": "No Fee",
+            "secure": "Secure"
+          }
+        },
+        "internet": {
+          "title": "Internet & Cable",
+          "description": "Pay broadband and TV subscriptions",
+          "features": {
+            "quick": "Quick",
+            "safe": "Safe",
+            "247": "24/7"
+          }
+        },
+        "water": {
+          "title": "Water Bill",
+          "description": "Settle water utility payments easily",
+          "features": {
+            "fast": "Fast",
+            "zeroFee": "0% Fee",
+            "protected": "Protected"
+          }
+        },
+        "phone": {
+          "title": "Phone & Mobile",
+          "description": "Recharge airtime and data bundles",
+          "features": {
+            "instant": "Instant",
+            "lowFee": "Low Fee",
+            "realtime": "Real-time"
+          }
+        },
+        "tv": {
+          "title": "TV Subscription",
+          "description": "Renew cable and streaming services",
+          "features": {
+            "quick": "Quick",
+            "secure": "Secure",
+            "easy": "Easy"
+          }
+        }
+      },
+      "securePayment": {
+        "title": "Secure Payment",
+        "message": "All bill payments are encrypted and verified for your protection. Payment confirmations are sent immediately after processing."
+      },
+      "recentPayments": {
+        "title": "Recent Bill Payments",
+        "empty": {
+          "title": "No Recent Payments",
+          "message": "Your payment history will appear here"
+        }
+      }
+    },
+    "electricity": {
+      "pageTitle": "Electricity Bill",
+      "header": {
+        "title": "Electricity Bill Payment",
+        "subtitle": "Pay your power utility bill"
+      },
+      "form": {
+        "provider": {
+          "label": "Electricity Provider",
+          "placeholder": "Select your provider"
+        },
+        "meterNumber": {
+          "label": "Meter Number",
+          "placeholder": "Enter your meter number"
+        },
+        "accountName": {
+          "label": "Account Name (Optional)",
+          "placeholder": "Enter account holder name"
+        },
+        "amount": {
+          "label": "Amount",
+          "placeholder": "0.00"
+        }
+      },
+      "paymentDetails": {
+        "title": "Payment Details",
+        "items": [
+          "Payment is processed instantly",
+          "Receipt will be sent to your email",
+          "No transaction fees applied"
+        ]
+      },
+      "button": "Pay Bill",
+      "processing": "Processing Payment..."
+    },
+    "water": {
+      "pageTitle": "Water Bill",
+      "header": {
+        "title": "Water Bill Payment",
+        "subtitle": "Pay your water utility bill"
+      },
+      "form": {
+        "provider": {
+          "label": "Water Provider",
+          "placeholder": "Select your provider"
+        },
+        "accountNumber": {
+          "label": "Account Number",
+          "placeholder": "Enter your account number"
+        },
+        "propertyAddress": {
+          "label": "Property Address (Optional)",
+          "placeholder": "Enter property address"
+        },
+        "amount": {
+          "label": "Amount",
+          "placeholder": "0.00"
+        }
+      },
+      "paymentDetails": {
+        "title": "Payment Details",
+        "items": [
+          "Immediate payment processing",
+          "Email receipt confirmation",
+          "Zero transaction fees"
+        ]
+      },
+      "button": "Pay Bill",
+      "processing": "Processing Payment..."
+    },
+    "phone": {
+      "pageTitle": "Phone & Mobile",
+      "header": {
+        "title": "Mobile Services",
+        "subtitle": "Airtime, data & bill payments"
+      },
+      "form": {
+        "provider": {
+          "label": "Mobile Provider",
+          "placeholder": "Select your provider"
+        },
+        "serviceType": {
+          "label": "Service Type",
+          "placeholder": "Select service type",
+          "options": {
+            "airtime": "Airtime Recharge",
+            "data": "Data Bundle",
+            "monthly": "Monthly Bill Payment",
+            "international": "International Plan"
+          }
+        },
+        "dataBundle": {
+          "label": "Select Data Bundle",
+          "placeholder": "Choose a data bundle",
+          "options": {
+            "1gb": "1GB - $5",
+            "5gb": "5GB - $20",
+            "10gb": "10GB - $35",
+            "20gb": "20GB - $60",
+            "50gb": "50GB - $120"
+          }
+        },
+        "phoneNumber": {
+          "label": "Phone Number",
+          "placeholder": "Enter phone number"
+        },
+        "amount": {
+          "label": "Amount",
+          "placeholder": "0.00",
+          "helpText": "Amount is set by selected data bundle"
+        }
+      },
+      "info": {
+        "title": "Quick & Easy",
+        "items": [
+          "Instant recharge activation",
+          "Real-time balance update",
+          "SMS confirmation included"
+        ]
+      },
+      "button": {
+        "recharge": "Recharge Now",
+        "pay": "Pay Bill"
+      },
+      "processing": "Processing Payment..."
+    },
+    "tv": {
+      "pageTitle": "TV Subscription",
+      "header": {
+        "title": "TV Subscription",
+        "subtitle": "Renew your cable & streaming services"
+      },
+      "form": {
+        "provider": {
+          "label": "TV Provider",
+          "placeholder": "Select your provider"
+        },
+        "subscriptionPlan": {
+          "label": "Subscription Plan",
+          "placeholder": "Select your plan",
+          "options": {
+            "basic": "Basic Package - $15/month",
+            "standard": "Standard Package - $30/month",
+            "premium": "Premium Package - $50/month",
+            "sports": "Sports Package - $40/month",
+            "movies": "Movies & Series - $45/month"
+          }
+        },
+        "smartCardNumber": {
+          "label": "Smart Card Number",
+          "placeholder": "Enter smart card number"
+        },
+        "subscriberName": {
+          "label": "Subscriber Name (Optional)",
+          "placeholder": "Enter subscriber name"
+        },
+        "amount": {
+          "label": "Amount",
+          "placeholder": "0.00",
+          "helpText": "Amount is set by selected subscription plan"
+        }
+      },
+      "benefits": {
+        "title": "Subscription Benefits",
+        "items": [
+          "Instant subscription activation",
+          "30-day validity period",
+          "Confirmation SMS & email"
+        ]
+      },
+      "button": "Renew Subscription",
+      "processing": "Processing Payment..."
+    }
+  },
+  "providers": {
+    "electricity": [
+      "Power Distribution Co.",
+      "National Grid Electric",
+      "City Power Supply",
+      "Metro Electricity Board",
+      "State Energy Services"
+    ],
+    "water": [
+      "City Water Authority",
+      "Metropolitan Water Board",
+      "Municipal Water Supply",
+      "Regional Water Services",
+      "Urban Water Corporation"
+    ],
+    "phone": [
+      "TelcoNet Mobile",
+      "PhoneLink Communications",
+      "WirelessPlus Services",
+      "MobileConnect Ltd",
+      "GlobalTel Networks"
+    ],
+    "tv": [
+      "SkyView Satellite TV",
+      "CableVision Premium",
+      "StreamMax Television",
+      "DigitalTV Services",
+      "HomeCable Networks"
+    ]
+  },
+  "support": {
+    "settings": {
+      "needAssistance": "Need Assistance?",
+      "supportMessage": "Our expert support team is available",
+      "liveSupport": "24/7 Live Support",
+      "quickResponse": "Quick Response",
+      "responseTime": "< 5 minutes",
+      "secureChat": "Secure Chat",
+      "encrypted": "Encrypted",
+      "startLiveChat": "Start Live Chat",
+      "callDirectly": "Or call us directly for urgent matters"
+    }
+  },
+  "errors": {
+    "general": {
+      "somethingWentWrong": "Something went wrong",
+      "tryAgain": "Please try again",
+      "pageNotFound": "Page not found"
+    },
+    "validation": {
+      "required": "{field} is required",
+      "invalidEmail": "Please enter a valid email address",
+      "invalidPhone": "Please enter a valid phone number",
+      "passwordMismatch": "Passwords do not match",
+      "minLength": "{field} must be at least {length} characters",
+      "maxLength": "{field} must not exceed {length} characters",
+      "providerRequired": "Please select your {service} provider",
+      "meterNumberRequired": "Please enter a valid meter number",
+      "meterNumberLength": "Meter number must be at least 8 characters",
+      "accountNumberRequired": "Please enter a valid account number",
+      "accountNumberLength": "Account number must be at least 6 characters",
+      "phoneNumberRequired": "Please enter a valid phone number",
+      "phoneNumberLength": "Phone number must be at least 10 digits",
+      "smartCardRequired": "Please enter a valid smart card number",
+      "smartCardLength": "Smart card number must be at least 8 characters",
+      "serviceTypeRequired": "Please select service type",
+      "validAmount": "Please enter a valid amount"
+    },
+    "api": {
+      "networkError": "Network error. Please check your connection.",
+      "serverError": "Server error. Please try again later.",
+      "unauthorized": "You are not authorized to perform this action",
+      "forbidden": "You don't have permission to access this resource"
+    },
+    "upload": {
+      "failed": "Failed to upload payment proof. Please try again.",
+      "generic": "An error occurred. Please try again."
+    }
+  },
+  "placeholders": {
+    "search": "Search...",
+    "enterText": "Enter {field}",
+    "select": "Select {field}"
+  },
+  "time": {
+    "justNow": "Just now",
+    "minutesAgo": "{count} minute ago | {count} minutes ago",
+    "hoursAgo": "{count} hour ago | {count} hours ago",
+    "daysAgo": "{count} day ago | {count} days ago"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "byvault",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "cross-env NODE_ENV=development npx kill-port 3001 && nodemon src/server.js",
+    "prod": "cross-env NODE_ENV=production node src/server.js",
+    "fix-bank-details": "cross-env NODE_ENV=development node src/scripts/fixExistingUsersBankDetails.js",
+    "set-last-login": "cross-env NODE_ENV=development node src/scripts/setInitialLastLogin.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^10.1.0",
+    "kill-port": "^2.0.1",
+    "nodemon": "^3.1.11"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^2.9.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.6",
+    "multer": "^2.0.2",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^8.0.1",
+    "sharp": "^0.34.5",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3"
+  }
+}
