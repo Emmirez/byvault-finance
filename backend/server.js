@@ -65,7 +65,13 @@ const httpServer = createServer(app);
 // Setup Socket.IO
 const io = new Server(httpServer, {
   cors: {
-    origin: ["http://localhost:5173", "http://localhost:3000"],
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:3000",
+      "https://byvault-finance.vercel.app",
+      "https://byvaultonline.com",
+      "https://www.byvaultonline.com",
+    ],
     credentials: true,
     methods: ["GET", "POST"],
   },

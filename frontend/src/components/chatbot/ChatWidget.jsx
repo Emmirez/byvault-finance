@@ -99,14 +99,14 @@ const ChatWidget = ({ position = "right", primaryColor = "#2563eb" }) => {
       : "Byvault Finance";
   }, [unreadCount]);
 
-  // ── Reset unread as soon as chat is open and visible ────────────────────────
+  // ── Reset unread as soon as chat is open and visible 
   useEffect(() => {
     if (isOpen && !isMinimized) {
       setUnreadCount(0);
     }
   }, [isOpen, isMinimized]);
 
-  // ── Message handler ─────────────────────────────────────────────────────────
+  //  Message handler 
   const handleNewMessage = useCallback((message) => {
     setMessages((prev) => {
       // Deduplicate by server _id
@@ -142,7 +142,7 @@ const ChatWidget = ({ position = "right", primaryColor = "#2563eb" }) => {
     // History loads when chat opens — unread already reset by the isOpen effect
   }, []);
 
-  // ── Socket (mount once) ─────────────────────────────────────────────────────
+  // Socket (mount once) 
   useEffect(() => {
     const socketUrl = import.meta.env.VITE_SOCKET_URL || "http://localhost:3001";
 
