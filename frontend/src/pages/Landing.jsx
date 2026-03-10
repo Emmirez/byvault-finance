@@ -7,7 +7,7 @@ import Header from "../components/header/Header.jsx";
 import Footer from "../components/layout/footer/Footer.jsx";
 import { CTASection } from "../components/sections/CTA";
 import { Disclosures } from "../components/sections/Disclosures.jsx";
-import { FAQSection } from "../components/sections/FAQSection.jsx";
+import { FAQSection } from "../components/sections/FAQsection.jsx";
 import RealTalk from "../components/sections/RealTalk.jsx";
 import Offer from "../components/sections/Offer.jsx";
 import Mobile from "../components/sections/Mobile.jsx";
