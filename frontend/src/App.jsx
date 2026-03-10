@@ -21,7 +21,7 @@ import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
 import Help from "./pages/Help.jsx";
 import ScrollToTop from "./hooks/useScrollToTop.js";
-import ContactSupport from "./pages/contactSupport.jsx";
+import ContactSupport from "./pages/ContactSupport.jsx";
 import TermsConditions from "./pages/TermsConditions.jsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
 import ForgotPassword from "./pages/auth/ForgotPassword/ForgotPassword.jsx";
