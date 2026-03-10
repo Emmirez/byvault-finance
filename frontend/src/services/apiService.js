@@ -87,9 +87,7 @@ class ApiService {
     };
 
     try {
-      console.log(
-        `🌐 Making ${options.method || "GET"} request to: ${this.baseURL}${endpoint}`,
-      );
+      
 
       const response = await fetch(`${this.baseURL}${endpoint}`, config);
 
