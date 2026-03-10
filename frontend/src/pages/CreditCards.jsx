@@ -13,7 +13,7 @@ import {
   Check,
   ArrowUp,
 } from "lucide-react";
-import Header from "../components/header/header.jsx";
+import Header from "../components/header/Header.jsx";
 import Footer from "../components/layout/Footer/Footer.jsx";
 import { useLanguageContext } from "../contexts/LanguageContext.jsx";
 
