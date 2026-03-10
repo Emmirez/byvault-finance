@@ -2,7 +2,7 @@
 // src/pages/auth/Register/Register.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../../../components/header/header.jsx";
+import Header from "../../../components/header/Header.jsx";
 import {
   User,
   Mail,

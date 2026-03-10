@@ -2,7 +2,7 @@
 /* eslint-disable no-useless-catch */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "../../../components/header/header.jsx";
+import Header from "../../../components/header/Header.jsx";
 import {
   Shield,
   Mail,

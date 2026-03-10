@@ -1,7 +1,7 @@
 // pages/auth/ResetPassword.jsx
 import React, { useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import Header from "../../../components/header/header.jsx";
+import Header from "../../../components/header/Header.jsx";
 import {
   Shield,
   Lock,
