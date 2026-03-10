@@ -35,7 +35,7 @@ import LocalTransfer from "./pages/user/Transfers/LocalTransfer";
 import InternationalTransfer from "./pages/user/Transfers/InternationalTransfer";
 import ReceiveBitcoin from "./pages/user/Receive/ReceiveBitcoin";
 import MoreMenu from "./pages/user/More/MoreMenu";
-import PayPalTransfer from "./pages/user/Transfers/PayPalTransfer";
+import PayPalTransfer from "./pages/user/Transfers/PaypalTransfer";
 import CryptoTransfer from "./pages/user/Transfers/CryptoTransfer";
 import CashAppTransfer from "./pages/user/Transfers/CashAppTransfer";
 import WiseTransfer from "./pages/user/Transfers/WiseTransfer";
