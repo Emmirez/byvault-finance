@@ -37,7 +37,7 @@ import ReceiveBitcoin from "./pages/user/Receive/ReceiveBitcoin";
 import MoreMenu from "./pages/user/More/MoreMenu";
 import PayPalTransfer from "./pages/user/Transfers/PaypalTransfer";
 import CryptoTransfer from "./pages/user/Transfers/CryptoTransfer";
-import CashAppTransfer from "./pages/user/Transfers/CashAppTransfer";
+import CashAppTransfer from "./pages/user/Transfers/CashappTransfer";
 import WiseTransfer from "./pages/user/Transfers/WiseTransfer";
 import ZelleTransfer from "./pages/user/Transfers/ZelleTransfer";
 import VenmoTransfer from "./pages/user/Transfers/VenmoTransfer";
