@@ -4,7 +4,7 @@ import { useLanguageContext } from "../contexts/LanguageContext";
 import { useSmoothScroll } from "../hooks/useSmoothscroll.js";
 import { useCarousel } from "../hooks/useCarousel.js";
 import Header from "../components/header/Header.jsx";
-import Footer from "../components/layout/Footer/Footer.jsx";
+import Footer from "../components/layout/footer/Footer.jsx";
 import { CTASection } from "../components/sections/CTA";
 import { Disclosures } from "../components/sections/Disclosures.jsx";
 import { FAQSection } from "../components/sections/FAQSection.jsx";
