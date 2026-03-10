@@ -45,7 +45,7 @@ import { twoFactorService } from "../../../services/twoFactorService";
 import { kycService } from "../../../services/kycService";
 import { userService } from "../../../services/userService";
 import { useNotifications } from "../../../contexts/NotificationContext";
-import KYCBanner from "../Components/KYCbanner";
+import KYCBanner from "../Components/KYCBanner";
 import AnnouncementBanner from "../Components/AnnouncementBanner";
 
 const Dashboard = () => {
