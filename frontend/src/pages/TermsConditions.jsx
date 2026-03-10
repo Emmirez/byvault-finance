@@ -1,8 +1,8 @@
 // pages/TermsConditions.jsx
 import React, { useState, useEffect } from "react";
 import { useLanguageContext } from "../contexts/LanguageContext.jsx";
-import Header from "../components/header/header.jsx";
-import Footer from "../components/layout/Footer/Footer.jsx";
+import Header from "../components/header/Header.jsx";
+import Footer from "../components/layout/footer/Footer.jsx";
 import { FileText, Shield, AlertCircle, ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
 

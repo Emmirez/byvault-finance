@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLanguageContext } from "../contexts/LanguageContext";
-import Header from "../components/header/header.jsx";
-import Footer from "../components/layout/Footer/Footer.jsx";
+import Header from "../components/header/Header.jsx";
+import Footer from "../components/layout/footer/Footer.jsx";
 import {
   Users,
   Shield,

@@ -1,8 +1,8 @@
 // pages/ExploreResources.jsx
 import React, { useState } from "react";
 import { useLanguageContext } from "../contexts/LanguageContext";
-import Header from "../components/header/header.jsx";
-import Footer from "../components/layout/Footer/Footer.jsx";
+import Header from "../components/header/Header.jsx";
+import Footer from "../components/layout/footer/Footer.jsx";
 import { 
   BookOpen, 
   Video, 

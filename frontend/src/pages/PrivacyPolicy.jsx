@@ -1,8 +1,8 @@
 // pages/PrivacyPolicy.jsx
 import React from "react";
 import { useLanguageContext } from "../contexts/LanguageContext";
-import Header from "../components/header/header.jsx";
-import Footer from "../components/layout/Footer/Footer.jsx";
+import Header from "../components/header/Header.jsx";
+import Footer from "../components/layout/footer/Footer.jsx";
 import { Shield, Lock, Eye, AlertCircle, CheckCircle } from "lucide-react";
 
 const PrivacyPolicy = () => {

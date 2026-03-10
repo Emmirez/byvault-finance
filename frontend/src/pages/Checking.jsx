@@ -16,7 +16,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Header from "../components/header/Header.jsx";
-import Footer from "../components/layout/Footer/Footer.jsx";
+import Footer from "../components/layout/footer/Footer.jsx";
 import { useLanguageContext } from "../contexts/LanguageContext";
 import { CTASection } from "../components/sections/CTA";
 import Features from "../components/sections/Features.jsx";
