@@ -10,7 +10,8 @@ import {
   rejectCard,
   toggleBlockCard,
   getAllCards,
-  deleteCard
+  deleteCard,
+  userToggleBlockCard
 } from "../controllers/cardController.js";
 
 const router = express.Router();
@@ -20,6 +21,7 @@ const router = express.Router();
 router.post("/cards/apply", protect,checkUserStatus,requireVerified, applyForCard);
 router.get("/cards", protect, getUserCards);
 router.get("/cards/:id", protect, getCardDetails);
+router.put("/cards/:id/toggle-block", protect, checkUserStatus, userToggleBlockCard);
 
 
 // Both admin and superadmin can access these

@@ -3,9 +3,9 @@ import nodemailer from "nodemailer";
 
 // Create transporter (reuse your existing email config)
 const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST || "smtp.gmail.com",
-  port: process.env.EMAIL_PORT || 587,
-  secure: false,
+  host: "smtp.zoho.com",
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASSWORD,
@@ -281,7 +281,7 @@ export const sendWelcomeEmail = async ({ to, name, accountId }) => {
 
               <!-- CTA Button -->
               <div style="text-align: center;">
-                <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}/dashboard" class="cta-button">
+                <a href="${process.env.FRONTEND_URL || "http://localhost:5173"}/dashboard" class="cta-button">
                   Go to Your Dashboard
                 </a>
               </div>
@@ -295,7 +295,7 @@ export const sendWelcomeEmail = async ({ to, name, accountId }) => {
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width: 100%; margin: 30px 0;">
                 <tr>
                   <td style="width: 25%; text-align: center; padding: 0 10px;">
-                    <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}/deposit" style="text-decoration: none; color: #1e293b;">
+                    <a href="${process.env.FRONTEND_URL || "http://localhost:5173"}/deposit" style="text-decoration: none; color: #1e293b;">
                       <div style="
                         width: 40px; height: 40px; background: #f1f5f9; border-radius: 10px;
                         font-size: 20px; line-height: 40px; text-align: center;
@@ -305,7 +305,7 @@ export const sendWelcomeEmail = async ({ to, name, accountId }) => {
                     </a>
                   </td>
                   <td style="width: 25%; text-align: center; padding: 0 10px;">
-                    <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}/transfer" style="text-decoration: none; color: #1e293b;">
+                    <a href="${process.env.FRONTEND_URL || "http://localhost:5173"}/transfer" style="text-decoration: none; color: #1e293b;">
                       <div style="
                         width: 40px; height: 40px; background: #f1f5f9; border-radius: 10px;
                         font-size: 20px; line-height: 40px; text-align: center;
@@ -315,7 +315,7 @@ export const sendWelcomeEmail = async ({ to, name, accountId }) => {
                     </a>
                   </td>
                   <td style="width: 25%; text-align: center; padding: 0 10px;">
-                    <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}/cards" style="text-decoration: none; color: #1e293b;">
+                    <a href="${process.env.FRONTEND_URL || "http://localhost:5173"}/cards" style="text-decoration: none; color: #1e293b;">
                       <div style="
                         width: 40px; height: 40px; background: #f1f5f9; border-radius: 10px;
                         font-size: 20px; line-height: 40px; text-align: center;
@@ -325,7 +325,7 @@ export const sendWelcomeEmail = async ({ to, name, accountId }) => {
                     </a>
                   </td>
                   <td style="width: 25%; text-align: center; padding: 0 10px;">
-                    <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}/support" style="text-decoration: none; color: #1e293b;">
+                    <a href="${process.env.FRONTEND_URL || "http://localhost:5173"}/support" style="text-decoration: none; color: #1e293b;">
                       <div style="
                         width: 40px; height: 40px; background: #f1f5f9; border-radius: 10px;
                         font-size: 20px; line-height: 40px; text-align: center;
@@ -388,7 +388,7 @@ export const sendWelcomeEmail = async ({ to, name, accountId }) => {
               
               <div class="help-text">
                 <p style="margin:0 0 10px;">
-                  Need help? <a href="${process.env.FRONTEND_URL || 'http://localhost:5173'}/support">Visit our Support Center</a>
+                  Need help? <a href="${process.env.FRONTEND_URL || "http://localhost:5173"}/support">Visit our Support Center</a>
                 </p>
                 <p style="margin:0; font-size: 11px; color: #94a3b8;">
                   © ${new Date().getFullYear()} Byvault Finance. All rights reserved.<br>

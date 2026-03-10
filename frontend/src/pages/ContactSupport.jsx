@@ -122,11 +122,11 @@ const ContactSupport = () => {
     {
       icon: Mail,
       title: t("pages.contact.emailUs") || "Email Us",
-      primary: "support@byvaultfinance.com",
+      primary: "admin@byvaultonline.com",
       secondary: null,
       color: "green",
       isLink: true,
-      linkHref: "mailto:support@byvaultfinance.com",
+      linkHref: "mailto:admin@byvaultonline.com",
     },
     {
       icon: Phone,

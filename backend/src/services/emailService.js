@@ -4,19 +4,13 @@ import nodemailer from "nodemailer";
 
 // Create transporter with explicit configuration
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587, // Use 587 for TLS
-  secure: false, // true for 465, false for 587
-  requireTLS: true,
+  host: "smtp.zoho.com",
+  port: 465, 
+  secure: true, 
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASSWORD,
   },
-  tls: {
-    rejectUnauthorized: false, // Helps with some network issues
-    ciphers: 'SSLv3'
-  },
-  connectionTimeout: 30000, // 30 seconds
 });
 
 // Verify connection configuration

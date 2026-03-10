@@ -88,9 +88,32 @@ export const getUserCards = async (req, res) => {
   }
 };
 
-// @desc    Get single card details
-// @route   GET /api/cards/:id
-// @access  Private
+export const userToggleBlockCard = async (req, res) => {
+  try {
+    const card = await Card.findOne({
+      _id: req.params.id,
+      user: req.user.id  // ensures user can only block their own card
+    });
+
+   if (card.status?.toLowerCase() === "pending" || card.status?.toLowerCase() === "rejected") {
+  return res.status(400).json({ message: "Only active or blocked cards can be toggled" });
+}
+
+card.status = card.status?.toLowerCase() === "blocked" ? "active" : "blocked";
+await card.save();
+
+res.json({
+  success: true,
+  message: `Card ${card.status === "blocked" ? "blocked" : "unblocked"} successfully`,
+  card: { id: card._id, status: card.status }
+});
+  } catch (error) {
+    console.error("Error toggling card block:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+
 export const getCardDetails = async (req, res) => {
   try {
     const card = await Card.findOne({
@@ -130,9 +153,6 @@ export const getCardDetails = async (req, res) => {
 
 // ADMIN CONTROLLERS
 
-// @desc    Get all pending card applications
-// @route   GET /api/admin/cards/pending
-// @access  Private/Admin
 export const getPendingCards = async (req, res) => {
   try {
     const cards = await Card.find({ status: "pending" })
@@ -149,9 +169,7 @@ export const getPendingCards = async (req, res) => {
   }
 };
 
-// @desc    Approve card application
-// @route   PUT /api/admin/cards/:id/approve
-// @access  Private/Admin
+
 export const approveCard = async (req, res) => {
   try {
     const card = await Card.findById(req.params.id).populate("user");
@@ -184,9 +202,7 @@ export const approveCard = async (req, res) => {
   }
 };
 
-// @desc    Reject card application
-// @route   PUT /api/admin/cards/:id/reject
-// @access  Private/Admin
+
 export const rejectCard = async (req, res) => {
   try {
     const { reason } = req.body;
@@ -335,8 +351,7 @@ export const deleteCard = async (req, res) => {
   }
 };
 
-// @desc    Block/Unblock card
-// @route   PUT /api/admin/cards/:id/toggle-block
+
 export const toggleBlockCard = async (req, res) => {
   try {
     const card = await Card.findById(req.params.id);

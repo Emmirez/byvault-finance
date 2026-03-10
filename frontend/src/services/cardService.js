@@ -42,6 +42,17 @@ export const cardService = {
     }
   },
 
+  // User: Toggle block/unblock own card
+userToggleBlockCard: async (cardId) => {
+  try {
+    const response = await api.put(`/cards/${cardId}/toggle-block`);
+    return response;
+  } catch (error) {
+    if (!isHandledError(error)) console.error("Error toggling card block:", error);
+    throw error;
+  }
+},
+
   // Admin: Get pending cards
   getPendingCards: async () => {
     try {
@@ -109,4 +120,5 @@ export const cardService = {
       throw error;
     }
   },
+
 };

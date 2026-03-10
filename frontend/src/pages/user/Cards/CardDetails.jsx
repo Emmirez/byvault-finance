@@ -32,10 +32,25 @@ const CardDetails = () => {
   const [card, setCard] = useState(null);
   const [showCVV, setShowCVV] = useState(false);
   const [copiedField, setCopiedField] = useState(null);
+  const [toggling, setToggling] = useState(false);
 
   useEffect(() => {
     fetchCardDetails();
   }, [id]);
+
+  const handleToggleBlock = async () => {
+    try {
+      setToggling(true);
+      const response = await cardService.userToggleBlockCard(id);
+      if (response.success) {
+        setCard((prev) => ({ ...prev, status: response.card.status }));
+      }
+    } catch (error) {
+      console.error("Error toggling card block:", error);
+    } finally {
+      setToggling(false);
+    }
+  };
 
   const fetchCardDetails = async () => {
     try {
@@ -125,6 +140,7 @@ const CardDetails = () => {
 
   const userName =
     `${user?.firstName || ""} ${user?.lastName || ""}`.trim() || "YOUR NAME";
+
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -333,7 +349,27 @@ const CardDetails = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex gap-3">
+            <div className="flex gap-3 mb-20 lg:mb-0">
+              {(card.status?.toLowerCase() === "active" ||
+                card.status?.toLowerCase() === "blocked") && (
+                <button
+                  onClick={handleToggleBlock}
+                  disabled={toggling}
+                  className={`flex-1 px-6 py-3 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2
+      ${
+        card.status?.toLowerCase() === "blocked"
+          ? "bg-green-600 hover:bg-green-700 text-white"
+          : "bg-red-600 hover:bg-red-700 text-white"
+      } disabled:opacity-50`}
+                >
+                  <Lock size={18} />
+                  {toggling
+                    ? "Processing..."
+                    : card.status?.toLowerCase() === "blocked"
+                      ? "Unblock Card"
+                      : "Block Card"}
+                </button>
+              )}
               <button
                 onClick={() => navigate("/dashboard")}
                 className="flex-1 px-6 py-3 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-semibold hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
