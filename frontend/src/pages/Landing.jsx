@@ -23,7 +23,7 @@ import React from "react";
 import CurrencyTable from "../components/sections/CurrencyTable.jsx";
 import { useAuth } from "../contexts/AuthContext";
 import ChatWidget from "../components/chatbot/ChatWidget.jsx";
-import LanguageSwitcher from "../components/ui/GoogleTranslate/GoogleTranslate.jsx";
+
 
 const Landing = () => {
   const { t } = useLanguageContext();
@@ -198,7 +198,7 @@ const Landing = () => {
         />
       </section>
 
-      <LanguageSwitcher />
+     
 
       {/* Footer */}
       <Footer />

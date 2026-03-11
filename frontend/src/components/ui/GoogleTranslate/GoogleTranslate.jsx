@@ -1,96 +1,76 @@
-// components/ui/GoogleTranslate/GoogleTranslate.jsx
+// components/ui/LanguageSwitcher/LanguageSwitcher.jsx
 import { useState, useRef, useEffect } from "react";
 import { ChevronUp, ChevronDown } from "lucide-react";
 
 const languages = [
-  { code: "en", label: "English", country: "us", gtCode: null },
-  { code: "es", label: "Spanish", country: "es", gtCode: "es" },
-  { code: "fr", label: "French", country: "fr", gtCode: "fr" },
-  { code: "de", label: "German", country: "de", gtCode: "de" },
-  { code: "it", label: "Italian", country: "it", gtCode: "it" },
-  { code: "pt", label: "Portuguese", country: "pt", gtCode: "pt" },
-  { code: "ru", label: "Russian", country: "ru", gtCode: "ru" },
-  { code: "zh", label: "Chinese", country: "cn", gtCode: "zh-CN" },
-  { code: "ja", label: "Japanese", country: "jp", gtCode: "ja" },
-  { code: "ko", label: "Korean", country: "kr", gtCode: "ko" },
-  { code: "ar", label: "Arabic", country: "sa", gtCode: "ar" },
-  { code: "hi", label: "Hindi", country: "in", gtCode: "hi" },
-  { code: "tr", label: "Turkish", country: "tr", gtCode: "tr" },
-  { code: "nl", label: "Dutch", country: "nl", gtCode: "nl" },
-  { code: "pl", label: "Polish", country: "pl", gtCode: "pl" },
-  { code: "cs", label: "Czech", country: "cz", gtCode: "cs" },
-  { code: "da", label: "Danish", country: "dk", gtCode: "da" },
-  { code: "fi", label: "Finnish", country: "fi", gtCode: "fi" },
-  { code: "et", label: "Estonian", country: "ee", gtCode: "et" },
-  { code: "fil", label: "Filipino", country: "ph", gtCode: "tl" },
-  { code: "sv", label: "Swedish", country: "se", gtCode: "sv" },
-  { code: "no", label: "Norwegian", country: "no", gtCode: "no" },
+  { code: "en",  label: "English",    country: "us", gtCode: null    },
+  { code: "es",  label: "Spanish",    country: "es", gtCode: "es"    },
+  { code: "fr",  label: "French",     country: "fr", gtCode: "fr"    },
+  { code: "de",  label: "German",     country: "de", gtCode: "de"    },
+  { code: "it",  label: "Italian",    country: "it", gtCode: "it"    },
+  { code: "pt",  label: "Portuguese", country: "pt", gtCode: "pt"    },
+  { code: "ru",  label: "Russian",    country: "ru", gtCode: "ru"    },
+  { code: "zh",  label: "Chinese",    country: "cn", gtCode: "zh-CN" },
+  { code: "ja",  label: "Japanese",   country: "jp", gtCode: "ja"    },
+  { code: "ko",  label: "Korean",     country: "kr", gtCode: "ko"    },
+  { code: "ar",  label: "Arabic",     country: "sa", gtCode: "ar"    },
+  { code: "hi",  label: "Hindi",      country: "in", gtCode: "hi"    },
+  { code: "tr",  label: "Turkish",    country: "tr", gtCode: "tr"    },
+  { code: "nl",  label: "Dutch",      country: "nl", gtCode: "nl"    },
+  { code: "pl",  label: "Polish",     country: "pl", gtCode: "pl"    },
+  { code: "cs",  label: "Czech",      country: "cz", gtCode: "cs"    },
+  { code: "da",  label: "Danish",     country: "dk", gtCode: "da"    },
+  { code: "fi",  label: "Finnish",    country: "fi", gtCode: "fi"    },
+  { code: "et",  label: "Estonian",   country: "ee", gtCode: "et"    },
+  { code: "fil", label: "Filipino",   country: "ph", gtCode: "tl"    },
+  { code: "sv",  label: "Swedish",    country: "se", gtCode: "sv"    },
+  { code: "no",  label: "Norwegian",  country: "no", gtCode: "no"    },
 ];
 
 const LANG_CHANGE_EVENT = "app:languageChanged";
-const LANG_STORAGE_KEY = "app:selectedLanguage";
 
-// ─── Singleton: only ever init the widget once ───────────────────────────────
-let widgetInitialized = false;
-
-const initGoogleTranslateWidget = () => {
-  if (widgetInitialized) return;
-  widgetInitialized = true;
-
-  // Ensure the hidden container exists
-  if (!document.getElementById("gt-hidden-widget")) {
-    const div = document.createElement("div");
-    div.id = "gt-hidden-widget";
-    div.style.cssText =
-      "position:absolute;visibility:hidden;height:0;overflow:hidden";
-    document.body.appendChild(div);
-  }
-
-  if (!document.getElementById("gt-script")) {
-    window.googleTranslateElementInit = () => {
-      new window.google.translate.TranslateElement(
-        { pageLanguage: "en", autoDisplay: false },
-        "gt-hidden-widget",
-      );
-    };
-    const script = document.createElement("script");
-    script.id = "gt-script";
-    script.src =
-      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    script.async = true;
-    document.body.appendChild(script);
-  }
-};
-// ─────────────────────────────────────────────────────────────────────────────
-
-const getLanguageFromCookie = () => {
+// Helper to get language from cookie OR localStorage
+const getSavedLanguage = () => {
+  // First try cookie (Google Translate)
   const cookie = document.cookie
     .split("; ")
     .find((row) => row.startsWith("googtrans="));
-  if (!cookie) return null;
-  const parts = cookie.split("=")[1].split("/");
-  const targetLang = parts[2];
-  if (!targetLang || targetLang === "en") return null;
-  return languages.find((l) => l.gtCode === targetLang) || null;
-};
-
-const clearGoogTransCookie = () => {
-  const domains = [window.location.hostname, "." + window.location.hostname];
-  domains.forEach((domain) => {
-    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain}`;
-  });
-  document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+  
+  if (cookie) {
+    const parts = cookie.split("=")[1].split("/");
+    const targetLang = parts[2];
+    if (targetLang && targetLang !== "en") {
+      const langFromCookie = languages.find((l) => l.gtCode === targetLang);
+      if (langFromCookie) {
+        // Sync to localStorage
+        localStorage.setItem('preferredLanguage', langFromCookie.code);
+        return langFromCookie;
+      }
+    }
+  }
+  
+  // If no cookie, try localStorage
+  const savedCode = localStorage.getItem('preferredLanguage');
+  if (savedCode) {
+    const langFromStorage = languages.find((l) => l.code === savedCode);
+    if (langFromStorage) return langFromStorage;
+  }
+  
+  // Default to English
+  return languages[0];
 };
 
 const resetToEnglish = () => {
   sessionStorage.setItem("scrollPos", window.scrollY);
-  localStorage.setItem(LANG_STORAGE_KEY, "en");
-  // Clear cookie and reload — index.html will block GT on next load
   const domains = [window.location.hostname, "." + window.location.hostname];
   domains.forEach((domain) => {
     document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain}`;
   });
   document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+  
+  // Clear localStorage for language
+  localStorage.removeItem('preferredLanguage');
+  
   window.location.reload();
 };
 
@@ -101,52 +81,14 @@ const Flag = ({ country, size = 24 }) => (
     width={size}
     height={Math.round(size * 0.67)}
     className="rounded-sm object-cover flex-shrink-0"
-    onError={(e) => {
-      e.target.style.display = "none";
-    }}
+    onError={(e) => { e.target.style.display = "none"; }}
   />
 );
 
-//  Shared state across all instances via module-level variable
-// This prevents each instance from reading the cookie independently
-let sharedSelectedCode = null;
-
-const getInitialLanguage = () => {
-  if (sharedSelectedCode) {
-    return languages.find((l) => l.code === sharedSelectedCode) || languages[0];
-  }
-  const savedCode = localStorage.getItem(LANG_STORAGE_KEY);
-  if (savedCode === "en") {
-    sharedSelectedCode = "en";
-    clearGoogTransCookie();
-    return languages[0];
-  }
-  if (savedCode) {
-    const saved = languages.find((l) => l.code === savedCode);
-    if (saved) {
-      sharedSelectedCode = saved.code;
-      return saved;
-    }
-  }
-  const fromCookie = getLanguageFromCookie();
-  if (fromCookie) {
-    sharedSelectedCode = fromCookie.code;
-    localStorage.setItem(LANG_STORAGE_KEY, fromCookie.code);
-    return fromCookie;
-  }
-  sharedSelectedCode = "en";
-  return languages[0];
-};
-
 const LanguageSwitcher = ({ dropDown = false }) => {
-  const [selected, setSelected] = useState(() => getInitialLanguage());
+  const [selected, setSelected] = useState(languages[0]);
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
-
-  // Init widget once — safe to call multiple times, singleton guards it
-  useEffect(() => {
-    initGoogleTranslateWidget();
-  }, []);
 
   // Restore scroll after English reload
   useEffect(() => {
@@ -157,18 +99,58 @@ const LanguageSwitcher = ({ dropDown = false }) => {
     }
   }, []);
 
-  // Sync with OTHER instances on the same page
+  // Initialize from saved preference
+  useEffect(() => {
+    const savedLang = getSavedLanguage();
+    setSelected(savedLang);
+    
+    // If it's not English, trigger Google Translate
+    if (savedLang.gtCode) {
+      // Small delay to ensure Google Translate is loaded
+      setTimeout(() => {
+        triggerGoogleTranslate(savedLang.gtCode);
+      }, 1000);
+    }
+  }, []);
+
+  // Listen for language changes from other instances
   useEffect(() => {
     const handleExternalChange = (e) => {
       const lang = languages.find((l) => l.code === e.detail.code);
       if (lang) {
-        sharedSelectedCode = lang.code;
         setSelected(lang);
+        // Save to localStorage
+        localStorage.setItem('preferredLanguage', lang.code);
       }
     };
     window.addEventListener(LANG_CHANGE_EVENT, handleExternalChange);
-    return () =>
-      window.removeEventListener(LANG_CHANGE_EVENT, handleExternalChange);
+    return () => window.removeEventListener(LANG_CHANGE_EVENT, handleExternalChange);
+  }, []);
+
+  // Load Google Translate widget
+  useEffect(() => {
+    if (!document.getElementById("gt-script")) {
+      window.googleTranslateElementInit = () => {
+        new window.google.translate.TranslateElement(
+          { pageLanguage: "en", autoDisplay: false },
+          "gt-hidden-widget"
+        );
+        
+        // After widget loads, restore saved language
+        const savedLang = getSavedLanguage();
+        if (savedLang.gtCode) {
+          setTimeout(() => {
+            triggerGoogleTranslate(savedLang.gtCode);
+          }, 500);
+        }
+      };
+      
+      const script = document.createElement("script");
+      script.id = "gt-script";
+      script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      script.async = true;
+      document.body.appendChild(script);
+    }
   }, []);
 
   // Close on outside click
@@ -186,7 +168,7 @@ const LanguageSwitcher = ({ dropDown = false }) => {
       if (select) {
         select.value = gtCode;
         select.dispatchEvent(new Event("change"));
-      } else if (attempts < 20) {
+      } else if (attempts < 30) { // Try more times (30 * 300ms = 9 seconds)
         setTimeout(() => tryChange(attempts + 1), 300);
       }
     };
@@ -195,12 +177,13 @@ const LanguageSwitcher = ({ dropDown = false }) => {
 
   const handleSelect = (lang) => {
     setOpen(false);
-    sharedSelectedCode = lang.code;
-    localStorage.setItem(LANG_STORAGE_KEY, lang.code);
+
+    // Save to localStorage
+    localStorage.setItem('preferredLanguage', lang.code);
 
     // Broadcast to all other instances
     window.dispatchEvent(
-      new CustomEvent(LANG_CHANGE_EVENT, { detail: { code: lang.code } }),
+      new CustomEvent(LANG_CHANGE_EVENT, { detail: { code: lang.code } })
     );
 
     if (lang.gtCode === null) {
@@ -217,6 +200,11 @@ const LanguageSwitcher = ({ dropDown = false }) => {
 
   return (
     <>
+      <div
+        id="gt-hidden-widget"
+        style={{ position: "absolute", visibility: "hidden", height: 0, overflow: "hidden" }}
+      />
+
       <style>{`
         .goog-te-banner-frame,
         #goog-gt-tt,
@@ -236,37 +224,31 @@ const LanguageSwitcher = ({ dropDown = false }) => {
           <span className="text-sm font-bold text-gray-800 dark:text-gray-100 uppercase tracking-wide">
             {selected.code}
           </span>
-          {open ? (
-            <ChevronUp className="w-4 h-4 text-gray-400" />
-          ) : (
-            <ChevronDown className="w-4 h-4 text-gray-400" />
-          )}
+          {open
+            ? <ChevronUp className="w-4 h-4 text-gray-400" />
+            : <ChevronDown className="w-4 h-4 text-gray-400" />
+          }
         </button>
 
         {open && (
-          <div
-            className={`absolute ${dropdownPosition} left-0 w-56 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-2xl overflow-hidden z-[9999]`}
-          >
+          <div className={`absolute ${dropdownPosition} left-0 w-56 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-2xl overflow-hidden z-[9999]`}>
             <div className="max-h-72 overflow-y-auto">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
                   onClick={() => handleSelect(lang)}
                   className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors duration-150
-                    ${
-                      selected.code === lang.code
-                        ? "bg-blue-50 dark:bg-blue-900/30"
-                        : "hover:bg-gray-50 dark:hover:bg-gray-800"
+                    ${selected.code === lang.code
+                      ? "bg-blue-50 dark:bg-blue-900/30"
+                      : "hover:bg-gray-50 dark:hover:bg-gray-800"
                     }`}
                 >
                   <Flag country={lang.country} size={22} />
-                  <span
-                    className={`text-sm font-medium ${
-                      selected.code === lang.code
-                        ? "text-blue-600 dark:text-blue-400"
-                        : "text-gray-700 dark:text-gray-300"
-                    }`}
-                  >
+                  <span className={`text-sm font-medium ${
+                    selected.code === lang.code
+                      ? "text-blue-600 dark:text-blue-400"
+                      : "text-gray-700 dark:text-gray-300"
+                  }`}>
                     {lang.label}
                   </span>
                   {selected.code === lang.code && (
