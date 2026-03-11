@@ -5,7 +5,7 @@ import nodemailer from "nodemailer";
 // Create transporter with explicit configuration
 const transporter = nodemailer.createTransport({
   host: "smtp.zoho.com",
-  port: 465, 
+  port: 587, 
   secure: true, 
   auth: {
     user: process.env.EMAIL_USER,
