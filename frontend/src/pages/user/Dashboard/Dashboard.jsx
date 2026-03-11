@@ -525,7 +525,7 @@ const Dashboard = () => {
           </div>
 
           {/* Scrollable Sidebar Content */}
-          <div className="overflow-y-auto h-[calc(100vh-140px)] lg:h-[calc(100vh-140px)] p-4 pb-24 lg:pb-4">
+          <div className="overflow-y-auto h-[calc(100vh-140px-64px)] lg:h-[calc(100vh-140px)] p-4 pb-24 lg:pb-4">
             {/* Main Section */}
             <div className="mb-6">
               <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-3">
