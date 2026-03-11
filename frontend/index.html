@@ -5,6 +5,20 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Byvault-Finance</title>
+    <script>
+      // Clear googtrans cookie immediately if user chose English
+      // This runs before React and before Google Translate script loads
+      (function() {
+        var savedLang = localStorage.getItem('app:selectedLanguage');
+        if (savedLang === 'en' || !savedLang) {
+          var domains = [window.location.hostname, '.' + window.location.hostname];
+          domains.forEach(function(domain) {
+            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + domain;
+          });
+          document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
