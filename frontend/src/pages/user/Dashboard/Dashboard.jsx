@@ -1927,7 +1927,7 @@ const Dashboard = () => {
 
               <button
                 onClick={() =>
-                  (window.location.href = "mailto:support@byvaultfinance.com")
+                  (window.location.href = "mailto:admin@byvaultonline.com")
                 }
                 className="bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all"
               >
