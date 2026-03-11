@@ -28,6 +28,7 @@ const languages = [
 ];
 
 const LANG_CHANGE_EVENT = "app:languageChanged";
+const LANG_STORAGE_KEY = "app:selectedLanguage";
 
 const getLanguageFromCookie = () => {
   const cookie = document.cookie
@@ -40,13 +41,19 @@ const getLanguageFromCookie = () => {
   return languages.find((l) => l.gtCode === targetLang) || null;
 };
 
-const resetToEnglish = () => {
-  sessionStorage.setItem("scrollPos", window.scrollY);
+const clearGoogTransCookie = () => {
   const domains = [window.location.hostname, "." + window.location.hostname];
   domains.forEach((domain) => {
     document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain}`;
   });
   document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+};
+
+const resetToEnglish = () => {
+  sessionStorage.setItem("scrollPos", window.scrollY);
+  // Save English choice BEFORE reload so it's respected on remount
+  localStorage.setItem(LANG_STORAGE_KEY, "en");
+  clearGoogTransCookie();
   window.location.reload();
 };
 
@@ -65,6 +72,8 @@ const LanguageSwitcher = ({ dropDown = false }) => {
   const [selected, setSelected] = useState(languages[0]);
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
+  // Track if user has explicitly chosen a language this session
+  const userChoseRef = useRef(false);
 
   // Restore scroll after English reload
   useEffect(() => {
@@ -75,13 +84,36 @@ const LanguageSwitcher = ({ dropDown = false }) => {
     }
   }, []);
 
-  // Sync with cookie on mount
+  // Sync on mount ONLY — check localStorage first, then cookie
+  // This runs once and never again, preventing re-render loops
   useEffect(() => {
-    const fromCookie = getLanguageFromCookie();
-    if (fromCookie) setSelected(fromCookie);
-  }, []);
+    const savedCode = localStorage.getItem(LANG_STORAGE_KEY);
 
-  // ✅ Listen for changes made by OTHER instances and sync this one
+    // If user explicitly saved English, stay on English — ignore cookie
+    if (savedCode === "en") {
+      setSelected(languages[0]);
+      clearGoogTransCookie();
+      return;
+    }
+
+    // If there's a saved non-English language, use it
+    if (savedCode) {
+      const savedLang = languages.find((l) => l.code === savedCode);
+      if (savedLang) {
+        setSelected(savedLang);
+        return;
+      }
+    }
+
+    // Fallback: read from cookie (first ever visit, no localStorage yet)
+    const fromCookie = getLanguageFromCookie();
+    if (fromCookie) {
+      setSelected(fromCookie);
+      localStorage.setItem(LANG_STORAGE_KEY, fromCookie.code);
+    }
+  }, []); // ← Empty deps: runs ONCE on mount only, never on re-renders
+
+  // Listen for changes made by OTHER instances and sync this one
   useEffect(() => {
     const handleExternalChange = (e) => {
       const lang = languages.find((l) => l.code === e.detail.code);
@@ -133,11 +165,15 @@ const LanguageSwitcher = ({ dropDown = false }) => {
 
   const handleSelect = (lang) => {
     setOpen(false);
+    userChoseRef.current = true;
 
-    // ✅ Broadcast to all other instances on the page
+    // Broadcast to all other instances on the page
     window.dispatchEvent(
       new CustomEvent(LANG_CHANGE_EVENT, { detail: { code: lang.code } })
     );
+
+    // Persist choice to localStorage so re-renders don't override it
+    localStorage.setItem(LANG_STORAGE_KEY, lang.code);
 
     if (lang.gtCode === null) {
       setSelected(lang);
