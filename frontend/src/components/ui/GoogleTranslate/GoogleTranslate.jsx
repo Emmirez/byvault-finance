@@ -116,7 +116,7 @@ const getInitialLang = () => {
   sharedLang = languages[0];
   return languages[0];
 };
-// ─────────────────────────────────────────────────────────────────────────────
+
 
 const Flag = ({ country, size = 24 }) => (
   <img

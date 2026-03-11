@@ -1772,8 +1772,10 @@ const Dashboard = () => {
                     </div>
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
                       Account created{" "}
-                      {user?.createdAt
-                        ? new Date(user.createdAt).toLocaleDateString("en-US", {
+                      {userProfile?.createdAt || user?.createdAt
+                        ? new Date(
+                            userProfile?.createdAt || user?.createdAt,
+                          ).toLocaleDateString("en-US", {
                             month: "long",
                             day: "numeric",
                             year: "numeric",
