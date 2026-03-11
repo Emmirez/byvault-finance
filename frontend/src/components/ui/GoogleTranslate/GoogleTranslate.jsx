@@ -1,4 +1,4 @@
-// components/ui/LanguageSwitcher/LanguageSwitcher.jsx
+// components/ui/GoogleTranslate/GoogleTranslate.jsx
 import { useState, useRef, useEffect } from "react";
 import { ChevronUp, ChevronDown } from "lucide-react";
 
@@ -30,6 +30,38 @@ const languages = [
 const LANG_CHANGE_EVENT = "app:languageChanged";
 const LANG_STORAGE_KEY = "app:selectedLanguage";
 
+// ─── Singleton: only ever init the widget once ───────────────────────────────
+let widgetInitialized = false;
+
+const initGoogleTranslateWidget = () => {
+  if (widgetInitialized) return;
+  widgetInitialized = true;
+
+  // Ensure the hidden container exists
+  if (!document.getElementById("gt-hidden-widget")) {
+    const div = document.createElement("div");
+    div.id = "gt-hidden-widget";
+    div.style.cssText = "position:absolute;visibility:hidden;height:0;overflow:hidden";
+    document.body.appendChild(div);
+  }
+
+  if (!document.getElementById("gt-script")) {
+    window.googleTranslateElementInit = () => {
+      new window.google.translate.TranslateElement(
+        { pageLanguage: "en", autoDisplay: false },
+        "gt-hidden-widget"
+      );
+    };
+    const script = document.createElement("script");
+    script.id = "gt-script";
+    script.src =
+      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    script.async = true;
+    document.body.appendChild(script);
+  }
+};
+// ─────────────────────────────────────────────────────────────────────────────
+
 const getLanguageFromCookie = () => {
   const cookie = document.cookie
     .split("; ")
@@ -51,7 +83,6 @@ const clearGoogTransCookie = () => {
 
 const resetToEnglish = () => {
   sessionStorage.setItem("scrollPos", window.scrollY);
-  // Save English choice BEFORE reload so it's respected on remount
   localStorage.setItem(LANG_STORAGE_KEY, "en");
   clearGoogTransCookie();
   window.location.reload();
@@ -68,12 +99,47 @@ const Flag = ({ country, size = 24 }) => (
   />
 );
 
+// ─── Shared state across all instances via module-level variable ──────────────
+// This prevents each instance from reading the cookie independently
+let sharedSelectedCode = null;
+
+const getInitialLanguage = () => {
+  if (sharedSelectedCode) {
+    return languages.find((l) => l.code === sharedSelectedCode) || languages[0];
+  }
+  const savedCode = localStorage.getItem(LANG_STORAGE_KEY);
+  if (savedCode === "en") {
+    sharedSelectedCode = "en";
+    clearGoogTransCookie();
+    return languages[0];
+  }
+  if (savedCode) {
+    const saved = languages.find((l) => l.code === savedCode);
+    if (saved) {
+      sharedSelectedCode = saved.code;
+      return saved;
+    }
+  }
+  const fromCookie = getLanguageFromCookie();
+  if (fromCookie) {
+    sharedSelectedCode = fromCookie.code;
+    localStorage.setItem(LANG_STORAGE_KEY, fromCookie.code);
+    return fromCookie;
+  }
+  sharedSelectedCode = "en";
+  return languages[0];
+};
+// ─────────────────────────────────────────────────────────────────────────────
+
 const LanguageSwitcher = ({ dropDown = false }) => {
-  const [selected, setSelected] = useState(languages[0]);
+  const [selected, setSelected] = useState(() => getInitialLanguage());
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
-  // Track if user has explicitly chosen a language this session
-  const userChoseRef = useRef(false);
+
+  // Init widget once — safe to call multiple times, singleton guards it
+  useEffect(() => {
+    initGoogleTranslateWidget();
+  }, []);
 
   // Restore scroll after English reload
   useEffect(() => {
@@ -84,61 +150,17 @@ const LanguageSwitcher = ({ dropDown = false }) => {
     }
   }, []);
 
-  // Sync on mount ONLY — check localStorage first, then cookie
-  // This runs once and never again, preventing re-render loops
-  useEffect(() => {
-    const savedCode = localStorage.getItem(LANG_STORAGE_KEY);
-
-    // If user explicitly saved English, stay on English — ignore cookie
-    if (savedCode === "en") {
-      setSelected(languages[0]);
-      clearGoogTransCookie();
-      return;
-    }
-
-    // If there's a saved non-English language, use it
-    if (savedCode) {
-      const savedLang = languages.find((l) => l.code === savedCode);
-      if (savedLang) {
-        setSelected(savedLang);
-        return;
-      }
-    }
-
-    // Fallback: read from cookie (first ever visit, no localStorage yet)
-    const fromCookie = getLanguageFromCookie();
-    if (fromCookie) {
-      setSelected(fromCookie);
-      localStorage.setItem(LANG_STORAGE_KEY, fromCookie.code);
-    }
-  }, []); // ← Empty deps: runs ONCE on mount only, never on re-renders
-
-  // Listen for changes made by OTHER instances and sync this one
+  // Sync with OTHER instances on the same page
   useEffect(() => {
     const handleExternalChange = (e) => {
       const lang = languages.find((l) => l.code === e.detail.code);
-      if (lang) setSelected(lang);
+      if (lang) {
+        sharedSelectedCode = lang.code;
+        setSelected(lang);
+      }
     };
     window.addEventListener(LANG_CHANGE_EVENT, handleExternalChange);
     return () => window.removeEventListener(LANG_CHANGE_EVENT, handleExternalChange);
-  }, []);
-
-  // Load hidden Google Translate widget once
-  useEffect(() => {
-    if (!document.getElementById("gt-script")) {
-      window.googleTranslateElementInit = () => {
-        new window.google.translate.TranslateElement(
-          { pageLanguage: "en", autoDisplay: false },
-          "gt-hidden-widget"
-        );
-      };
-      const script = document.createElement("script");
-      script.id = "gt-script";
-      script.src =
-        "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-      script.async = true;
-      document.body.appendChild(script);
-    }
   }, []);
 
   // Close on outside click
@@ -165,15 +187,13 @@ const LanguageSwitcher = ({ dropDown = false }) => {
 
   const handleSelect = (lang) => {
     setOpen(false);
-    userChoseRef.current = true;
+    sharedSelectedCode = lang.code;
+    localStorage.setItem(LANG_STORAGE_KEY, lang.code);
 
-    // Broadcast to all other instances on the page
+    // Broadcast to all other instances
     window.dispatchEvent(
       new CustomEvent(LANG_CHANGE_EVENT, { detail: { code: lang.code } })
     );
-
-    // Persist choice to localStorage so re-renders don't override it
-    localStorage.setItem(LANG_STORAGE_KEY, lang.code);
 
     if (lang.gtCode === null) {
       setSelected(lang);
@@ -189,11 +209,6 @@ const LanguageSwitcher = ({ dropDown = false }) => {
 
   return (
     <>
-      <div
-        id="gt-hidden-widget"
-        style={{ position: "absolute", visibility: "hidden", height: 0, overflow: "hidden" }}
-      />
-
       <style>{`
         .goog-te-banner-frame,
         #goog-gt-tt,
