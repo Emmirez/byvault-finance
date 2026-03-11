@@ -440,7 +440,7 @@ const Dashboard = () => {
   const totalCount = achievementsDone.length;
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 overflow-x-hidden pb-20">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 overflow-x-hidden pb-24">
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
         <div className="px-4 sm:px-6 lg:px-8">
@@ -525,7 +525,7 @@ const Dashboard = () => {
           </div>
 
           {/* Scrollable Sidebar Content */}
-          <div className="overflow-y-auto h-[calc(100vh-140px)] lg:h-[calc(100vh-140px)] p-4">
+          <div className="overflow-y-auto h-[calc(100vh-140px)] lg:h-[calc(100vh-140px)] p-4 pb-24">
             {/* Main Section */}
             <div className="mb-6">
               <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-3">

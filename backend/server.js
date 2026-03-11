@@ -104,6 +104,7 @@ app.use(
       "http://localhost:5173",
       "http://localhost:3000",
       "https://byvault-finance.vercel.app",
+      "https://byvaultonline.com",
       "https://www.byvaultonline.com",
     ],
     credentials: true,
