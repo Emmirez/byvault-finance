@@ -6,16 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Byvault-Finance</title>
     <script>
-      // Clear googtrans cookie immediately if user chose English
-      // This runs before React and before Google Translate script loads
-      (function() {
+      (function () {
         var savedLang = localStorage.getItem('app:selectedLanguage');
-        if (savedLang === 'en' || !savedLang) {
+
+        // Always nuke the cookie first
+        function clearGoogTrans() {
           var domains = [window.location.hostname, '.' + window.location.hostname];
-          domains.forEach(function(domain) {
-            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + domain;
+          domains.forEach(function (d) {
+            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + d;
           });
           document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+        }
+
+        if (!savedLang || savedLang === 'en') {
+          // User wants English — clear cookie and BLOCK Google Translate
+          clearGoogTrans();
+
+          // Override cookie setter to prevent googtrans from being set
+          var originalDescriptor = Object.getOwnPropertyDescriptor(Document.prototype, 'cookie');
+          Object.defineProperty(document, 'cookie', {
+            get: function () {
+              return originalDescriptor.get.call(document);
+            },
+            set: function (val) {
+              // Block any attempt to set googtrans cookie
+              if (val && val.indexOf('googtrans') !== -1 && val.indexOf('expires=Thu, 01 Jan 1970') === -1) {
+                return;
+              }
+              originalDescriptor.set.call(document, val);
+            },
+            configurable: true,
+          });
+        } else {
+          // User wants a non-English language — set the cookie for Google Translate
+          document.cookie = 'googtrans=/en/' + savedLang + '; path=/';
+          document.cookie = 'googtrans=/en/' + savedLang + '; path=/; domain=' + window.location.hostname;
         }
       })();
     </script>
@@ -23,6 +48,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    
   </body>
 </html>

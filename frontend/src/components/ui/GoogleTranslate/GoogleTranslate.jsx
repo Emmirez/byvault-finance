@@ -3,28 +3,28 @@ import { useState, useRef, useEffect } from "react";
 import { ChevronUp, ChevronDown } from "lucide-react";
 
 const languages = [
-  { code: "en",  label: "English",    country: "us", gtCode: null    },
-  { code: "es",  label: "Spanish",    country: "es", gtCode: "es"    },
-  { code: "fr",  label: "French",     country: "fr", gtCode: "fr"    },
-  { code: "de",  label: "German",     country: "de", gtCode: "de"    },
-  { code: "it",  label: "Italian",    country: "it", gtCode: "it"    },
-  { code: "pt",  label: "Portuguese", country: "pt", gtCode: "pt"    },
-  { code: "ru",  label: "Russian",    country: "ru", gtCode: "ru"    },
-  { code: "zh",  label: "Chinese",    country: "cn", gtCode: "zh-CN" },
-  { code: "ja",  label: "Japanese",   country: "jp", gtCode: "ja"    },
-  { code: "ko",  label: "Korean",     country: "kr", gtCode: "ko"    },
-  { code: "ar",  label: "Arabic",     country: "sa", gtCode: "ar"    },
-  { code: "hi",  label: "Hindi",      country: "in", gtCode: "hi"    },
-  { code: "tr",  label: "Turkish",    country: "tr", gtCode: "tr"    },
-  { code: "nl",  label: "Dutch",      country: "nl", gtCode: "nl"    },
-  { code: "pl",  label: "Polish",     country: "pl", gtCode: "pl"    },
-  { code: "cs",  label: "Czech",      country: "cz", gtCode: "cs"    },
-  { code: "da",  label: "Danish",     country: "dk", gtCode: "da"    },
-  { code: "fi",  label: "Finnish",    country: "fi", gtCode: "fi"    },
-  { code: "et",  label: "Estonian",   country: "ee", gtCode: "et"    },
-  { code: "fil", label: "Filipino",   country: "ph", gtCode: "tl"    },
-  { code: "sv",  label: "Swedish",    country: "se", gtCode: "sv"    },
-  { code: "no",  label: "Norwegian",  country: "no", gtCode: "no"    },
+  { code: "en", label: "English", country: "us", gtCode: null },
+  { code: "es", label: "Spanish", country: "es", gtCode: "es" },
+  { code: "fr", label: "French", country: "fr", gtCode: "fr" },
+  { code: "de", label: "German", country: "de", gtCode: "de" },
+  { code: "it", label: "Italian", country: "it", gtCode: "it" },
+  { code: "pt", label: "Portuguese", country: "pt", gtCode: "pt" },
+  { code: "ru", label: "Russian", country: "ru", gtCode: "ru" },
+  { code: "zh", label: "Chinese", country: "cn", gtCode: "zh-CN" },
+  { code: "ja", label: "Japanese", country: "jp", gtCode: "ja" },
+  { code: "ko", label: "Korean", country: "kr", gtCode: "ko" },
+  { code: "ar", label: "Arabic", country: "sa", gtCode: "ar" },
+  { code: "hi", label: "Hindi", country: "in", gtCode: "hi" },
+  { code: "tr", label: "Turkish", country: "tr", gtCode: "tr" },
+  { code: "nl", label: "Dutch", country: "nl", gtCode: "nl" },
+  { code: "pl", label: "Polish", country: "pl", gtCode: "pl" },
+  { code: "cs", label: "Czech", country: "cz", gtCode: "cs" },
+  { code: "da", label: "Danish", country: "dk", gtCode: "da" },
+  { code: "fi", label: "Finnish", country: "fi", gtCode: "fi" },
+  { code: "et", label: "Estonian", country: "ee", gtCode: "et" },
+  { code: "fil", label: "Filipino", country: "ph", gtCode: "tl" },
+  { code: "sv", label: "Swedish", country: "se", gtCode: "sv" },
+  { code: "no", label: "Norwegian", country: "no", gtCode: "no" },
 ];
 
 const LANG_CHANGE_EVENT = "app:languageChanged";
@@ -41,7 +41,8 @@ const initGoogleTranslateWidget = () => {
   if (!document.getElementById("gt-hidden-widget")) {
     const div = document.createElement("div");
     div.id = "gt-hidden-widget";
-    div.style.cssText = "position:absolute;visibility:hidden;height:0;overflow:hidden";
+    div.style.cssText =
+      "position:absolute;visibility:hidden;height:0;overflow:hidden";
     document.body.appendChild(div);
   }
 
@@ -49,7 +50,7 @@ const initGoogleTranslateWidget = () => {
     window.googleTranslateElementInit = () => {
       new window.google.translate.TranslateElement(
         { pageLanguage: "en", autoDisplay: false },
-        "gt-hidden-widget"
+        "gt-hidden-widget",
       );
     };
     const script = document.createElement("script");
@@ -84,7 +85,12 @@ const clearGoogTransCookie = () => {
 const resetToEnglish = () => {
   sessionStorage.setItem("scrollPos", window.scrollY);
   localStorage.setItem(LANG_STORAGE_KEY, "en");
-  clearGoogTransCookie();
+  // Clear cookie and reload — index.html will block GT on next load
+  const domains = [window.location.hostname, "." + window.location.hostname];
+  domains.forEach((domain) => {
+    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain}`;
+  });
+  document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
   window.location.reload();
 };
 
@@ -95,11 +101,13 @@ const Flag = ({ country, size = 24 }) => (
     width={size}
     height={Math.round(size * 0.67)}
     className="rounded-sm object-cover flex-shrink-0"
-    onError={(e) => { e.target.style.display = "none"; }}
+    onError={(e) => {
+      e.target.style.display = "none";
+    }}
   />
 );
 
-// ─── Shared state across all instances via module-level variable ──────────────
+//  Shared state across all instances via module-level variable
 // This prevents each instance from reading the cookie independently
 let sharedSelectedCode = null;
 
@@ -129,7 +137,6 @@ const getInitialLanguage = () => {
   sharedSelectedCode = "en";
   return languages[0];
 };
-// ─────────────────────────────────────────────────────────────────────────────
 
 const LanguageSwitcher = ({ dropDown = false }) => {
   const [selected, setSelected] = useState(() => getInitialLanguage());
@@ -160,7 +167,8 @@ const LanguageSwitcher = ({ dropDown = false }) => {
       }
     };
     window.addEventListener(LANG_CHANGE_EVENT, handleExternalChange);
-    return () => window.removeEventListener(LANG_CHANGE_EVENT, handleExternalChange);
+    return () =>
+      window.removeEventListener(LANG_CHANGE_EVENT, handleExternalChange);
   }, []);
 
   // Close on outside click
@@ -192,7 +200,7 @@ const LanguageSwitcher = ({ dropDown = false }) => {
 
     // Broadcast to all other instances
     window.dispatchEvent(
-      new CustomEvent(LANG_CHANGE_EVENT, { detail: { code: lang.code } })
+      new CustomEvent(LANG_CHANGE_EVENT, { detail: { code: lang.code } }),
     );
 
     if (lang.gtCode === null) {
@@ -228,31 +236,37 @@ const LanguageSwitcher = ({ dropDown = false }) => {
           <span className="text-sm font-bold text-gray-800 dark:text-gray-100 uppercase tracking-wide">
             {selected.code}
           </span>
-          {open
-            ? <ChevronUp className="w-4 h-4 text-gray-400" />
-            : <ChevronDown className="w-4 h-4 text-gray-400" />
-          }
+          {open ? (
+            <ChevronUp className="w-4 h-4 text-gray-400" />
+          ) : (
+            <ChevronDown className="w-4 h-4 text-gray-400" />
+          )}
         </button>
 
         {open && (
-          <div className={`absolute ${dropdownPosition} left-0 w-56 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-2xl overflow-hidden z-[9999]`}>
+          <div
+            className={`absolute ${dropdownPosition} left-0 w-56 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-2xl overflow-hidden z-[9999]`}
+          >
             <div className="max-h-72 overflow-y-auto">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
                   onClick={() => handleSelect(lang)}
                   className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors duration-150
-                    ${selected.code === lang.code
-                      ? "bg-blue-50 dark:bg-blue-900/30"
-                      : "hover:bg-gray-50 dark:hover:bg-gray-800"
+                    ${
+                      selected.code === lang.code
+                        ? "bg-blue-50 dark:bg-blue-900/30"
+                        : "hover:bg-gray-50 dark:hover:bg-gray-800"
                     }`}
                 >
                   <Flag country={lang.country} size={22} />
-                  <span className={`text-sm font-medium ${
-                    selected.code === lang.code
-                      ? "text-blue-600 dark:text-blue-400"
-                      : "text-gray-700 dark:text-gray-300"
-                  }`}>
+                  <span
+                    className={`text-sm font-medium ${
+                      selected.code === lang.code
+                        ? "text-blue-600 dark:text-blue-400"
+                        : "text-gray-700 dark:text-gray-300"
+                    }`}
+                  >
                     {lang.label}
                   </span>
                   {selected.code === lang.code && (
