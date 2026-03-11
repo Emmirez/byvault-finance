@@ -5,20 +5,41 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Byvault-Finance</title>
-
-     <script>
+    <script>
       (function () {
         var saved = localStorage.getItem("language");
         if (!saved || saved === "en") {
-          // Ensure both systems agree on English
           localStorage.setItem("language", "en");
-          localStorage.removeItem("i18nextLng");
-          // Nuke the googtrans cookie before Google Translate script loads
-          var domains = [window.location.hostname, "." + window.location.hostname];
-          domains.forEach(function (d) {
-            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + d;
-          });
-          document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+
+          // Override document.cookie setter to BLOCK googtrans from being set
+          var cookieDesc = Object.getOwnPropertyDescriptor(Document.prototype, "cookie") ||
+                           Object.getOwnPropertyDescriptor(HTMLDocument.prototype, "cookie");
+
+          if (cookieDesc && cookieDesc.configurable) {
+            Object.defineProperty(document, "cookie", {
+              get: function () {
+                return cookieDesc.get.call(document);
+              },
+              set: function (val) {
+                // Block googtrans cookie UNLESS it's being deleted
+                if (
+                  typeof val === "string" &&
+                  val.indexOf("googtrans") !== -1 &&
+                  val.indexOf("Thu, 01 Jan 1970") === -1
+                ) {
+                  console.log("Blocked googtrans cookie:", val);
+                  return;
+                }
+                cookieDesc.set.call(document, val);
+              },
+              configurable: true,
+            });
+          }
+
+          // Also clear any existing googtrans cookie
+          cookieDesc.set.call(document, "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname);
+          cookieDesc.set.call(document, "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + window.location.hostname);
+          cookieDesc.set.call(document, "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/");
         }
       })();
     </script>
@@ -26,6 +47,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    
   </body>
 </html>
