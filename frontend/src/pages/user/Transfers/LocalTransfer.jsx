@@ -27,6 +27,7 @@ import { useAuth } from "../../../contexts/AuthContext";
 import { transferService } from "../../../services/transferService";
 import { dashboardService } from "../../../services/dashhboardService";
 import { useDarkMode } from "../../../hooks/useDarkMode";
+import { beneficiaryService } from "../../../services/beneficiaryService";
 
 const LocalTransfer = () => {
   const navigate = useNavigate();
@@ -84,7 +85,6 @@ const LocalTransfer = () => {
 
         console.log("Fetching account data for transfer...");
         const data = await dashboardService.getDashboardData();
-       
 
         setAccountData(data);
         setBalance(data.fiatBalance || user?.balanceFiat || 0);
@@ -104,19 +104,12 @@ const LocalTransfer = () => {
     fetchAccountData();
   }, [user]);
 
-  // Load saved beneficiaries from localStorage - PER USER
   useEffect(() => {
-    if (user) {
-      const userBeneficiariesKey = `savedBeneficiaries_${user.id}`;
-      const saved = localStorage.getItem(userBeneficiariesKey);
-      if (saved) {
-        try {
-          setSavedBeneficiaries(JSON.parse(saved));
-        } catch (e) {
-          console.error("Failed to parse saved beneficiaries:", e);
-        }
-      }
-    }
+    if (!user) return;
+    beneficiaryService
+      .getBeneficiaries()
+      .then(setSavedBeneficiaries)
+      .catch(console.error);
   }, [user]);
 
   const showNotification = (type, message) => {
@@ -180,7 +173,6 @@ const LocalTransfer = () => {
         transferType: "local",
       });
 
-      
       showNotification("success", "Transfer initiated successfully!");
 
       setTimeout(() => {
@@ -268,7 +260,7 @@ const LocalTransfer = () => {
     }
   };
 
-  const saveBeneficiary = () => {
+  const saveBeneficiary = async () => {
     if (
       !formData.accountName ||
       !formData.accountNumber ||
@@ -277,41 +269,24 @@ const LocalTransfer = () => {
       showNotification("error", "Please complete beneficiary details first");
       return;
     }
-
-    const duplicate = savedBeneficiaries.find(
-      (b) =>
-        b.accountNumber === formData.accountNumber &&
-        b.bankName === formData.bankName,
-    );
-
-    if (duplicate) {
+    try {
+      const saved = await beneficiaryService.saveBeneficiary({
+        type: "local",
+        name: formData.accountName,
+        accountNumber: formData.accountNumber,
+        bankName: formData.bankName,
+        routingNumber: formData.routingNumber || "",
+        address: formData.address || "",
+        email: formData.email || "",
+      });
+      setSavedBeneficiaries((prev) => [...prev, { ...saved, id: saved._id }]);
       showNotification(
-        "warning",
-        `${duplicate.name} is already saved with this account at ${formData.bankName}`,
+        "success",
+        `${formData.accountName} saved successfully!`,
       );
-      return;
+    } catch (error) {
+      showNotification("error", error.message || "Failed to save beneficiary");
     }
-
-    const newBeneficiary = {
-      id: Date.now(),
-      name: formData.accountName,
-      accountNumber: formData.accountNumber,
-      bankName: formData.bankName,
-      routingNumber: formData.routingNumber || "",
-      address: formData.address || "",
-      email: formData.email || "",
-    };
-
-    const updated = [...savedBeneficiaries, newBeneficiary];
-    setSavedBeneficiaries(updated);
-
-    // Save with user-specific key
-    if (user) {
-      const userBeneficiariesKey = `savedBeneficiaries_${user.id}`;
-      localStorage.setItem(userBeneficiariesKey, JSON.stringify(updated));
-    }
-
-    showNotification("success", `${formData.accountName} saved successfully!`);
   };
 
   const selectBeneficiary = (beneficiary) => {
@@ -328,22 +303,24 @@ const LocalTransfer = () => {
     showNotification("success", `Selected ${beneficiary.name}`);
   };
 
-  const deleteBeneficiary = (id, e) => {
+  const deleteBeneficiary = async (id, e) => {
     e.stopPropagation();
-    const beneficiary = savedBeneficiaries.find((b) => b.id === id);
-    const updated = savedBeneficiaries.filter((b) => b.id !== id);
-    setSavedBeneficiaries(updated);
-
-    // Update localStorage with user-specific key
-    if (user) {
-      const userBeneficiariesKey = `savedBeneficiaries_${user.id}`;
-      localStorage.setItem(userBeneficiariesKey, JSON.stringify(updated));
-    }
-
-    showNotification(
-      "success",
-      `Deleted ${beneficiary?.name || "beneficiary"}`,
+    const beneficiary = savedBeneficiaries.find(
+      (b) => b._id === id || b.id === id,
     );
+    try {
+      await beneficiaryService.deleteBeneficiary(id);
+      setSavedBeneficiaries((prev) =>
+        prev.filter((b) => b._id !== id && b.id !== id),
+      );
+      showNotification(
+        "success",
+        `Deleted ${beneficiary?.name || "beneficiary"}`,
+      );
+      // eslint-disable-next-line no-unused-vars
+    } catch (error) {
+      showNotification("error", "Failed to delete beneficiary");
+    }
   };
 
   const handleLogout = async () => {

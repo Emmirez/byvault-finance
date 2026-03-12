@@ -48,6 +48,7 @@ import searchRoutes from "./src/routes/searchRoutes.js";
 import contactRoutes from "./src/routes/contactRoutes.js";
 import { getPublicPaymentSettings } from "./src/controllers/adminController.js";
 import { protect } from "./src/middleware/authMiddleware.js";
+import beneficiaryRoutes from "./src/routes/beneficiaryRoutes.js";
 
 connectDB();
 
@@ -161,6 +162,7 @@ app.use("/api/admin/security", securityRoutes);
 app.use("/api", healthRoutes);
 app.use("/api/admin/alerts", adminAlertRoutes);
 app.use("/api/admin/search", searchRoutes);
+app.use("/api", beneficiaryRoutes);
 
 // Run every hour to check for expired suspensions
 cron.schedule("0 * * * *", async () => {
