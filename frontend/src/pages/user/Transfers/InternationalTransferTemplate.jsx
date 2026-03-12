@@ -37,6 +37,7 @@ import { useAuth } from "../../../contexts/AuthContext";
 import { transferService } from "../../../services/transferService";
 import { dashboardService } from "../../../services/dashhboardService";
 import { useDarkMode } from "../../../hooks/useDarkMode";
+import { beneficiaryService } from "../../../services/beneficiaryService";
 
 const InternationalTransferTemplate = ({
   type,
@@ -110,9 +111,7 @@ const InternationalTransferTemplate = ({
         setIsDataLoading(true);
         setDataError(null);
 
-        
         const data = await dashboardService.getDashboardData();
-       
 
         setAccountData(data);
         setBalance(
@@ -142,17 +141,13 @@ const InternationalTransferTemplate = ({
     setFormData(buildInitialFormData());
   }, [buildInitialFormData]);
 
-  // Load saved beneficiaries from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem(`${type}Beneficiaries`);
-    if (saved) {
-      try {
-        setSavedBeneficiaries(JSON.parse(saved));
-      } catch (e) {
-        console.error("Failed to parse saved beneficiaries:", e);
-      }
-    }
-  }, [type]);
+    if (!user) return;
+    beneficiaryService
+      .getBeneficiaries()
+      .then((all) => setSavedBeneficiaries(all.filter((b) => b.type === type)))
+      .catch(console.error);
+  }, [user, type]);
 
   // Handle dynamic options for fields like network (for crypto)
   useEffect(() => {
@@ -282,105 +277,116 @@ const InternationalTransferTemplate = ({
   };
 
   // Handle transfer
-const handleTransfer = async () => {
-  const transferAmount = parseFloat(formData.amount);
-  if (!validateForm()) return;
+  const handleTransfer = async () => {
+    const transferAmount = parseFloat(formData.amount);
+    if (!validateForm()) return;
 
-  setIsLoading(true);
-  showNotification("success", "Processing your transfer...");
+    setIsLoading(true);
+    showNotification("success", "Processing your transfer...");
 
-  try {
-    const payload = {
-      type,
-      ...formData,
-      amount: transferAmount,
-      currency: type === "crypto" ? "btc" : "fiat",
-      transferType: "international",
-      beneficiaryName:
-        formData.accountName ||
-        formData.fullName ||
-        formData.email ||
-        "Recipient",
-    };
+    try {
+      const payload = {
+        type,
+        ...formData,
+        amount: transferAmount,
+        currency: type === "crypto" ? "btc" : "fiat",
+        transferType: "international",
+        beneficiaryName:
+          formData.accountName ||
+          formData.fullName ||
+          formData.email ||
+          "Recipient",
+      };
 
-    const response = await transferService.internationalTransfer(payload);
+      const response = await transferService.internationalTransfer(payload);
 
-    showNotification("success", "Transfer initiated successfully!");
+      showNotification("success", "Transfer initiated successfully!");
 
-    setTimeout(() => {
-      navigate("/transfer/hold", {
-        state: {
-          type: title,
-          amount: transferAmount,
-          recipient: getRecipientName(),
-          method: title,
-          transactionId: response.transactionId || `TXN${Date.now()}`,
-          status: response.status || "pending",
-        },
-      });
-    }, 1000);
+      setTimeout(() => {
+        navigate("/transfer/hold", {
+          state: {
+            type: title,
+            amount: transferAmount,
+            recipient: getRecipientName(),
+            method: title,
+            transactionId: response.transactionId || `TXN${Date.now()}`,
+            status: response.status || "pending",
+          },
+        });
+      }, 1000);
+    } catch (error) {
+      if (error.status !== 403 && error.status !== 401) {
+        console.error("Transfer error:", error);
+      }
 
-  } catch (error) {
-    if (error.status !== 403 && error.status !== 401) {
-      console.error("Transfer error:", error);
+      const code = error.data?.code || "";
+      const message = error.message || "";
+
+      if (
+        code === "VERIFICATION_REQUIRED" ||
+        message.includes("verification") ||
+        message.includes("KYC")
+      ) {
+        showNotification(
+          "error",
+          "Your account is not yet verified. Please complete KYC verification before making transfers.",
+        );
+        return;
+      }
+
+      if (code === "ACCOUNT_BLOCKED" || message.includes("blocked")) {
+        showNotification(
+          "error",
+          "Your account has been blocked. Please contact support.",
+        );
+        return;
+      }
+
+      if (code === "ACCOUNT_SUSPENDED" || message.includes("suspended")) {
+        showNotification(
+          "error",
+          "Your account is temporarily suspended. Please contact support.",
+        );
+        return;
+      }
+
+      if (message.includes("PIN") || message.includes("pin")) {
+        showNotification("error", "Invalid transaction PIN. Please try again.");
+        return;
+      }
+
+      if (message.includes("balance") || message.includes("Insufficient")) {
+        showNotification("error", "Insufficient balance for this transfer.");
+        return;
+      }
+
+      if (message.includes("limit") || message.includes("Limit")) {
+        showNotification("error", message);
+        return;
+      }
+
+      // Only navigate to hold for genuine unknown/network errors
+      showNotification("warning", "Transfer placed on hold for verification.");
+      setTimeout(() => {
+        navigate("/transfer/hold", {
+          state: {
+            type: title,
+            amount: transferAmount,
+            recipient: getRecipientName(),
+            method: title,
+            transactionId: `TXN${Date.now()}`,
+            status: "pending",
+            error: message,
+          },
+        });
+      }, 1500);
+    } finally {
+      setIsLoading(false);
     }
-
-    const code = error.data?.code || "";
-    const message = error.message || "";
-
-    if (code === "VERIFICATION_REQUIRED" || message.includes("verification") || message.includes("KYC")) {
-      showNotification("error", "Your account is not yet verified. Please complete KYC verification before making transfers.");
-      return;
-    }
-
-    if (code === "ACCOUNT_BLOCKED" || message.includes("blocked")) {
-      showNotification("error", "Your account has been blocked. Please contact support.");
-      return;
-    }
-
-    if (code === "ACCOUNT_SUSPENDED" || message.includes("suspended")) {
-      showNotification("error", "Your account is temporarily suspended. Please contact support.");
-      return;
-    }
-
-    if (message.includes("PIN") || message.includes("pin")) {
-      showNotification("error", "Invalid transaction PIN. Please try again.");
-      return;
-    }
-
-    if (message.includes("balance") || message.includes("Insufficient")) {
-      showNotification("error", "Insufficient balance for this transfer.");
-      return;
-    }
-
-    if (message.includes("limit") || message.includes("Limit")) {
-      showNotification("error", message);
-      return;
-    }
-
-    // Only navigate to hold for genuine unknown/network errors
-    showNotification("warning", "Transfer placed on hold for verification.");
-    setTimeout(() => {
-      navigate("/transfer/hold", {
-        state: {
-          type: title,
-          amount: transferAmount,
-          recipient: getRecipientName(),
-          method: title,
-          transactionId: `TXN${Date.now()}`,
-          status: "pending",
-          error: message,
-        },
-      });
-    }, 1500);
-
-  } finally {
-    setIsLoading(false);
-  }
-};
+  };
 
   // Save beneficiary
-  const saveBeneficiary = () => {
+  const saveBeneficiary = async () => {
     const hasIdentifier = fields.some(
       (field) =>
         formData[field.name] &&
@@ -392,76 +398,32 @@ const handleTransfer = async () => {
       return;
     }
 
-    const isDuplicate = savedBeneficiaries.some((existing) => {
-      if (
-        formData.email &&
-        normalize(existing.email) === normalize(formData.email)
-      )
-        return true;
-
-      if (
-        formData.phone &&
-        normalize(existing.phone) === normalize(formData.phone)
-      )
-        return true;
-
-      if (
-        formData.cashtag &&
-        normalize(existing.cashtag) === normalize(formData.cashtag)
-      )
-        return true;
-
-      if (
-        formData.walletAddress &&
-        normalize(existing.walletAddress) === normalize(formData.walletAddress)
-      )
-        return true;
-
-      if (
-        formData.accountNumber &&
-        formData.bankName &&
-        normalize(existing.accountNumber) ===
-          normalize(formData.accountNumber) &&
-        normalize(existing.bankName) === normalize(formData.bankName)
-      )
-        return true;
-
-      return false;
-    });
-
-    if (isDuplicate) {
-      showNotification("warning", "Beneficiary already saved");
-      return;
+    try {
+      const saved = await beneficiaryService.saveBeneficiary({
+        type,
+        name:
+          formData.fullName ||
+          formData.accountName ||
+          formData.email?.split("@")[0] ||
+          formData.cashtag ||
+          formData.phone ||
+          "Beneficiary",
+        accountNumber: formData.accountNumber || "",
+        bankName: formData.bankName || "",
+        routingNumber: formData.routingNumber || "",
+        swiftCode: formData.swiftCode || "",
+        address: formData.address || formData.bankAddress || "",
+        email: formData.email || "",
+        phone: formData.phone || "",
+        cashtag: formData.cashtag || "",
+        walletAddress: formData.walletAddress || "",
+        raw: { ...formData },
+      });
+      setSavedBeneficiaries((prev) => [...prev, saved]);
+      showNotification("success", `${saved.name} saved successfully!`);
+    } catch (error) {
+      showNotification("error", error.message || "Failed to save beneficiary");
     }
-
-    const newBeneficiary = {
-      id: Date.now(),
-      type,
-
-      fullName: formData.fullName || formData.accountName || "",
-      email: formData.email || "",
-      phone: formData.phone || "",
-      address: formData.address || formData.bankAddress || "",
-
-      bankName: formData.bankName || "",
-      accountName: formData.accountName || "",
-      accountNumber: formData.accountNumber || "",
-      routingNumber: formData.routingNumber || "",
-      swiftCode: formData.swiftCode || "",
-      walletAddress: formData.walletAddress || "",
-      cashtag: formData.cashtag || "",
-
-      raw: { ...formData },
-    };
-
-    const updated = [...savedBeneficiaries, newBeneficiary];
-    setSavedBeneficiaries(updated);
-    localStorage.setItem(`${type}Beneficiaries`, JSON.stringify(updated));
-
-    showNotification(
-      "success",
-      `${newBeneficiary.fullName || "Beneficiary"} saved successfully!`,
-    );
   };
 
   // Select beneficiary
@@ -491,15 +453,20 @@ const handleTransfer = async () => {
   };
 
   // Delete beneficiary
-  const deleteBeneficiary = (id, e) => {
+  const deleteBeneficiary = async (id, e) => {
     e.stopPropagation();
-    const beneficiary = savedBeneficiaries.find((b) => b.id === id);
-    const updated = savedBeneficiaries.filter((b) => b.id !== id);
-    setSavedBeneficiaries(updated);
-    localStorage.setItem(`${type}Beneficiaries`, JSON.stringify(updated));
-
-    const beneficiaryName = getBeneficiaryName(beneficiary);
-    showNotification("success", `Deleted ${beneficiaryName}`);
+    const beneficiary = savedBeneficiaries.find(
+      (b) => b._id === id || b.id === id,
+    );
+    try {
+      await beneficiaryService.deleteBeneficiary(id);
+      setSavedBeneficiaries((prev) =>
+        prev.filter((b) => b._id !== id && b.id !== id),
+      );
+      showNotification("success", `Deleted ${getBeneficiaryName(beneficiary)}`);
+    } catch (error) {
+      showNotification("error", "Failed to delete beneficiary");
+    }
   };
 
   const handleLogout = async () => {
@@ -918,7 +885,7 @@ const handleTransfer = async () => {
                   {savedBeneficiaries.length > 0 ? (
                     savedBeneficiaries.slice(0, 5).map((beneficiary) => (
                       <button
-                        key={beneficiary.id}
+                        key={beneficiary._id || beneficiary.id}
                         onClick={() => selectBeneficiary(beneficiary)}
                         className="flex flex-col items-center gap-2 flex-shrink-0 group relative"
                       >
@@ -1225,7 +1192,10 @@ const handleTransfer = async () => {
               {savedBeneficiaries.length > 0 ? (
                 <div className="space-y-3">
                   {savedBeneficiaries.map((beneficiary) => (
-                    <div key={beneficiary.id} className="relative group">
+                    <div
+                      key={beneficiary._id || beneficiary.id}
+                      className="relative group"
+                    >
                       <button
                         onClick={() => selectBeneficiary(beneficiary)}
                         className="w-full p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-left"
@@ -1295,7 +1265,12 @@ const handleTransfer = async () => {
                       </button>
 
                       <button
-                        onClick={(e) => deleteBeneficiary(beneficiary.id, e)}
+                        onClick={(e) =>
+                          deleteBeneficiary(
+                            beneficiary._id || beneficiary.id,
+                            e,
+                          )
+                        }
                         className="absolute top-2 right-2 p-2 bg-red-100 dark:bg-red-900/30 rounded-lg hover:bg-red-200 dark:hover:bg-red-900/50 transition-colors"
                         title="Delete beneficiary"
                       >

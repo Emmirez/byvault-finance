@@ -47,6 +47,7 @@ import { userService } from "../../../services/userService";
 import { useNotifications } from "../../../contexts/NotificationContext";
 import KYCBanner from "../Components/KYCBanner";
 import AnnouncementBanner from "../Components/AnnouncementBanner";
+import { beneficiaryService } from "../../../services/beneficiaryService";
 
 const Dashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -143,8 +144,6 @@ const Dashboard = () => {
         setIsDataLoading(true);
         setDataError(null);
 
-        console.log("Fetching dashboard data...");
-
         const data = await dashboardService.getDashboardData();
         setAccountData(data);
 
@@ -202,19 +201,12 @@ const Dashboard = () => {
     fetchDashboardData();
   }, [user]);
 
-  // Load beneficiaries from localStorage
   useEffect(() => {
-    if (user) {
-      const userBeneficiariesKey = `savedBeneficiaries_${user.id}`;
-      const saved = localStorage.getItem(userBeneficiariesKey);
-      if (saved) {
-        try {
-          setSavedBeneficiaries(JSON.parse(saved));
-        } catch (e) {
-          console.error("Failed to parse saved beneficiaries:", e);
-        }
-      }
-    }
+    if (!user) return;
+    beneficiaryService
+      .getBeneficiaries()
+      .then(setSavedBeneficiaries)
+      .catch(console.error);
   }, [user]);
 
   useEffect(() => {
