@@ -14,10 +14,7 @@ export const send2FACode = async (userEmail, code) => {
     console.log(`📧 Attempting to send 2FA email to: ${userEmail}`);
 
     await sgMail.send({
-      from: {
-        email: process.env.FROM_EMAIL, 
-        name: "Byvault Finance Security",
-      },
+      from: "noreply@byvaultonline.com",
       to: userEmail,
       subject: "Your Two-Factor Authentication Code",
       html: `
