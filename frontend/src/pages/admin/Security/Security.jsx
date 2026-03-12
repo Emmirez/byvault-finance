@@ -40,6 +40,7 @@ import { securityService } from "../../../services/securityService";
 import SuperAdminProfile from "../Components/SuperAdmin";
 import AdminBottomNav from "../Components/AdminBottomNav";
 import { useDarkMode } from "../../../hooks/useDarkMode";
+import AdminAlertBell from "../Notification/AdminAlertBell";
 
 // Toast Component
 const Toast = ({ toasts, removeToast }) => (
@@ -278,10 +279,7 @@ const Security = () => {
                 >
                   {darkMode ? <Sun size={20} className="dark:text-white" /> : <Moon size={20} />}
                 </button>
-                <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 relative">
-                  <Bell size={20} className="text-gray-600 dark:text-gray-300" />
-                  <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-                </button>
+                <AdminAlertBell />
                 <SuperAdminProfile />
               </div>
             </div>
