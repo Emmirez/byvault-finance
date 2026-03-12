@@ -231,7 +231,7 @@ const TransferHold = () => {
                     </a>
 
                     <a
-                      href="mailto:support@byvaultfinance.com"
+                      href="mailto:admin@byvaultonline.com"
                       className="bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl p-4 hover:bg-gray-50 dark:hover:bg-gray-600 transition-all group col-span-2"
                     >
                       <div className="flex items-center gap-3">
@@ -246,7 +246,7 @@ const TransferHold = () => {
                             Email Support
                           </p>
                           <p className="text-xs text-gray-500 dark:text-gray-400">
-                            support@byvaultfinance.com
+                            admin@byvaultonline.com
                           </p>
                           <p className="text-[10px] text-gray-400 dark:text-gray-500">
                             24-48h response time

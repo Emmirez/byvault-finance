@@ -693,7 +693,7 @@ const Help = () => {
                 </h3>
               </div>
               <p className="text-gray-600 mb-4">
-                Tweet us @TrustedBankSupport or message us on Facebook. We're
+                Tweet us @ByvaultSupport or message us on Facebook. We're
                 here to help!
               </p>
               <p className="text-sm text-gray-500 italic">
