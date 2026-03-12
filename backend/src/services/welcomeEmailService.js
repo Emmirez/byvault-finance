@@ -9,7 +9,7 @@ export const sendWelcomeEmail = async ({ to, name, accountId }) => {
 
     await sgMail.send({
       from: {
-        email: process.env.EMAIL_FROM,
+        email: process.env.FROM_EMAIL,
         name: "Byvault Finance",
       },
       to,

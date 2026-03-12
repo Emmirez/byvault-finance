@@ -17,8 +17,8 @@ export const sendContactMessage = async (req, res) => {
 
     // Email to support team
     await sgMail.send({
-      from: { email: process.env.EMAIL_FROM, name: "Byvault Contact Form" },
-      to: process.env.EMAIL_FROM,
+      from: { email: process.env.FROM_EMAIL, name: "Byvault Contact Form" },
+      to: process.env.FROM_EMAIL,
       replyTo: email,
       subject: `New Contact Message from ${name}`,
       html: `
@@ -46,7 +46,7 @@ export const sendContactMessage = async (req, res) => {
 
     // Auto-reply to user
     await sgMail.send({
-      from: { email: process.env.EMAIL_FROM, name: "Byvault Finance Support" },
+      from: { email: process.env.FROM_EMAIL, name: "Byvault Finance Support" },
       to: email,
       subject: "Thank you for contacting Byvault Finance",
       html: `

@@ -15,7 +15,7 @@ export const send2FACode = async (userEmail, code) => {
 
     await sgMail.send({
       from: {
-        email: process.env.EMAIL_FROM, // e.g. noreply@byvaultonline.com
+        email: process.env.FROM_EMAIL, 
         name: "Byvault Finance Security",
       },
       to: userEmail,
@@ -57,7 +57,7 @@ export const sendPasswordResetEmail = async ({ to, name, resetUrl }) => {
   try {
     await sgMail.send({
       from: {
-        email: process.env.EMAIL_FROM,
+        email: process.env.FROM_EMAIL,
         name: "Byvault Finance",
       },
       to,
