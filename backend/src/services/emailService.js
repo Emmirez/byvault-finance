@@ -1,33 +1,7 @@
 // services/emailService.js
-import nodemailer from "nodemailer";
+import sgMail from "@sendgrid/mail";
 
-
-// Create transporter with explicit configuration
-// Updated transporter with port 2525
-const transporter = nodemailer.createTransport({
-  host: "smtp.zoho.com",
-  port: 2525,  // Changed from 587 to 2525
-  secure: false, // Still false for 2525
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-  // Add timeouts to prevent hanging
-  connectionTimeout: 30000,
-  greetingTimeout: 30000,
-});
-
-// Verify connection configuration
-transporter.verify(function (error, success) {
-  if (error) {
-    console.log("❌ Email transporter error:", error);
-    console.log("❌ Error code:", error.code);
-    console.log("❌ Error command:", error.command);
-  } else {
-    console.log("✅ Email server is ready to send messages");
-  }
-});
-
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 // Generate 6-digit verification code
 export const generateVerificationCode = () => {
@@ -37,10 +11,13 @@ export const generateVerificationCode = () => {
 // Send 2FA code email
 export const send2FACode = async (userEmail, code) => {
   try {
-    console.log(`📧 Attempting to send email to: ${userEmail}`);
+    console.log(`📧 Attempting to send 2FA email to: ${userEmail}`);
 
-    const mailOptions = {
-      from: `"Byvault Finance Security" <${process.env.EMAIL_USER}>`,
+    await sgMail.send({
+      from: {
+        email: process.env.EMAIL_FROM, // e.g. noreply@byvaultonline.com
+        name: "Byvault Finance Security",
+      },
       to: userEmail,
       subject: "Your Two-Factor Authentication Code",
       html: `
@@ -66,22 +43,23 @@ export const send2FACode = async (userEmail, code) => {
           </div>
         </div>
       `,
-    };
+    });
 
-    const info = await transporter.sendMail(mailOptions);
-    console.log(`✅ Email sent successfully to ${userEmail}`);
-    console.log(`📨 Message ID: ${info.messageId}`);
+    console.log(`✅ 2FA email sent successfully to ${userEmail}`);
     return true;
   } catch (error) {
-    console.error("❌ Error sending email:", error);
+    console.error("❌ Error sending 2FA email:", error?.response?.body || error);
     return false;
   }
 };
 
 export const sendPasswordResetEmail = async ({ to, name, resetUrl }) => {
   try {
-    const mailOptions = {
-      from: `"Byvault Finance" <${process.env.EMAIL_USER}>`,
+    await sgMail.send({
+      from: {
+        email: process.env.EMAIL_FROM,
+        name: "Byvault Finance",
+      },
       to,
       subject: "Reset Your Password - Byvault Finance",
       html: `
@@ -127,13 +105,12 @@ export const sendPasswordResetEmail = async ({ to, name, resetUrl }) => {
         </body>
         </html>
       `,
-    };
+    });
 
-    const info = await transporter.sendMail(mailOptions);
-    console.log("✅ Password reset email sent:", info.messageId);
+    console.log(`✅ Password reset email sent to ${to}`);
     return true;
   } catch (error) {
-    console.error("❌ Error sending password reset email:", error);
+    console.error("❌ Error sending password reset email:", error?.response?.body || error);
     return false;
   }
 };
