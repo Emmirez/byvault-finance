@@ -46,7 +46,7 @@ const NAV_ITEMS = [
   { label: "Settings", icon: Settings, to: "/admin/settings" },
 ];
 
-// ─── Desktop Nav Rail (hidden on mobile — mobile uses AdminBottomNav) ─────────
+// Desktop Nav Rail (hidden on mobile — mobile uses AdminBottomNav)
 const DesktopNavRail = ({ unreadChats = 0 }) => {
   const { pathname } = useLocation();
 
@@ -265,7 +265,7 @@ const ChatDashboard = () => {
       new Notification(title, { body, icon: "/favicon.ico", silent: true });
   }, []);
 
-  //  Socket created ONCE
+  // Socket created ONCE
   useEffect(() => {
     const socketUrl =
       import.meta.env.VITE_SOCKET_URL || "http://localhost:3001";
@@ -722,20 +722,16 @@ const ChatDashboard = () => {
 
               {/* Right-side controls */}
               <div className="ml-auto flex items-center gap-1 sm:gap-2">
-                {/* Admin Alert Bell  */}
                 <AdminAlertBell
                   iconSize={18}
                   showCount={true}
                   maxDisplay={5}
                   position="right-0"
                   onNotificationClick={(notification) => {
-                    console.log("Admin notification clicked:", notification);
-                    // Handle navigation 
                     if (
                       notification.type === "chat" &&
                       notification.data?.sessionId
                     ) {
-                      // Navigate to chat with this session
                       const session = sessions.find(
                         (s) => s._id === notification.data.sessionId,
                       );
@@ -743,7 +739,6 @@ const ChatDashboard = () => {
                     }
                   }}
                 />
-
 
                 <button
                   onClick={toggleDarkMode}
