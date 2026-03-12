@@ -104,11 +104,14 @@ const LocalTransfer = () => {
     fetchAccountData();
   }, [user]);
 
+  //saved beneficiary
   useEffect(() => {
     if (!user) return;
     beneficiaryService
       .getBeneficiaries()
-      .then(setSavedBeneficiaries)
+      .then((all) =>
+        setSavedBeneficiaries(all.filter((b) => b.type === "local")),
+      )
       .catch(console.error);
   }, [user]);
 
