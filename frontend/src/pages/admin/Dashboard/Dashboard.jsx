@@ -571,7 +571,7 @@ const AdminDashboard = () => {
             </div>
 
             {/* Scrollable Bottom: all other sections */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-6">
+            <div className="flex-1 overflow-y-auto p-4 space-y-6 pb-20 lg:pb-4">
               {/* Management Section */}
               <div>
                 <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-3">

@@ -170,6 +170,16 @@ cron.schedule("0 * * * *", async () => {
   await checkExpiredSuspensions();
 });
 
+// Keep server alive - ping every 14 minutes
+cron.schedule("*/14 * * * *", async () => {
+  try {
+    await fetch("https://byvault-backend.onrender.com/");
+    console.log("✅ Keep-alive ping sent");
+  } catch (error) {
+    console.error("❌ Keep-alive ping failed:", error.message);
+  }
+});
+
 // Setup chat handlers
 setupChatHandlers(io);
 

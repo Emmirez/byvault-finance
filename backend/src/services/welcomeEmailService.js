@@ -305,7 +305,7 @@ export const sendWelcomeEmail = async ({ to, name, accountId }) => {
                 </p>
                 <p style="margin:0; font-size: 11px; color: #94a3b8;">
                   © ${new Date().getFullYear()} Byvault Finance. All rights reserved.<br>
-                  800 Nicollet Mall Minneapolis, MN 55304
+                  123 Financial Plaza, New York, NY 10001
                 </p>
               </div>
             </div>
