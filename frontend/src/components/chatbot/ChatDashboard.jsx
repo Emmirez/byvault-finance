@@ -744,23 +744,6 @@ const ChatDashboard = () => {
                   }}
                 />
 
-                {/* Sound toggle button (keep this separate) */}
-                <button
-                  onClick={() => setSoundEnabled(!soundEnabled)}
-                  className="relative p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                  title={
-                    soundEnabled ? "Mute notifications" : "Unmute notifications"
-                  }
-                >
-                  {soundEnabled ? (
-                    <Bell
-                      size={18}
-                      className="text-gray-600 dark:text-gray-300"
-                    />
-                  ) : (
-                    <BellOff size={18} className="text-gray-400" />
-                  )}
-                </button>
 
                 <button
                   onClick={toggleDarkMode}
