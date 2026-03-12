@@ -3,14 +3,18 @@ import nodemailer from "nodemailer";
 
 
 // Create transporter with explicit configuration
+// Updated transporter with port 2525
 const transporter = nodemailer.createTransport({
   host: "smtp.zoho.com",
-  port: 587, 
-  secure: false, 
+  port: 2525,  // Changed from 587 to 2525
+  secure: false, // Still false for 2525
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASSWORD,
   },
+  // Add timeouts to prevent hanging
+  connectionTimeout: 30000,
+  greetingTimeout: 30000,
 });
 
 // Verify connection configuration
