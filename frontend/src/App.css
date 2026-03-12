@@ -1,6 +1,8 @@
 /* Prevent iOS Safari auto-zoom on input focus */
+input:focus, select:focus, textarea:focus,
 input, select, textarea {
   font-size: 16px !important;
+  -webkit-text-size-adjust: 100%;
 }
 
 #root {
