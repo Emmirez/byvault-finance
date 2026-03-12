@@ -200,6 +200,7 @@ const InternationalTransferTemplate = ({
     typeof v === "string" ? v.trim().toLowerCase() : "";
 
   const getBeneficiaryName = (beneficiary) => {
+    if (beneficiary.name) return beneficiary.name; 
     if (beneficiary.fullName) return beneficiary.fullName;
     if (beneficiary.accountName) return beneficiary.accountName;
     if (beneficiary.email) return beneficiary.email.split("@")[0];

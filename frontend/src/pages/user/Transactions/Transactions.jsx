@@ -11,6 +11,7 @@ import {
   CheckCircle,
   XCircle,
   Search,
+  Eye,
 } from "lucide-react";
 import Header from "../../../components/layout/UserNav/Header";
 import Sidebar from "../../../components/layout/UserNav/Sidebar";
@@ -122,11 +123,23 @@ const Transactions = () => {
     return matchesSearch && matchesType && matchesDate;
   });
 
-  // Format large numbers compactly: 1,200,000 → $1.2M
   const formatAmount = (amount) => {
     if (amount >= 1_000_000) return `$${(amount / 1_000_000).toFixed(1)}M`;
     if (amount >= 1_000) return `$${(amount / 1_000).toFixed(1)}K`;
     return `$${amount.toLocaleString()}`;
+  };
+
+  const getStatusIcon = (status) => {
+    switch (status?.toLowerCase()) {
+      case "completed":
+        return <CheckCircle className="w-3 h-3 text-green-500" />;
+      case "pending":
+        return <Clock className="w-3 h-3 text-yellow-500" />;
+      case "failed":
+        return <XCircle className="w-3 h-3 text-red-500" />;
+      default:
+        return <CheckCircle className="w-3 h-3 text-green-500" />;
+    }
   };
 
   return (
@@ -156,20 +169,17 @@ const Transactions = () => {
 
         <main className="flex-1 min-w-0 overflow-x-hidden lg:ml-64">
           <div className="max-w-4xl mx-auto p-4 lg:p-8">
+
             {/* Stats Cards */}
             <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-6">
               <div className="bg-white dark:bg-gray-800 rounded-xl p-3 border border-gray-200 dark:border-gray-700 min-w-0">
-                <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">
-                  Total
-                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Total</p>
                 <p className="text-base sm:text-lg font-bold text-gray-900 dark:text-white truncate">
                   {transactions.length}
                 </p>
               </div>
               <div className="bg-white dark:bg-gray-800 rounded-xl p-3 border border-gray-200 dark:border-gray-700 min-w-0">
-                <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">
-                  Deposits
-                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Deposits</p>
                 <p className="text-base sm:text-lg font-bold text-green-600 truncate">
                   {formatAmount(
                     transactions
@@ -179,9 +189,7 @@ const Transactions = () => {
                 </p>
               </div>
               <div className="bg-white dark:bg-gray-800 rounded-xl p-3 border border-gray-200 dark:border-gray-700 min-w-0">
-                <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">
-                  Withdrawals
-                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Withdrawals</p>
                 <p className="text-base sm:text-lg font-bold text-red-600 truncate">
                   {formatAmount(
                     transactions
@@ -217,7 +225,6 @@ const Transactions = () => {
             {/* Filters Panel */}
             {showFilters && (
               <div className="mb-6 space-y-4 bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-200 dark:border-gray-700">
-                {/* Search */}
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
@@ -228,8 +235,6 @@ const Transactions = () => {
                     className="w-full pl-10 pr-4 py-2.5 border border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm"
                   />
                 </div>
-
-                {/* Type Filter */}
                 <div>
                   <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">
                     Type
@@ -250,8 +255,6 @@ const Transactions = () => {
                     ))}
                   </div>
                 </div>
-
-                {/* Date Filter */}
                 <div>
                   <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">
                     Period
@@ -279,9 +282,7 @@ const Transactions = () => {
             {loading ? (
               <div className="bg-white dark:bg-gray-800 rounded-2xl p-12 text-center border border-gray-200 dark:border-gray-700">
                 <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600 mx-auto mb-4" />
-                <p className="text-gray-600 dark:text-gray-400">
-                  Loading transactions...
-                </p>
+                <p className="text-gray-600 dark:text-gray-400">Loading transactions...</p>
               </div>
             ) : filteredTransactions.length === 0 ? (
               <div className="bg-white dark:bg-gray-800 rounded-2xl p-12 text-center border border-gray-200 dark:border-gray-700">
@@ -327,12 +328,8 @@ const Transactions = () => {
                       </p>
                     </div>
                     <div className="sm:text-right text-sm">
-                      <p className="font-semibold text-gray-900 dark:text-white">
-                        {userName}
-                      </p>
-                      <p className="text-gray-500 dark:text-gray-400 text-xs break-all">
-                        {userEmail}
-                      </p>
+                      <p className="font-semibold text-gray-900 dark:text-white">{userName}</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-xs break-all">{userEmail}</p>
                       <p className="text-gray-500 dark:text-gray-400 text-xs capitalize">
                         {user?.accountType || "Savings"} Account
                       </p>
@@ -341,13 +338,13 @@ const Transactions = () => {
                 </div>
 
                 {/* Transaction Rows */}
-                <div className="relative z-10 space-y-2 pb-9">
+                <div className="relative z-10 space-y-2 pb-6">
                   {filteredTransactions.map((transaction) => (
                     <div
                       key={transaction._id}
-                      className="border border-gray-100 dark:border-gray-700 rounded-lg px-3 py-3 flex items-center gap-3"
+                      className="border border-gray-100 dark:border-gray-700 rounded-lg px-3 py-3 flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors"
                     >
-                      {/* Icon */}
+                      {/* Type Icon */}
                       <div
                         className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 ${
                           transaction.type === "deposit"
@@ -362,7 +359,7 @@ const Transactions = () => {
                         )}
                       </div>
 
-                      {/* Description + date — takes all remaining space */}
+                      {/* Description + date */}
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-medium text-gray-900 dark:text-white truncate">
                           {transaction.description ||
@@ -373,20 +370,17 @@ const Transactions = () => {
                                 : "Transfer")}
                         </p>
                         <p className="text-xs text-gray-400 dark:text-gray-500">
-                          {new Date(transaction.createdAt).toLocaleString(
-                            "en-US",
-                            {
-                              month: "short",
-                              day: "numeric",
-                              year: "numeric",
-                              hour: "2-digit",
-                              minute: "2-digit",
-                            },
-                          )}
+                          {new Date(transaction.createdAt).toLocaleString("en-US", {
+                            month: "short",
+                            day: "numeric",
+                            year: "numeric",
+                            hour: "2-digit",
+                            minute: "2-digit",
+                          })}
                         </p>
                       </div>
 
-                      {/* Amount + status — fixed width, no wrapping */}
+                      {/* Amount + status */}
                       <div className="text-right flex-shrink-0 w-24">
                         <p
                           className={`text-sm font-bold ${
@@ -396,18 +390,32 @@ const Transactions = () => {
                           }`}
                         >
                           {transaction.type === "deposit" ? "+" : "-"}$
-                          {Math.abs(transaction.amount).toLocaleString(
-                            undefined,
-                            {
-                              minimumFractionDigits: 2,
-                              maximumFractionDigits: 2,
-                            },
-                          )}
+                          {Math.abs(transaction.amount).toLocaleString(undefined, {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2,
+                          })}
                         </p>
-                        <p className="text-xs capitalize text-gray-400 dark:text-gray-500">
-                          {transaction.status || "completed"}
-                        </p>
+                        <div className="flex items-center justify-end gap-1 mt-0.5">
+                          {getStatusIcon(transaction.status)}
+                          <p className="text-xs capitalize text-gray-400 dark:text-gray-500">
+                            {transaction.status || "completed"}
+                          </p>
+                        </div>
                       </div>
+
+                      {/* ── Eye button ── */}
+                      <button
+                        onClick={() =>
+                          navigate(`/transaction/${transaction._id}`)
+                        }
+                        title="View details"
+                        className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors group"
+                      >
+                        <Eye
+                          size={16}
+                          className="text-gray-400 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors"
+                        />
+                      </button>
                     </div>
                   ))}
                 </div>
