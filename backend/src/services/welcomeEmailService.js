@@ -1,23 +1,17 @@
 // services/welcomeEmailService.js
-import nodemailer from "nodemailer";
+import sgMail from "@sendgrid/mail";
 
-// Create transporter (reuse your existing email config)
-const transporter = nodemailer.createTransport({
-  host: "smtp.zoho.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-});
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export const sendWelcomeEmail = async ({ to, name, accountId }) => {
   try {
     console.log(`📧 Sending welcome email to: ${to}`);
 
-    const mailOptions = {
-      from: `"Byvault Finance" <${process.env.EMAIL_USER}>`,
+    await sgMail.send({
+      from: {
+        email: process.env.EMAIL_FROM,
+        name: "Byvault Finance",
+      },
       to,
       subject: "Welcome to Byvault Finance! 🎉",
       html: `
@@ -126,39 +120,11 @@ export const sendWelcomeEmail = async ({ to, name, accountId }) => {
               margin: 20px 0;
               box-shadow: 0 4px 6px rgba(37,99,235,0.2);
             }
-            .cta-button:hover {
-              transform: translateY(-2px);
-              box-shadow: 0 6px 12px rgba(37,99,235,0.3);
-            }
             .footer {
               background: #f8fafc;
               padding: 30px;
               text-align: center;
               border-top: 1px solid #e2e8f0;
-            }
-            .social-links {
-              display: flex;
-              justify-content: center;
-              gap: 15px;
-              margin: 20px 0;
-            }
-            .social-link {
-              width: 36px;
-              height: 36px;
-              background: #e2e8f0;
-              border-radius: 50%;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              text-decoration: none;
-              color: #1e293b;
-              font-size: 18px;
-              transition: all 0.2s;
-            }
-            .social-link:hover {
-              background: #2563eb;
-              color: white;
-              transform: translateY(-2px);
             }
             .help-text {
               font-size: 13px;
@@ -203,14 +169,7 @@ export const sendWelcomeEmail = async ({ to, name, accountId }) => {
         </head>
         <body>
           <div class="container">
-            <!-- Header -->
             <div class="header">
-              <!--
-                FIX 1: Logo centered using a table instead of flexbox.
-                Flexbox (display:flex) is poorly supported in email clients
-                (Gmail strips it). A single-cell table is universally supported
-                and guarantees both horizontal AND vertical centering.
-              -->
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto 15px;">
                 <tr>
                   <td style="
@@ -231,7 +190,6 @@ export const sendWelcomeEmail = async ({ to, name, accountId }) => {
               <h1>Welcome to Byvault Finance! 🎉</h1>
             </div>
 
-            <!-- Content -->
             <div class="content">
               <div class="greeting">
                 Hello <strong>${name}</strong>,
@@ -239,22 +197,17 @@ export const sendWelcomeEmail = async ({ to, name, accountId }) => {
               
               <p>Thank you for choosing Byvault Finance! We're thrilled to have you on board and excited to help you on your financial journey.</p>
 
-              <!-- Welcome Message -->
               <div class="welcome-message">
                 <p style="margin:0; font-size: 18px; color: #1e293b; font-weight: 500;">Your financial future starts here</p>
                 <p style="margin:10px 0 0; color: #475569;">Experience banking that works for you, not against you.</p>
               </div>
 
-              <!-- Account Details -->
               <div class="account-box">
                 <p style="margin:0; font-size: 14px; opacity: 0.8;">Your Account ID</p>
-                <div class="account-number">
-                  ${accountId}
-                </div>
+                <div class="account-number">${accountId}</div>
                 <p style="margin:10px 0 0; font-size: 13px; opacity: 0.7;">Use this ID for transfers and customer support</p>
               </div>
 
-              <!-- Features -->
               <h3 style="color: #1e293b; margin-bottom: 15px;">What you can do with Byvault Finance:</h3>
               <div class="features">
                 <div class="feature">
@@ -279,120 +232,80 @@ export const sendWelcomeEmail = async ({ to, name, accountId }) => {
                 </div>
               </div>
 
-              <!-- CTA Button -->
               <div style="text-align: center;">
-                <a href="${process.env.FRONTEND_URL || "http://localhost:5173"}/dashboard" class="cta-button">
+                <a href="${process.env.FRONTEND_URL}/dashboard" class="cta-button">
                   Go to Your Dashboard
                 </a>
               </div>
 
-              <!--
-                FIX 2: Quick links rebuilt as a 4-column table.
-                The gap/flexbox approach breaks in Outlook and many mobile clients.
-                A table with explicit padding on each cell gives consistent,
-                reliable spacing everywhere without touching the links/data.
-              -->
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width: 100%; margin: 30px 0;">
                 <tr>
                   <td style="width: 25%; text-align: center; padding: 0 10px;">
-                    <a href="${process.env.FRONTEND_URL || "http://localhost:5173"}/deposit" style="text-decoration: none; color: #1e293b;">
-                      <div style="
-                        width: 40px; height: 40px; background: #f1f5f9; border-radius: 10px;
-                        font-size: 20px; line-height: 40px; text-align: center;
-                        margin: 0 auto 8px;
-                      ">💰</div>
+                    <a href="${process.env.FRONTEND_URL}/deposit" style="text-decoration: none; color: #1e293b;">
+                      <div style="width: 40px; height: 40px; background: #f1f5f9; border-radius: 10px; font-size: 20px; line-height: 40px; text-align: center; margin: 0 auto 8px;">💰</div>
                       <div style="font-size: 12px; font-weight: 500;">Deposit</div>
                     </a>
                   </td>
                   <td style="width: 25%; text-align: center; padding: 0 10px;">
-                    <a href="${process.env.FRONTEND_URL || "http://localhost:5173"}/transfer" style="text-decoration: none; color: #1e293b;">
-                      <div style="
-                        width: 40px; height: 40px; background: #f1f5f9; border-radius: 10px;
-                        font-size: 20px; line-height: 40px; text-align: center;
-                        margin: 0 auto 8px;
-                      ">↗️</div>
+                    <a href="${process.env.FRONTEND_URL}/transfer" style="text-decoration: none; color: #1e293b;">
+                      <div style="width: 40px; height: 40px; background: #f1f5f9; border-radius: 10px; font-size: 20px; line-height: 40px; text-align: center; margin: 0 auto 8px;">↗️</div>
                       <div style="font-size: 12px; font-weight: 500;">Transfer</div>
                     </a>
                   </td>
                   <td style="width: 25%; text-align: center; padding: 0 10px;">
-                    <a href="${process.env.FRONTEND_URL || "http://localhost:5173"}/cards" style="text-decoration: none; color: #1e293b;">
-                      <div style="
-                        width: 40px; height: 40px; background: #f1f5f9; border-radius: 10px;
-                        font-size: 20px; line-height: 40px; text-align: center;
-                        margin: 0 auto 8px;
-                      ">💳</div>
+                    <a href="${process.env.FRONTEND_URL}/cards" style="text-decoration: none; color: #1e293b;">
+                      <div style="width: 40px; height: 40px; background: #f1f5f9; border-radius: 10px; font-size: 20px; line-height: 40px; text-align: center; margin: 0 auto 8px;">💳</div>
                       <div style="font-size: 12px; font-weight: 500;">Get Card</div>
                     </a>
                   </td>
                   <td style="width: 25%; text-align: center; padding: 0 10px;">
-                    <a href="${process.env.FRONTEND_URL || "http://localhost:5173"}/support" style="text-decoration: none; color: #1e293b;">
-                      <div style="
-                        width: 40px; height: 40px; background: #f1f5f9; border-radius: 10px;
-                        font-size: 20px; line-height: 40px; text-align: center;
-                        margin: 0 auto 8px;
-                      ">🎧</div>
+                    <a href="${process.env.FRONTEND_URL}/support" style="text-decoration: none; color: #1e293b;">
+                      <div style="width: 40px; height: 40px; background: #f1f5f9; border-radius: 10px; font-size: 20px; line-height: 40px; text-align: center; margin: 0 auto 8px;">🎧</div>
                       <div style="font-size: 12px; font-weight: 500;">Support</div>
                     </a>
                   </td>
                 </tr>
               </table>
 
-              <!-- Getting Started Tips -->
               <hr>
               <h3 style="color: #1e293b; margin-bottom: 15px;">✨ Getting Started Tips</h3>
               <ul style="color: #475569; padding-left: 20px;">
                 <li style="margin-bottom: 12px;">
-                  <strong style="color: #2563eb;">Complete KYC Verification</strong> 
+                  <strong style="color: #2563eb;">Complete KYC Verification</strong>
                   <span style="display: block; margin-top: 4px; font-size: 14px;">Verify your identity to unlock higher limits and all features</span>
                   <span class="badge kyc" style="margin-top: 8px;">Required</span>
                 </li>
                 <li style="margin-bottom: 12px;">
-                  <strong style="color: #2563eb;">Complete your profile</strong> 
+                  <strong style="color: #2563eb;">Complete your profile</strong>
                   <span style="display: block; margin-top: 4px; font-size: 14px;">Add your phone number and address for enhanced security</span>
                 </li>
                 <li style="margin-bottom: 12px;">
-                  <strong style="color: #2563eb;">Set up 2FA</strong> 
+                  <strong style="color: #2563eb;">Set up 2FA</strong>
                   <span style="display: block; margin-top: 4px; font-size: 14px;">Enable two-factor authentication for extra protection</span>
                   <span class="badge twofa" style="margin-top: 8px;">Recommended</span>
                 </li>
                 <li style="margin-bottom: 12px;">
-                  <strong style="color: #2563eb;">Explore the app</strong> 
-                  <span style="display: block; margin-top: 4px; font-size: 14px;">Check out all the features in your dashboard</span>
-                </li>
-                <li style="margin-bottom: 12px;">
-                  <strong style="color: #2563eb;">Save beneficiaries</strong> 
+                  <strong style="color: #2563eb;">Save beneficiaries</strong>
                   <span style="display: block; margin-top: 4px; font-size: 14px;">Add frequent transfer recipients for quick access</span>
                 </li>
               </ul>
 
-              <!-- KYC Progress Badges -->
               <div style="background: #f8fafc; border-radius: 12px; padding: 20px; margin: 20px 0;">
                 <p style="margin:0 0 10px; font-weight: 600;">📋 Your Verification Status:</p>
-                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                  <span class="badge">✅ Email Verified</span>
-                  <span class="badge">⏳ KYC Pending</span>
-                  <span class="badge">⏳ 2FA Not Set</span>
-                </div>
+                <span class="badge">✅ Email Verified</span>
+                <span class="badge">⏳ KYC Pending</span>
+                <span class="badge">⏳ 2FA Not Set</span>
               </div>
             </div>
 
-            <!-- Footer -->
             <div class="footer">
-              <p style="margin:0; font-weight: 600; color: #1e293b;">Connect With Us</p>
-              <div class="social-links">
-                <a href="#" class="social-link">📘</a>
-                <a href="#" class="social-link">🐦</a>
-                <a href="#" class="social-link">📷</a>
-                <a href="#" class="social-link">💼</a>
-              </div>
-              
               <div class="help-text">
                 <p style="margin:0 0 10px;">
-                  Need help? <a href="${process.env.FRONTEND_URL || "http://localhost:5173"}/support">Visit our Support Center</a>
+                  Need help? <a href="${process.env.FRONTEND_URL}/support">Visit our Support Center</a>
                 </p>
                 <p style="margin:0; font-size: 11px; color: #94a3b8;">
                   © ${new Date().getFullYear()} Byvault Finance. All rights reserved.<br>
-                 123 Financial Plaza, New York, NY 10001
+                  800 Nicollet Mall Minneapolis, MN 55304
                 </p>
               </div>
             </div>
@@ -400,13 +313,12 @@ export const sendWelcomeEmail = async ({ to, name, accountId }) => {
         </body>
         </html>
       `,
-    };
+    });
 
-    const info = await transporter.sendMail(mailOptions);
-    console.log(`✅ Welcome email sent successfully to ${to}:`, info.messageId);
+    console.log(`✅ Welcome email sent successfully to ${to}`);
     return true;
   } catch (error) {
-    console.error("❌ Error sending welcome email:", error);
+    console.error("❌ Error sending welcome email:", error?.response?.body || error);
     return false;
   }
 };
