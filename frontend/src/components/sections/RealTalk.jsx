@@ -32,7 +32,7 @@ export const RealTalk = ({ t, className = "" }) => {
       title: t("landing.realTalk.budgeting.cardTitle") || "Master Your Money",
       description: t("landing.realTalk.budgeting.description") || "Learn proven strategies to track expenses, set realistic goals, and build wealth.",
       ctaText: t("landing.realTalk.budgeting.cta") || "Explore",
-      link: "/budgeting",
+      link: "/login",
       image: "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=600&h=600&fit=crop&q=80",
     },
     {
@@ -41,7 +41,7 @@ export const RealTalk = ({ t, className = "" }) => {
       title: t("landing.realTalk.homeBuying.cardTitle") || "Your Dream Home",
       description: t("landing.realTalk.homeBuying.description") || "Navigate homeownership with confidence and expert guidance every step.",
       ctaText: t("landing.realTalk.homeBuying.cta") || "Learn More",
-      link: "/home-buying",
+      link: "/login",
       image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&h=600&fit=crop&q=80",
     },
     {
@@ -50,7 +50,7 @@ export const RealTalk = ({ t, className = "" }) => {
       title: t("landing.realTalk.credit.cardTitle") || "Stellar Credit Score",
       description: t("landing.realTalk.credit.description") || "Understand credit scores and unlock better rates on loans and mortgages.",
       ctaText: t("landing.realTalk.credit.cta") || "Get Started",
-      link: "/credit",
+      link: "/login",
       image: "https://images.unsplash.com/photo-1563207153-f403bf289096?w=600&h=600&fit=crop&q=80",
     },
   ];
