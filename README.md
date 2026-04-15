@@ -1,27 +1,32 @@
 # Byvault Finance App
 
 ## 🚀 Live Demo
+
 🔗 Frontend: https://https://www.byvaultonline.com/
 🔗 Backend API: https://byvault-backend.onrender.com/api
 
-
 ## git repo
-- git clone git remote add origin https://github.com/Emmirez/byvault-finance.git
+
+- git clone git remote: https://github.com/Emmirez/byvault-finance.git
 
 ## project Structure
+
 1. frontend - React user Interface
 2. backend - Node.js API and business lohic
 
 ## Overview
+
 A web based banking application that allows users to create accounts, manage balances, and view transaction history. The project focuses on authentication, role based access, and secure data handling.
 
 ## Features
+
 1. User authentication
 2. Account dashboard
 3. Transaction history
-3. Admin management
+4. Admin management
 
 ## Tech Stack
+
 1. React
 2. Node.js
 3. Express
@@ -29,11 +34,13 @@ A web based banking application that allows users to create accounts, manage bal
 5. Tailwind CSS
 
 ## Other tools
+
 1. Nodemailer
 2. JWT authentication
 3. socket i.o
 
 ## User Features
+
 1. User registration and login
 2. Secure dashboard
 3. Balance management
@@ -45,6 +52,7 @@ A web based banking application that allows users to create accounts, manage bal
 9. Email notifications for important actions
 
 ## Admin Features
+
 1. Admin dashboard
 2. User management
 3. Transaction monitoring
@@ -52,6 +60,7 @@ A web based banking application that allows users to create accounts, manage bal
 5. System activity monitoring
 
 ## Security Features
+
 1. Password hashing before storing in the database
 2. JSON Web Token authentication
 3. Protected API routes
@@ -61,7 +70,9 @@ A web based banking application that allows users to create accounts, manage bal
 7. Input validation for sensitive operations
 
 ## screenshots
+
 - Heres a quick look at the Byvault Finance management app in action:
+
 1. Landing/login page
 2. User dashboard
 3. Transaction Flow
@@ -71,16 +82,19 @@ A web based banking application that allows users to create accounts, manage bal
 7. Security Features
 
 ## How the system Works.
+
 Users create an account and log in to access their personal dashboard. From the dashboard they can view balances, perform transfers, and track transactions.
 Sensitive actions such as account verification and transactions trigger backend processes that update the database and notify users through real time notifications or email alerts.
 Administrators have a separate dashboard that allows them to manage users, review verification requests, and monitor transactions.
 
 ## Local Setup
+
 1. Clone the repo
 2. Run npm install
-3. npm run dev  Start the server and frontend
+3. npm run dev Start the server and frontend
 
 ## What I Learned
+
 1. Designing full stack application architecture
 2. Implementing authentication and protected routes
 3. Managing financial transaction logic
@@ -89,11 +103,8 @@ Administrators have a separate dashboard that allows them to manage users, revie
 6. Structuring scalable backend APIs
 
 ## Future Improvements
+
 1. Enhanced fraud detection
 2. Improved transaction monitoring tools
 3. Mobile responsive improvements
 4. Advanced analytics dashboard
-
-
-
-
