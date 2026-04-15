@@ -2,9 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%232560EB'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-weight='bold'>B</text></svg>"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
     <title>Byvault-Finance</title>
+
     <script>
       (function () {
         var saved = localStorage.getItem("language");
@@ -12,8 +20,9 @@
           localStorage.setItem("language", "en");
 
           // Override document.cookie setter to BLOCK googtrans from being set
-          var cookieDesc = Object.getOwnPropertyDescriptor(Document.prototype, "cookie") ||
-                           Object.getOwnPropertyDescriptor(HTMLDocument.prototype, "cookie");
+          var cookieDesc =
+            Object.getOwnPropertyDescriptor(Document.prototype, "cookie") ||
+            Object.getOwnPropertyDescriptor(HTMLDocument.prototype, "cookie");
 
           if (cookieDesc && cookieDesc.configurable) {
             Object.defineProperty(document, "cookie", {
@@ -37,9 +46,20 @@
           }
 
           // Also clear any existing googtrans cookie
-          cookieDesc.set.call(document, "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname);
-          cookieDesc.set.call(document, "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + window.location.hostname);
-          cookieDesc.set.call(document, "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/");
+          cookieDesc.set.call(
+            document,
+            "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" +
+              window.location.hostname,
+          );
+          cookieDesc.set.call(
+            document,
+            "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." +
+              window.location.hostname,
+          );
+          cookieDesc.set.call(
+            document,
+            "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/",
+          );
         }
       })();
     </script>

@@ -1,5 +1,13 @@
 # Byvault Finance App
 
+## 🚀 Live Demo
+🔗 Frontend: https://https://www.byvaultonline.com/
+🔗 Backend API: https://byvault-backend.onrender.com/api
+
+
+## git repo
+- git clone git remote add origin https://github.com/Emmirez/byvault-finance.git
+
 ## project Structure
 1. frontend - React user Interface
 2. backend - Node.js API and business lohic
@@ -85,3 +93,7 @@ Administrators have a separate dashboard that allows them to manage users, revie
 2. Improved transaction monitoring tools
 3. Mobile responsive improvements
 4. Advanced analytics dashboard
+
+
+
+
